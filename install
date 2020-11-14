@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-gaps i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extras} pulseaudio-alsa pulsemixer neovim ranger chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl scrot xclip tldr man-db virtualbox virtualbox-guest-iso
+sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-gaps i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extras} pulseaudio-alsa pulsemixer neovim ranger chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl scrot xclip tldr man-db virtualbox virtualbox-guest-iso ;
 
-mkdir -p ~/.local/share/fonts/
-unzip fonts.zip -d ~/.local/share/fonts/
+mkdir -p ~/.local/share/fonts/ ;
+unzip fonts.zip -d ~/.local/share/fonts/ ;
 
 cp bash_profile.sh ~/.bash_profile ;
 cp bashrc.sh ~/.bashrc ;
