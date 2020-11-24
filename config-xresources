@@ -9,9 +9,6 @@ xterm*faceName: JetBrainsMono Nerd Font
 xterm*faceSize: 10
 xterm*selectToClipboard: true
 xterm*internalBorder: 5 
-! hard contrast: *background: #1d2021
-! medium contrast: *background: #282828
-! soft contrast: *background: #32302f
 xterm*background: #1d2021
 xterm*foreground: #ebdbb2
 ! Black + DarkGrey
