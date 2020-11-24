@@ -10,11 +10,11 @@ unzip JetBrainsMono.zip -d ~/.local/share/fonts/ ;
 fc-cache ;
 
 # set execute startx automatically after login
-echo "if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile ;
+echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile ;
 # set vi mode in bash
 echo "set -o vi" >> ~/.bashrc ;
 # load Xresources
-echo "[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources" >> ~/.xinitrc ;
+echo "[[ -f ~/.Xresources ]] && xrdb -merge -I\$HOME ~/.Xresources" >> ~/.xinitrc ;
 # load xprofile
 echo "[ -f ~/.xprofile ] && . ~/.xprofile" >> ~/.xinitrc ;
 # load  i3
