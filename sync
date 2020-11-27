@@ -1,0 +1,5 @@
+cp ~/.config/i3/config config-i3
+cp ~/.config/i3blocks/config config-i3blocks
+cp ~/.Xresources config-xresources
+cp ~/.config/nvim/init.vim config-nvim
+cp ~/.config/fontconfig/fonts.conf config-font

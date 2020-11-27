@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+# install packages
+sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-wm i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extra} pulseaudio-alsa pulsemixer neovim ranger w3m chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp sxiv imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl wget neofetch htop scrot xclip tldr acpi tlp tp_smapi man-db ntfs-3g dosfstools arandr ;
+
+# set touchpad
+sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf ;
+
 # make directories
 mkdir -p ~/.local/share/fonts/ ;
 mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper} ;
@@ -30,9 +36,3 @@ cp config-i3 ~/.config/i3/config ;
 cp config-i3blocks ~/.config/i3blocks/config ;
 cp config-nvim ~/.config/nvim/init.vim ;
 cp wall.jpg ~/.config/wallpaper/wall.jpg ;
-
-# install packages
-sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-wm i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extra} pulseaudio-alsa pulsemixer neovim ranger w3m chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp sxiv imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl scrot xclip tldr acpi tlp tp_smapi man-db ntfs-3g dosfstools arandr ;
-
-# set touchpad
-sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf ;
