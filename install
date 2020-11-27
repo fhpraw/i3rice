@@ -7,6 +7,7 @@ sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-
 sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf ;
 
 # make directories
+mkdir -p ~/.local/share/scripts/ ;
 mkdir -p ~/.local/share/fonts/ ;
 mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper} ;
 
@@ -19,6 +20,8 @@ fc-cache ;
 echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile ;
 # set vi mode in bash
 echo "set -o vi" >> ~/.bashrc ;
+# add scripts to path
+echo "export PATH=\$HOME/.local/share/scripts:\$PATH" >> ~/.bashrc ;
 # load Xresources
 echo "[[ -f ~/.Xresources ]] && xrdb -merge -I\$HOME ~/.Xresources" >> ~/.xinitrc ;
 # load xprofile
