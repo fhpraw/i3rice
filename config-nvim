@@ -18,11 +18,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-set bg=dark
-let g:gruvbox_contrast_dark='hard'
-colo gruvbox
+" set bg=dark
+" let g:gruvbox_contrast_dark='hard'
+" colo gruvbox
 
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 
 set laststatus=2
 set encoding=UTF-8
