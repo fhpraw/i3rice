@@ -7,7 +7,7 @@ sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-
 sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf ;
 
 # make directories
-mkdir -p ~/.local/share/scripts/ ;
+mkdir -p ~/.local/share/scripts/executable ;
 mkdir -p ~/.local/share/fonts/ ;
 mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper} ;
 
@@ -18,24 +18,36 @@ fc-cache ;
 
 # set execute startx automatically after login
 echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile ;
+
+# add scripts to path
+echo "export PATH=\$PATH:\$HOME/.local/share/scripts/executable" >> ~/.bashrc ;
+# aliases
+echo "source \$HOME/.local/share/scripts/aliases" >> ~/.bashrc ;
+# global variables
+echo "source \$HOME/.local/share/scripts/variables" >> ~/.bashrc ;
 # set vi mode in bash
 echo "set -o vi" >> ~/.bashrc ;
-# add scripts to path
-echo "export PATH=\$HOME/.local/share/scripts:\$PATH" >> ~/.bashrc ;
+
 # load Xresources
 echo "[[ -f ~/.Xresources ]] && xrdb -merge -I\$HOME ~/.Xresources" >> ~/.xinitrc ;
 # load xprofile
 echo "[ -f ~/.xprofile ] && . ~/.xprofile" >> ~/.xinitrc ;
 # load  i3
 echo "exec i3" >> ~/.xinitrc ;
+
 # mute beeb
 echo "xset -b" >> ~/.xprofile ;
 # set wallpaper
 echo "xwallpaper --zoom ~/.config/wallpaper/wall.jpg" >> ~/.xprofile ;
 
+cp aliases ~/.local/share/scripts/aliases
+cp variables ~/.local/share/scripts/variables
+
 cp config-xresources ~/.Xresources ;
 cp config-font ~/.config/fontconfig/fonts.conf ;
+
 cp config-i3 ~/.config/i3/config ;
 cp config-i3blocks ~/.config/i3blocks/config ;
+
 cp config-nvim ~/.config/nvim/init.vim ;
 cp wall.jpg ~/.config/wallpaper/wall.jpg ;

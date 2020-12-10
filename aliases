@@ -1,0 +1,29 @@
+# cli
+alias ls='ls --color=auto'
+
+# xampp
+alias wba='sudo /opt/lampp/lampp start'
+alias wbo='sudo /opt/lampp/lampp stop'
+alias wbc='cd /opt/lampp/bin/'
+
+# bash
+alias brc='nvim ~/.bashrc'
+alias bpr='nvim ~/.bash_profile'
+
+# i3
+alias ci3='nvim ~/.config/i3/config'
+alias ci3b='nvim ~/.config/i3blocks/config'
+
+# ranger
+alias rgd='ranger ~/Documents'
+alias rgi='ranger ~/Pictures'
+alias rgv='ranger ~/Videos'
+alias rgl='ranger ~/Downloads'
+alias rgp='ranger ~/Projects'
+alias rgr='ranger ~/Projects/rice'
+alias rgs='ranger ~/.local/share/scripts/executable/'
+
+# misc
+alias als='nvim ~/.local/share/scripts/aliases'
+alias pres='cd /opt/lampp/htdocs/prestasi'
+alias cdr='cd ~/Projects/rice'
