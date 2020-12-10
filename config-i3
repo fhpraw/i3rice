@@ -8,7 +8,7 @@ set $filemanager ranger
 set $displaymanager arandr
 
 # font for window title
-font pango:JetBrainsMono Nerd Font Bold 10
+font pango:JetBrainsMono Nerd Font ExtraBold 10
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
@@ -23,11 +23,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# XF86Tools is F9
-# XF86LaunchA is F11
-#bindsym XF86Explorer exec i3-sensible-terminal -e $filemanager
-
 # apps 
+bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font-10'
 bindsym XF86Tools exec i3-sensible-terminal
 bindsym XF86Explorer exec i3-sensible-terminal -e $filemanager
 bindsym XF86Display exec $displaymanager
@@ -43,9 +40,6 @@ bindsym --release $mod+Shift+Print exec "scrot -u -d 3 ~/Pictures/Screenshots/%s
 
 # kill focused window
 bindsym $mod+q kill
-
-# start dmenu
-bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font-10'
 
 # power button
 bindsym $mod+Home exec reboot
@@ -136,7 +130,7 @@ bindsym Ctrl+l resize grow width 10px or 10ppt
 
 title_align center
 # class                  border  bg      text    indicator child_border
-client.focused           #ebdbb2 #ebdbb2 #282828 #ebdbb2   #282828
+client.focused           #928374 #928374 #282828 #928374   #928374
 client.unfocused         #282828 #282828 #504945 #ebdbb2   #282828
 client.focused_inactive  #282828 #282828 #504945 #ebdbb2   #282828
 
@@ -145,10 +139,10 @@ bar {
         position top
         colors {
           background #282828
-          statusline #ebdbb2
+          statusline #928374
 
           # colorclass       border  bg      text
-          focused_workspace  #ebdbb2 #ebdbb2 #282828
-          inactive_workspace #282828 #282828 #ebdbb2
+          focused_workspace  #928374 #928374 #282828
+          inactive_workspace #282828 #282828 #928374
         }
 }

@@ -1,56 +1,129 @@
 #!/usr/bin/bash
 
-# update packages
-sudo pacman -Syyu
+# pacstrap
+# sudo pacman -S base linux linux-firmware networkmanger git
 
+# update packages
+sudo pacman -Syyu --noconfirm
+
+# ---------------------------------------------------------------
 # install packages
-sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-wm i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extra} pulseaudio-alsa pulsemixer neovim ranger w3m chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp sxiv imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl wget neofetch htop scrot xclip tldr acpi tlp tp_smapi man-db ntfs-3g dosfstools arandr ;
+# ---------------------------------------------------------------
+# xorg for GUI
+sudo pacman -S --noconfirm xorg-server xorg-xinit
+# GPU Hybrid driver, intel and amd
+sudo pacman -S --noconfirm xf86-video-intel xf86-video-amdgpu
+# 3D acceleration
+sudo pacman -S --noconfirm mesa
+# Multimonitor manager
+sudo pacman -S --noconfirm arandr
+# screen brightness control
+sudo pacman -S --noconfirm xorg-xbacklight
+# window manager
+sudo pacman -S --noconfirm i3-wm
+# status bar
+sudo pacman -S --noconfirm i3blocks
+# wallpaper setter
+sudo pacman -S --noconfirm xwallpaper
+# menu
+sudo pacman -S --noconfirm dmenu
+# terminal
+sudo pacman -S --noconfirm xterm
+# font
+sudo pacman -S --noconfirm noto-fonts
+# audio system
+sudo pacman -S --noconfirm pulseaudio-alsa pulsemixer
+# text editor
+sudo pacman -S --noconfirm neovim
+# file manager
+sudo pacman -S --noconfirm ranger
+# web browser
+sudo pacman -S --noconfirm chromium
+# office
+sudo pacman -S --noconfirm libreoffice-fresh
+# pdf reader
+sudo pacman -S --noconfirm zathura zathura-pdf-mupdf
+# draw vector
+sudo pacman -S --noconfirm inkscape
+# image viewer
+sudo pacman -S --noconfirm sxiv
+# image converter
+sudo pacman -S --noconfirm imagemagick
+# audio video converter
+sudo pacman -S --noconfirm ffmpeg
+# video player
+sudo pacman -S --noconfirm mpv
+# mp3 player
+sudo pacman -S --noconfirm cmus
+# video or audio media information
+sudo pacman -S --noconfirm mediainfo
+# zip tools
+sudo pacman -S --noconfirm zip unzip
+# extract rar file
+sudo pacman -S --noconfirm unrar
+# downloader
+sudo pacman -S --noconfirm wget
+# youtube downloader
+sudo pacman -S --noconfirm youtube-dl
+# screenshot
+sudo pacman -S --noconfirm scrot
+# system monitor
+sudo pacman -S --noconfirm htop
+# clipboard
+sudo pacman -S --noconfirm xclip
+# system info
+sudo pacman -S --noconfirm neofetch
+# NTFS support
+sudo pacman -S --noconfirm ntfs-3g
+# DOS File Systems support
+sudo pacman -S --noconfirm dosfstools
+# manual
+sudo pacman -S --noconfirm man-db
+# power management
+sudo pacman -S --noconfirm tlp tp_smapi
+# battery info
+sudo pacman -S --noconfirm acpi
 
 # set touchpad
-sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf ;
+sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
 
 # make directories
-mkdir -p ~/.local/share/scripts/executable ;
-mkdir -p ~/.local/share/fonts/ ;
-mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper} ;
+mkdir -p ~/.local/share/scripts/executable
+mkdir -p ~/.local/share/fonts/
+mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper}
+mkdir -p ~/{Documents,Pictures,Videos,Audios,Projects,Downloads}
 
 # install Jetbrain font
-curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip ;
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/ ;
-fc-cache ;
+curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/
+fc-cache
 
-# set execute startx automatically after login
-echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile ;
+# bash_profile
+echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile
 
-# add scripts to path
-echo "export PATH=\$PATH:\$HOME/.local/share/scripts/executable" >> ~/.bashrc ;
-# aliases
-echo "source \$HOME/.local/share/scripts/aliases" >> ~/.bashrc ;
-# global variables
-echo "source \$HOME/.local/share/scripts/variables" >> ~/.bashrc ;
-# set vi mode in bash
-echo "set -o vi" >> ~/.bashrc ;
+# bashrc
+echo "export PATH=\$PATH:\$HOME/.local/share/scripts/executable" >> ~/.bashrc
+echo "source \$HOME/.local/share/scripts/aliases" >> ~/.bashrc
+echo "source \$HOME/.local/share/scripts/variables" >> ~/.bashrc
+echo "set -o vi" >> ~/.bashrc
 
-# load Xresources
-echo "[[ -f ~/.Xresources ]] && xrdb -merge -I\$HOME ~/.Xresources" >> ~/.xinitrc ;
-# load xprofile
-echo "[ -f ~/.xprofile ] && . ~/.xprofile" >> ~/.xinitrc ;
-# load  i3
-echo "exec i3" >> ~/.xinitrc ;
+# xinitrc
+echo "[[ -f ~/.Xresources ]] && xrdb -merge -I\$HOME ~/.Xresources" >> ~/.xinitrc
+echo "[ -f ~/.xprofile ] && . ~/.xprofile" >> ~/.xinitrc
+echo "exec i3" >> ~/.xinitrc
 
-# mute beeb
-echo "xset -b" >> ~/.xprofile ;
-# set wallpaper
-echo "xwallpaper --zoom ~/.config/wallpaper/wall.jpg" >> ~/.xprofile ;
+# xprofile
+echo "xset -b" >> ~/.xprofile
+echo "xwallpaper --zoom ~/.config/wallpaper/wall.jpg" >> ~/.xprofile
 
 cp aliases ~/.local/share/scripts/aliases
 cp variables ~/.local/share/scripts/variables
 
-cp config-xresources ~/.Xresources ;
-cp config-font ~/.config/fontconfig/fonts.conf ;
+cp config-xresources ~/.Xresources
+cp config-font ~/.config/fontconfig/fonts.conf
 
-cp config-i3 ~/.config/i3/config ;
-cp config-i3blocks ~/.config/i3blocks/config ;
+cp config-i3 ~/.config/i3/config
+cp config-i3blocks ~/.config/i3blocks/config
 
-cp config-nvim ~/.config/nvim/init.vim ;
-cp wall.jpg ~/.config/wallpaper/wall.jpg ;
+cp config-nvim ~/.config/nvim/init.vim
+cp wall.jpg ~/.config/wallpaper/wall.jpg

@@ -8,21 +8,22 @@ endif
 unlet autoload_plug_path
 
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'morhetz/gruvbox'
-Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'mattn/emmet-vim'
+"Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'morhetz/gruvbox'
+"Plug 'mhinz/vim-startify'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-" set bg=dark
-" let g:gruvbox_contrast_dark='hard'
-" colo gruvbox
+"set bg=dark
+"let g:gruvbox_contrast_dark='hard'
+"colo gruvbox
 
-" let g:airline_powerline_fonts=1
+"let g:airline_powerline_fonts=1
 
 set laststatus=2
 set encoding=UTF-8
