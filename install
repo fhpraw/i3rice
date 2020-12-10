@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+# update packages
+sudo pacman -Syyu
+
 # install packages
 sudo pacman -S xorg-{server,xinit,xbacklight} xf86-video-{intel,amdgpu} mesa i3-wm i3blocks xwallpaper dmenu xterm noto-fonts noto-fonts-{cjk,emoji,extra} pulseaudio-alsa pulsemixer neovim ranger w3m chromium libreoffice-fresh zathura zathura-pdf-mupdf inkscape gimp sxiv imagemagick ffmpeg cmus mpv zip unzip unrar youtube-dl wget neofetch htop scrot xclip tldr acpi tlp tp_smapi man-db ntfs-3g dosfstools arandr ;
 
