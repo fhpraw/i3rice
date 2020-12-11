@@ -1,8 +1,5 @@
 #!/usr/bin/bash
 
-# pacstrap
-# sudo pacman -S base linux linux-firmware networkmanger git
-
 # update packages
 sudo pacman -Syyu --noconfirm
 
@@ -13,8 +10,6 @@ sudo pacman -Syyu --noconfirm
 sudo pacman -S --noconfirm xorg-server xorg-xinit
 # GPU Hybrid driver, intel and amd
 sudo pacman -S --noconfirm xf86-video-intel xf86-video-amdgpu
-# 3D acceleration
-sudo pacman -S --noconfirm mesa
 # Multimonitor manager
 sudo pacman -S --noconfirm arandr
 # screen brightness control
