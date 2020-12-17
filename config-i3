@@ -1,29 +1,21 @@
-# Mod4 is Windows button
 set $mod Mod4
-
-# set default apps
 set $browser chromium
 set $editor nvim
 set $filemanager ranger
 set $displaymanager arandr
-
-# font for window title
 font pango:JetBrainsMono Nerd Font ExtraBold 10
 
-# Use pactl to adjust volume in PulseAudio.
+# volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# use xbacklight to adjust brightness
+# brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# apps 
+# special keys 
 bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font-10'
 bindsym XF86Tools exec i3-sensible-terminal
 bindsym XF86Explorer exec i3-sensible-terminal -e $filemanager
@@ -31,11 +23,14 @@ bindsym XF86Display exec $displaymanager
 bindsym XF86Search exec $browser
 bindsym $mod+m exec i3-sensible-terminal -e htop
 
-# print screen all display
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# screenshot
 bindsym --release Print exec "scrot -m ~/Pictures/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"
-# print screen selected area
+# screenshot rectangle selected area
 bindsym --release Shift+Print exec "scrot -s ~/Pictures/Screenshots/%s_%H%M_%d%m%Y_$wx$h.png"
-# print screen focused window with 3 second delay
+# screenshot focused window with 3 second delay
 bindsym --release $mod+Shift+Print exec "scrot -u -d 3 ~/Pictures/Screenshots/%s_%H%M_%d%m%Y_$wx$h.png"
 
 # kill focused window
@@ -121,6 +116,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+# quit i3
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resizing window
 bindsym Ctrl+h resize shrink width 10px or 10ppt
@@ -129,8 +126,9 @@ bindsym Ctrl+k resize shrink height 10px or 10ppt
 bindsym Ctrl+l resize grow width 10px or 10ppt
 
 title_align center
+
 # class                  border  bg      text    indicator child_border
-client.focused           #928374 #928374 #282828 #928374   #928374
+client.focused           #458588 #458588 #fbf1c7 #458588   #458588
 client.unfocused         #282828 #282828 #504945 #ebdbb2   #282828
 client.focused_inactive  #282828 #282828 #504945 #ebdbb2   #282828
 
@@ -139,10 +137,10 @@ bar {
         position top
         colors {
           background #282828
-          statusline #928374
+          statusline #fbf1c7
 
           # colorclass       border  bg      text
-          focused_workspace  #928374 #928374 #282828
-          inactive_workspace #282828 #282828 #928374
+          focused_workspace  #83a598 #83a598 #282828
+          inactive_workspace #282828 #282828 #fbf1c7
         }
 }

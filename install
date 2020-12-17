@@ -10,24 +10,24 @@ sudo pacman -Syyu --noconfirm
 sudo pacman -S --noconfirm xorg-server xorg-xinit
 # GPU Hybrid driver, intel and amd
 sudo pacman -S --noconfirm xf86-video-intel xf86-video-amdgpu
-# Multimonitor manager
-sudo pacman -S --noconfirm arandr
-# screen brightness control
-sudo pacman -S --noconfirm xorg-xbacklight
 # window manager
 sudo pacman -S --noconfirm i3-wm
 # status bar
 sudo pacman -S --noconfirm i3blocks
-# wallpaper setter
-sudo pacman -S --noconfirm xwallpaper
 # menu
 sudo pacman -S --noconfirm dmenu
 # terminal
 sudo pacman -S --noconfirm xterm
 # font
-sudo pacman -S --noconfirm noto-fonts
+sudo pacman -S --noconfirm noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 # audio system
 sudo pacman -S --noconfirm pulseaudio-alsa pulsemixer
+# Multimonitor manager
+sudo pacman -S --noconfirm arandr
+# screen brightness control
+sudo pacman -S --noconfirm xorg-xbacklight
+# wallpaper setter
+sudo pacman -S --noconfirm xwallpaper
 # text editor
 sudo pacman -S --noconfirm neovim
 # file manager
@@ -40,6 +40,8 @@ sudo pacman -S --noconfirm libreoffice-fresh
 sudo pacman -S --noconfirm zathura zathura-pdf-mupdf
 # draw vector
 sudo pacman -S --noconfirm inkscape
+# draw bitmap
+sudo pacman -S --noconfirm gimp
 # image viewer
 sudo pacman -S --noconfirm sxiv
 # image converter
@@ -83,23 +85,17 @@ sudo pacman -S --noconfirm acpi
 sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
 
 # make directories
-mkdir -p ~/.local/share/scripts/executable
 mkdir -p ~/.local/share/fonts/
-mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim,wallpaper}
+mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim}
 mkdir -p ~/{Documents,Pictures,Videos,Audios,Projects,Downloads}
+mkdir -p ~/Pictures/Wallpapers/
 
 # install Jetbrain font
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 fc-cache
 
-# bash_profile
-echo "if [[ ! \$DISPLAY && \$XDG_VTNR -eq 1 ]] ; then exec startx ; fi" >> ~/.bash_profile
-
 # bashrc
-echo "export PATH=\$PATH:\$HOME/.local/share/scripts/executable" >> ~/.bashrc
-echo "source \$HOME/.local/share/scripts/aliases" >> ~/.bashrc
-echo "source \$HOME/.local/share/scripts/variables" >> ~/.bashrc
 echo "set -o vi" >> ~/.bashrc
 
 # xinitrc
@@ -109,16 +105,11 @@ echo "exec i3" >> ~/.xinitrc
 
 # xprofile
 echo "xset -b" >> ~/.xprofile
-echo "xwallpaper --zoom ~/.config/wallpaper/wall.jpg" >> ~/.xprofile
-
-cp aliases ~/.local/share/scripts/aliases
-cp variables ~/.local/share/scripts/variables
+echo "xwallpaper --zoom ~/Pictures/Wallpapers/wall.jpg" >> ~/.xprofile
 
 cp config-xresources ~/.Xresources
 cp config-font ~/.config/fontconfig/fonts.conf
-
 cp config-i3 ~/.config/i3/config
 cp config-i3blocks ~/.config/i3blocks/config
-
 cp config-nvim ~/.config/nvim/init.vim
-cp wall.jpg ~/.config/wallpaper/wall.jpg
+cp wall.jpg ~/Pictures/Wallpapers/wall.jpg
