@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# early packages: base linux linux-firmware networkmanager grub efibootmgr neovim sudo git tmux w3m
+# early packages: base linux linux-firmware networkmanager grub efibootmgr neovim sudo git tmux w3m man-db
 
 # update packages
 sudo pacman -Syyu --noconfirm
@@ -85,6 +85,8 @@ sudo systemctl enable tlp
 sudo pacman -S --noconfirm acpi
 # virtualbox
 sudo pacman -S --noconfirm virtualbox{,-host-modules-arch,-guest-iso}
+# tldr
+sudo pacman -S --noconfirm tldr
 
 # set touchpad
 sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
