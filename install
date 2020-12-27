@@ -1,121 +1,130 @@
 #!/usr/bin/bash
 
-# early packages: base linux linux-firmware networkmanager grub efibootmgr neovim sudo git tmux w3m man-db
+# early packages: base linux linux-firmware networkmanager grub efibootmgr sudo vi
+
+# make directories
+mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
 
 # update packages
 sudo pacman -Syyu --noconfirm
 
 # ---------------------------------------------------------------
-# install packages
+# install packages for cli mode
 # ---------------------------------------------------------------
-# xorg for GUI
-sudo pacman -S --noconfirm xorg-{server,xinit,xbacklight}
-# GPU Hybrid driver, intel and amd
-sudo pacman -S --noconfirm xf86-video-{intel,amdgpu}
-# window manager
-sudo pacman -S --noconfirm i3-wm
-# status bar
-sudo pacman -S --noconfirm i3blocks
-# lock
-sudo pacman -S --noconfirm i3lock
-# menu
-sudo pacman -S --noconfirm dmenu
-# terminal
-sudo pacman -S --noconfirm xterm
-# font
-sudo pacman -S --noconfirm noto-fonts{,-cjk,-emoji,-extra}
+# power management and battery info acpi
+sudo pacman -S --noconfirm tlp tp_smapi acpi
+sudo systemctl enable tlp
+# terminal multiplexer
+sudo pacman -S --noconfirm tmux
 # audio system
-sudo pacman -S --noconfirm pulseaudio-alsa pulsemixer
-# Multimonitor manager
-sudo pacman -S --noconfirm arandr
-# wallpaper setter
-sudo pacman -S --noconfirm xwallpaper
+sudo pacman -S --noconfirm pulse{audio-alsa,mixer}
+# git
+sudo pacman -S --noconfirm git
 # file manager
 sudo pacman -S --noconfirm ranger
-# web browser
-sudo pacman -S --noconfirm chromium
-# office
-sudo pacman -S --noconfirm libreoffice-fresh
-# pdf reader
-sudo pacman -S --noconfirm zathura{,-pdf-mupdf}
-# draw vector
-sudo pacman -S --noconfirm inkscape
-# draw bitmap
-sudo pacman -S --noconfirm gimp
-# image viewer
-sudo pacman -S --noconfirm sxiv
-# image converter
-sudo pacman -S --noconfirm imagemagick
-# audio video converter
-sudo pacman -S --noconfirm ffmpeg
-# video player
-sudo pacman -S --noconfirm mpv
 # mp3 player
 sudo pacman -S --noconfirm cmus
-# video or audio media information
-sudo pacman -S --noconfirm mediainfo
-# zip tools
-sudo pacman -S --noconfirm {,un}zip
-# 7zip tools
-sudo pacman -S --noconfirm p7zip
+# zip and 7zip tools
+sudo pacman -S --noconfirm {,un,p7}zip
 # extract rar file
 sudo pacman -S --noconfirm unrar
 # downloader
 sudo pacman -S --noconfirm wget
 # youtube downloader
 sudo pacman -S --noconfirm youtube-dl
-# screenshot
-sudo pacman -S --noconfirm scrot
-# system monitor
-sudo pacman -S --noconfirm htop
-# system info
-sudo pacman -S --noconfirm neofetch
-# clipboard
-sudo pacman -S --noconfirm xclip
 # NTFS support
 sudo pacman -S --noconfirm ntfs-3g
 # DOS File Systems support
 sudo pacman -S --noconfirm dosfstools
-# exfat support
+# EXFAT support
 sudo pacman -S --noconfirm exfat-utils
-# power management
-sudo pacman -S --noconfirm tlp tp_smapi
-sudo systemctl enable tlp
-# battery info
-sudo pacman -S --noconfirm acpi
-# virtualbox
-sudo pacman -S --noconfirm virtualbox{,-host-modules-arch,-guest-iso}
-# tldr
-sudo pacman -S --noconfirm tldr
+# video or audio media information
+sudo pacman -S --noconfirm mediainfo
+# system monitor
+sudo pacman -S --noconfirm htop
+# system info
+sudo pacman -S --noconfirm neofetch
+# manual (offline) and tldr (online)
+sudo pacman -S --noconfirm man-db tldr
 
-# set touchpad
-sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
-
-# make directories
+# ---------------------------------------------------------------
+# install packages for GUI mode
+# ---------------------------------------------------------------
+# install font Jetbrain and Google Noto
 mkdir -p ~/.local/share/fonts/
-mkdir -p ~/.config/{fontconfig,i3,i3blocks,nvim}
-mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
-mkdir -p ~/Pictures/Wallpapers/
-
-# install Jetbrain font
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
+rm JetBrainsMono.zip
+sudo pacman -S --noconfirm noto-fonts{,-cjk,-emoji,-extra}
 fc-cache
-
-# install dotfiles
-cat config-bashrc >> ~/.bashrc
-cat config-xinitrc >> ~/.xinitrc
-cat config-xprofile >> ~/.xprofile
-cp config-xresources ~/.Xresources
+mkdir -p ~/.config/fontconfig/
 cp config-font ~/.config/fontconfig/fonts.conf
+
+# xorg for GUI
+sudo pacman -S --noconfirm xorg-{server,xinit,xbacklight}
+# GPU Hybrid driver, intel and amd
+sudo pacman -S --noconfirm xf86-video-{intel,amdgpu}
+
+# window manager, status bar, screen locker
+sudo pacman -S --noconfirm i3{-wm,blocks,lock}
+mkdir -p ~/.config/{i3,i3blocks}
 cp config-i3 ~/.config/i3/config
 cp config-i3blocks ~/.config/i3blocks/config
-cp wall.jpg ~/Pictures/Wallpapers/wall.jpg
+cat config-xinitrc >> ~/.xinitrc
+cat config-xprofile >> ~/.xprofile
+cat config-bashrc >> ~/.bashrc
 
-# install init.vim and neovim plugins
+# terminal
+sudo pacman -S --noconfirm xterm
+cp config-xresources ~/.Xresources
+
+# menu
+sudo pacman -S --noconfirm dmenu
+
+# Multimonitor manager
+sudo pacman -S --noconfirm arandr
+
+# web browser
+sudo pacman -S --noconfirm chromium
+
+# office
+sudo pacman -S --noconfirm libreoffice-fresh
+# pdf reader
+sudo pacman -S --noconfirm zathura{,-pdf-mupdf}
+
+# image viewer
+sudo pacman -S --noconfirm sxiv
+# image editors 
+sudo pacman -S --noconfirm imagemagick inkscape gimp
+# screenshot
+sudo pacman -S --noconfirm scrot
+mkdir -p ~/Pictures/Screenshots/
+
+# video player
+sudo pacman -S --noconfirm mpv
+# audio video tools
+sudo pacman -S --noconfirm ffmpeg
+
+# clipboard
+sudo pacman -S --noconfirm xclip
+
+# virtualbox
+sudo pacman -S --noconfirm virtualbox{,-host-modules-arch,-guest-iso}
+
+# install neovim and vim-plug 
+mkdir -p ~/.config/nvim/
+sudo pacman -S --noconfirm neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 cat plug-nvim > ~/.config/nvim/init.vim
 nvim --headless +PlugInstall +qall
 cat config-nvim >> ~/.config/nvim/init.vim
+
+# wallpaper setter
+sudo pacman -S --noconfirm xwallpaper
+mkdir -p ~/Pictures/Wallpapers/
+cp wall.jpg ~/Pictures/Wallpapers/wall.jpg
+
+# set touchpad
+sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
 
 reboot
