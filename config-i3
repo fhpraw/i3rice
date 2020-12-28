@@ -130,12 +130,15 @@ bindsym Ctrl+k resize shrink height 10px or 10ppt
 bindsym Ctrl+l resize grow width 10px or 10ppt
 
 title_align center
-default_border pixel 2
+default_border pixel 5
 
 # class                  border  bg      text    indicator child_border
-client.focused           #8ec07c #1d2021 #fbf1c7 #fabd2f   #8ec07c
-client.unfocused         #665c54 #665c54 #928374 #665c54   #665c54
+client.focused           #8ec07c #1d2021 #fbf1c7 #fabd2f   #fbf1c7
 client.focused_inactive  #665c54 #665c54 #928374 #665c54   #665c54
+client.unfocused         #665c54 #665c54 #928374 #665c54   #665c54
+client.urgent            #665c54 #665c54 #928374 #665c54   #665c54
+client.placeholder       #665c54 #665c54 #928374 #665c54   #665c54
+client.background        #665c54
 
 bar {
         font pango:JetBrainsMono Nerd Font ExtraBold 9
