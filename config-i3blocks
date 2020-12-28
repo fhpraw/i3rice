@@ -8,7 +8,7 @@
 
 # Global properties
 separator=false
-separator_block_width=2
+separator_block_width=0
 
 # [documentation]
 # full_text=Documentation
@@ -17,15 +17,15 @@ separator_block_width=2
 # color=#f12711
 
 [wifi]
-label= NET:
+label= NET=
 command=echo -e "$(nmcli connection show --active | awk 'FNR == 2 {print $1}') "
 interval=60
 
-[batere]
-label= BAT:
+[battery]
+label= BAT=
 command=echo -e "$(acpi -b | sed -E 's/.* ([0-9]+%).*/\1/') "
 interval=60
 
-[waktu]
-command=echo -e " $(date '+%a, %d %b %Y %l:%M %p ') "
+[time]
+command=echo -e " $(date '+%a, %d %b %Y %l:%M %p') "
 interval=60
