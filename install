@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-# early packages: base linux linux-firmware networkmanager grub efibootmgr sudo vi
+# pacstrap packages: base linux linux-firmware
+# arch-chroot packages: networkmanager grub efibootmgr vi
 
 # make directories
 mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
@@ -56,7 +57,6 @@ curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBr
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 rm JetBrainsMono.zip
 sudo pacman -S --noconfirm noto-fonts{,-cjk,-emoji,-extra}
-fc-cache
 mkdir -p ~/.config/fontconfig/
 cp config-font ~/.config/fontconfig/fonts.conf
 
