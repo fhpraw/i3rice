@@ -18,7 +18,9 @@ sudo systemctl enable tlp
 # terminal multiplexer
 sudo pacman -S --noconfirm tmux
 # audio system
-sudo pacman -S --noconfirm pulse{audio-alsa,mixer}
+sudo pacman -S --noconfirm pulse{audio-alsa,audio-bluetooth,mixer}
+# bluetooth controller
+sudo pacman -S --noconfirm bluez bluez-utils
 # git
 sudo pacman -S --noconfirm git
 # file manager
