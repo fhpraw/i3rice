@@ -1,132 +1,50 @@
 #!/usr/bin/bash
 
-# pacstrap packages: base linux linux-firmware
-# arch-chroot packages: networkmanager grub efibootmgr vi
+# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim sudo
 
-# make directories
-mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
-
-# update packages
-sudo pacman -Syyu --noconfirm
 
 # ---------------------------------------------------------------
 # install packages for cli mode
 # ---------------------------------------------------------------
-# power management and battery info acpi
-sudo pacman -S --noconfirm tlp tp_smapi acpi
+# make directories
+mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
+
+# update and install packages
+sudo pacman -Syyu --noconfirm
+sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 1 | awk -F "," '{print $1}' | xargs)
+
+# install vim-plug and plugins on neovim
+mkdir -p ~/.config/nvim/
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+cp config-nvim ~/.config/nvim/init.vim
+nvim --headless +PlugInstall +qall
+
+# run tlp at startup
 sudo systemctl enable tlp
-# terminal multiplexer
-sudo pacman -S --noconfirm tmux
-# audio system
-sudo pacman -S --noconfirm pulse{audio-alsa,audio-bluetooth,mixer}
-# bluetooth controller
-sudo pacman -S --noconfirm bluez bluez-utils
-# git
-sudo pacman -S --noconfirm git
-# file manager
-sudo pacman -S --noconfirm ranger
-# mp3 player
-sudo pacman -S --noconfirm cmus
-# zip and 7zip tools
-sudo pacman -S --noconfirm {,un,p7}zip
-# extract rar file
-sudo pacman -S --noconfirm unrar
-# downloader
-sudo pacman -S --noconfirm wget
-# youtube downloader
-sudo pacman -S --noconfirm youtube-dl
-# NTFS support
-sudo pacman -S --noconfirm ntfs-3g
-# DOS File Systems support
-sudo pacman -S --noconfirm dosfstools
-# EXFAT support
-sudo pacman -S --noconfirm exfat-utils
-# video or audio media information
-sudo pacman -S --noconfirm mediainfo
-# system monitor
-sudo pacman -S --noconfirm htop
-# system info
-sudo pacman -S --noconfirm neofetch
-# manual (offline) and tldr (online)
-sudo pacman -S --noconfirm man-db tldr
 
 # ---------------------------------------------------------------
 # install packages for GUI mode
 # ---------------------------------------------------------------
-# install font Jetbrain and Google Noto
+mkdir -p ~/Pictures/{Wallpapers,Screenshots}/
+mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
+
+sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 2 | awk -F "," '{print $1}' | xargs)
+
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
-rm JetBrainsMono.zip
-sudo pacman -S --noconfirm noto-fonts{,-cjk,-emoji,-extra}
-mkdir -p ~/.config/fontconfig/
+
 cp config-font ~/.config/fontconfig/fonts.conf
-
-# xorg for GUI
-sudo pacman -S --noconfirm xorg-{server,xinit,xbacklight}
-# GPU Hybrid driver, intel and amd
-sudo pacman -S --noconfirm xf86-video-{intel,amdgpu}
-
-# window manager, status bar, screen locker
-sudo pacman -S --noconfirm i3{-wm,blocks,lock}
-mkdir -p ~/.config/{i3,i3blocks}
 cp config-i3 ~/.config/i3/config
 cp config-i3blocks ~/.config/i3blocks/config
-cat config-xinitrc >> ~/.xinitrc
-cat config-xprofile >> ~/.xprofile
-cat config-bashrc >> ~/.bashrc
-
-# terminal
-sudo pacman -S --noconfirm xterm
+cp config-xinitrc ~/.xinitrc
+cp config-xprofile ~/.xprofile
 cp config-xresources ~/.Xresources
+cat ~/.bashrc config-bashrc > ~/.bashrc
+cat ~/.bash_profile config-bash_profile > ~/.bash_profile
 
-# menu
-sudo pacman -S --noconfirm dmenu
+cp wall.jpg ~/.config/wallpaper.jpg
 
-# Multimonitor manager
-sudo pacman -S --noconfirm arandr
-
-# web browser
-sudo pacman -S --noconfirm chromium
-
-# office
-sudo pacman -S --noconfirm libreoffice-fresh
-# pdf reader
-sudo pacman -S --noconfirm zathura{,-pdf-mupdf}
-
-# image viewer
-sudo pacman -S --noconfirm sxiv
-# image editors 
-sudo pacman -S --noconfirm imagemagick inkscape gimp
-# screenshot
-sudo pacman -S --noconfirm scrot
-mkdir -p ~/Pictures/Screenshots/
-
-# video player
-sudo pacman -S --noconfirm mpv
-# audio video tools
-sudo pacman -S --noconfirm ffmpeg
-
-# clipboard
-sudo pacman -S --noconfirm xclip
-
-# virtualbox
-sudo pacman -S --noconfirm virtualbox{,-host-modules-arch,-guest-iso}
-
-# install neovim and vim-plug 
-mkdir -p ~/.config/nvim/
-sudo pacman -S --noconfirm neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-cat plug-nvim > ~/.config/nvim/init.vim
-nvim --headless +PlugInstall +qall
-cat config-nvim >> ~/.config/nvim/init.vim
-
-# wallpaper setter
-sudo pacman -S --noconfirm xwallpaper
-mkdir -p ~/Pictures/Wallpapers/
-cp wall.jpg ~/Pictures/Wallpapers/wall.jpg
-
-# set touchpad
 sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
 
 reboot

@@ -1,31 +1,16 @@
-# i3blocks configuration file
-#
-# The i3blocks man page describes the usage of the binary,
-# and its website describes the configuration:
-#
-#     https://vivien.github.io/i3blocks
-
-
-# Global properties
 separator=true
-separator_block_width=5
+separator_block_width=10
 
-# [documentation]
-# full_text=Documentation
-# website=https://vivien.github.io/i3blocks
-# command=xdg-open "$website"
-# color=#f12711
-
-[wifi]
-label= NET:
-command=echo -e "$(nmcli connection show --active | awk 'FNR == 2 {print $1}') "
+[network]
+command=echo -e " $(nm-online -t 3 | grep -P -o 'online|offline') "
 interval=60
 
 [battery]
-label= BAT:
-command=echo -e "$(acpi -b | sed -E 's/.* ([0-9]+%).*/\1/') "
+command=echo -e " BATTERY $(acpi -b | grep -P -o '\d{1,3}%') "
 interval=60
 
 [time]
-command=echo -e " $(date '+%a, %d %b %Y %l:%M %p') "
+command=echo -e " $(date '+%R %A %d %B %Y') "
 interval=60
+color=#1d2021
+background=#ebdbb2

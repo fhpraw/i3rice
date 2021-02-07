@@ -1,28 +1,36 @@
-set bg=dark
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
 
+set bg=dark
 if empty($DISPLAY) 
   " TTY
   colo gruvbox8
-  let g:airline_powerline_fonts=0
-  let g:airline_theme='monochrome'
 else
   " Not in TTY
   set t_Co=256
   colo gruvbox8_hard
-  let g:airline_powerline_fonts=1
-  let g:airline_theme='minimalist'
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'zenburn'
 endif
 
-set laststatus=2
 set encoding=UTF-8
-set number
 set relativenumber
+set noshowmode
+set laststatus=2
 set showcmd
 set wildmenu
 set lazyredraw
 set showmatch
 set visualbell
-"set cursorline
+set cursorline
 set incsearch
 set hlsearch
 set ignorecase
@@ -31,10 +39,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
-set foldenable
-set foldlevelstart=10
-set foldnestmax=10
-set foldmethod=indent
+set foldmethod=manual
 
 inoremap jk <esc>
 nnoremap <space>ev :edit $MYVIMRC<cr>

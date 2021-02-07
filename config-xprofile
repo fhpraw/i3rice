@@ -1,2 +1,2 @@
 xset -b
-xwallpaper --zoom ~/Pictures/Wallpapers/wall.jpg
+feh --bg-scale --no-fehbg ~/.config/wallpaper.jpg
