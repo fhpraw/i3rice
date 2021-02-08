@@ -78,7 +78,7 @@ bindsym $mod+m mode "moving"
 bindsym $mod+r mode "resizing"
 bindsym Print mode "screenshot"
 
-bindsym $mod+Shift+w exec sxiv -r -t -o ~/Pictures/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && feh --bg-scale --no-fehbg ~/.config/wallpaper.jpg
+bindsym $mod+Shift+w exec sxiv -r -t -o ~/Pictures/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg
 
 mode "moving" {
   bindsym h move left 50px
