@@ -1,2 +1,0 @@
-#!/usr/bin/bash
-sudo pacman -S --noconfirm virtualbox virtualbox-host-modules-arch virtualbox-guest-iso
