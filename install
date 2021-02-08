@@ -1,13 +1,11 @@
 #!/usr/bin/bash
 
-# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim sudo
+# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim man-db sudo
 
 
 # ---------------------------------------------------------------
 # install packages for cli mode
 # ---------------------------------------------------------------
-# make directories
-mkdir -p ~/{Documents,Videos,Audios,Projects,Downloads}
 
 # update and install packages
 sudo pacman -Syyu --noconfirm
@@ -25,7 +23,7 @@ sudo systemctl enable tlp
 # ---------------------------------------------------------------
 # install packages for GUI mode
 # ---------------------------------------------------------------
-mkdir -p ~/Pictures/{Wallpapers,Screenshots}/
+mkdir -p ~/Images/{Wallpapers,Screenshots}/
 mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
 
