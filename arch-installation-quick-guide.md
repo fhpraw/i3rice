@@ -61,7 +61,7 @@ Mount EFI Filesystem `/dev/sda1` to `/mnt/efi`
 Use `pacstrap` to install base package, linux kernel and firmware, also Bootmanager (grub and efibootmgr), Network Manager (networkmanager), Text Editor(vi), and Manual Pages(man-db)
 
 ```shell
-# pacstrap /mnt base linux linux-firmware grub efibootmgr networkmanager neovim man-db
+# pacstrap /mnt base linux linux-firmware grub efibootmgr networkmanager neovim man-db sudo
 ```
 
 ## Generate fstab
