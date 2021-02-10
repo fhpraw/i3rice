@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim man-db sudo
+# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim git man-db sudo
 
 
 # ---------------------------------------------------------------
@@ -11,27 +11,27 @@
 sudo pacman -Syyu --noconfirm
 sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 1 | awk -F "," '{print $1}' | xargs)
 
+# run tlp at startup
+sudo systemctl enable tlp
+
 # install vim-plug and plugins on neovim
 mkdir -p ~/.config/nvim/
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 cp config-nvim ~/.config/nvim/init.vim
 nvim --headless +PlugInstall +qall
 
-# run tlp at startup
-sudo systemctl enable tlp
-
 # ---------------------------------------------------------------
 # install packages for GUI mode
 # ---------------------------------------------------------------
+
+sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 2 | awk -F "," '{print $1}' | xargs)
+sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
+
 mkdir -p ~/Images/{Wallpapers,Screenshots}/
 mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
-
-sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 2 | awk -F "," '{print $1}' | xargs)
-
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
-
 cp config-font ~/.config/fontconfig/fonts.conf
 cp config-i3 ~/.config/i3/config
 cp config-i3blocks ~/.config/i3blocks/config
@@ -40,9 +40,5 @@ cp config-xprofile ~/.xprofile
 cp config-xresources ~/.Xresources
 cat ~/.bashrc config-bashrc > ~/.bashrc
 cat ~/.bash_profile config-bash_profile > ~/.bash_profile
-
 cp wall.jpg ~/.config/wallpaper.jpg
-
-sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
-
-reboot
+rm JetBrainsMono.zip

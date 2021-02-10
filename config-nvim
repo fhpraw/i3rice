@@ -12,13 +12,13 @@ call plug#end()
 set bg=dark
 if empty($DISPLAY) 
   " TTY
-  "colo gruvbox8
+  colo gruvbox8
 else
   " Not in TTY
   set t_Co=256
-  "colo gruvbox8_hard
-  "let g:airline_powerline_fonts = 1
-  "let g:airline_theme = 'zenburn'
+  colo gruvbox8_hard
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'zenburn'
 endif
 
 set encoding=UTF-8

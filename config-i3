@@ -43,9 +43,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
-bindsym XF86Tools exec xterm -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+bindsym XF86Tools mode "setting" 
 bindsym XF86Search exec chromium
-bindsym XF86LaunchA exec dmenu_run -b -nb '#1d2021' -nf '#ebdbb2' -fn 'JetBrainsMono Nerd Font:style=bold:pixelsize=14'
+bindsym XF86LaunchA exec dmenu_run -nb '#1d2021' -nf '#ebdbb2' -fn 'JetBrainsMono Nerd Font:style=bold:pixelsize=14'
 bindsym XF86Explorer exec xterm -e ranger
 bindsym $mod+Home exec reboot
 bindsym $mod+End exec poweroff
@@ -98,15 +98,22 @@ mode "resizing" {
 }
 
 mode "screenshot" {
-  bindsym --release f exec "maim -u ~/Pictures/Screenshots/scrot_$(date +%F-%H%M%S).png"
-  bindsym --release w exec "maim -u -i $(xdotool getactivewindow) ~/Pictures/Screenshots/scrot_$(date +%F-%H%M%S).jpg"
-  bindsym --release s exec "maim -u -s -o ~/Pictures/Screenshots/scrot_$(date +%F-%H%M%S).jpg"
+  bindsym --release f exec "maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).png"
+  bindsym --release w exec "maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg"
+  bindsym --release s exec "maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg"
+  bindsym Escape mode "default"
+}
+
+mode "setting" {
+  bindsym s exec xterm -e nvim ~/.xinitrc ~/.Xresources ~/.bashrc ~/.bash_profile ~/.xprofile ~/.config/i3/config ~/.config/i3blocks/config ~/.config/fontconfig/fonts.conf ~/.config/nvim/init.vim
+  bindsym p exec xterm -e pulsemixer
+  bindsym n exec xterm -e nmtui
   bindsym Escape mode "default"
 }
 
 bar {
   status_command i3blocks
-  font pango:JetBrainsMono Nerd Font ExtraBold 10
+  font pango:JetBrainsMono Nerd Font ExtraBold 9
   position top
   colors {
     background #1d2021

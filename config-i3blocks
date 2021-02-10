@@ -1,12 +1,12 @@
-separator=true
+separator=false
 separator_block_width=10
 
 [network]
-command=echo -e " $(nm-online -t 3 | grep -P -o 'online|offline') "
+command=echo -e " INTERNET: $(nm-online -t 3 | grep -P -o 'online|offline') "
 interval=60
 
 [battery]
-command=echo -e " BATTERY $(acpi -b | grep -P -o '\d{1,3}%') "
+command=echo -e " BATTERY: $(acpi -b | grep -P -o '\d{1,3}%') "
 interval=60
 
 [time]

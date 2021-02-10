@@ -6,7 +6,6 @@ pulseaudio pulseaudio-alsa,audio system,1
 pulseaudio-bluetooth,bluetooth support for audio system,1
 pulsemixer,audio mixer for pulseaudio,1
 bluez bluez-utils,bluetooth controller,1
-git,code versioning controller,1
 ranger,file manager,1
 cmus,mp3 player,1
 unzip,extract zip,1
@@ -24,6 +23,7 @@ i3-wm,window manager,2
 i3blocks,status bar,2
 i3lock,screen locker,2
 dmenu,application launcher,2
+noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font,2
 xterm,terminal emulator,2
 arandr,multidisplay manager,2
 chromium,web browser,2
