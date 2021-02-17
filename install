@@ -1,44 +1,24 @@
-#!/usr/bin/bash
-
-# pacstrap packages: base linux linux-firmware networkmanager grub efibootmgr neovim git man-db sudo
-
-
-# ---------------------------------------------------------------
-# install packages for cli mode
-# ---------------------------------------------------------------
-
-# update and install packages
+#!/bin/bash
 sudo pacman -Syyu --noconfirm
-sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 1 | awk -F "," '{print $1}' | xargs)
-
-# run tlp at startup
+sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
 sudo systemctl enable tlp
-
-# install vim-plug and plugins on neovim
-mkdir -p ~/.config/nvim/
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-cp config-nvim ~/.config/nvim/init.vim
-nvim --headless +PlugInstall +qall
-
-# ---------------------------------------------------------------
-# install packages for GUI mode
-# ---------------------------------------------------------------
-
-sudo pacman -S --noconfirm $(sed '1d' packages-list.csv | grep 2 | awk -F "," '{print $1}' | xargs)
-sudo cp config-touchpad /etc/X11/xorg.conf.d/30-touchpad.conf
-
-mkdir -p ~/Images/{Wallpapers,Screenshots}/
+sudo mkdir -p /etc/X11/xorg.conf.d/
+sudo cp config/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
+mkdir -p ~/Images/{Wallpapers,Screenshots}/
+cp config/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
+cp config/.xinitrc ~/.xinitrc
+cp config/.xprofile ~/.xprofile
+cp config/.Xresources ~/.Xresources
+cp config/.bash_profile ~/.bash_profile
+cp config/.bashrc ~/.bashrc
+cp config/i3/config ~/.config/i3/config
+cp config/i3blocks/config ~/.config/i3blocks/config
+cp config/nvim/init.vim ~/.config/nvim/init.vim
+cp wallpaper.jpg ~/.config/wallpaper.jpg
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
-cp config-font ~/.config/fontconfig/fonts.conf
-cp config-i3 ~/.config/i3/config
-cp config-i3blocks ~/.config/i3blocks/config
-cp config-xinitrc ~/.xinitrc
-cp config-xprofile ~/.xprofile
-cp config-xresources ~/.Xresources
-cat ~/.bashrc config-bashrc > ~/.bashrc
-cat ~/.bash_profile config-bash_profile > ~/.bash_profile
-cp wall.jpg ~/.config/wallpaper.jpg
+nvim --headless +PlugInstall +qall
 rm JetBrainsMono.zip
