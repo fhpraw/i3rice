@@ -1,40 +1,20 @@
-call plug#begin(stdpath('data') . '/plugged')
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'lifepillar/vim-gruvbox8'
-Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-call plug#end()
-
-set bg=dark
-if empty($DISPLAY) 
-  " TTY
-  colo gruvbox8
-else
-  " Not in TTY
-  set t_Co=256
-  colo gruvbox8_hard
-  let g:airline_powerline_fonts = 1
-  let g:airline_theme = 'zenburn'
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set encoding=UTF-8
-set relativenumber
-set noshowmode
-set laststatus=2
-set showcmd
-set wildmenu
-set lazyredraw
-set showmatch
-set visualbell
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'dracula/vim',{'as':'dracula'}
+Plug 'mhinz/vim-startify'
+call plug#end()
+
+colo dracula
+
 set cursorline
 set incsearch
 set hlsearch
 set ignorecase
-set smartcase
 set shiftwidth=2
 set softtabstop=2
 set expandtab

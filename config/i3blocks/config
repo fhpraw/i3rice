@@ -12,5 +12,3 @@ interval=60
 [time]
 command=echo -e " $(date '+%R %A %d %B %Y') "
 interval=60
-color=#ebdbb2
-background=#285577

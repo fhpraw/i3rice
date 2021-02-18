@@ -1,7 +1,10 @@
-cp ~/.config/i3/config config/i3
-cp ~/.config/i3blocks/config config/i3blocks
-cp ~/.Xresources config/xresources
-cp ~/.config/fontconfig/fonts.conf config/fonts.conf
-cp ~/.xprofile config/xprofile
-cp ~/.xinitrc config/xinitrc
-cp ~/.config/nvim/init.vim config/init.vim
+#!/bin/bash
+cp ~/.config/i3/config config/i3/config
+cp ~/.config/i3blocks/config config/i3blocks/config
+cp ~/.Xresources config/.Xresources
+cp ~/.config/fontconfig/fonts.conf config/fontconfig/fonts.conf
+cp ~/.xprofile config/.xprofile
+cp ~/.xinitrc config/.xinitrc
+cp ~/.bashrc config/.bashrc
+cp ~/.bash_profile config/.bash_profile
+cp ~/.config/nvim/init.vim config/nvim/init.vim

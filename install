@@ -17,8 +17,3 @@ cp config/i3/config ~/.config/i3/config
 cp config/i3blocks/config ~/.config/i3blocks/config
 cp config/nvim/init.vim ~/.config/nvim/init.vim
 cp wallpaper.jpg ~/.config/wallpaper.jpg
-curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-unzip JetBrainsMono.zip -d ~/.local/share/fonts/
-nvim --headless +PlugInstall +qall
-rm JetBrainsMono.zip
