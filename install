@@ -16,4 +16,6 @@ cp config/.bashrc ~/.bashrc
 cp config/i3/config ~/.config/i3/config
 cp config/i3blocks/config ~/.config/i3blocks/config
 cp config/nvim/init.vim ~/.config/nvim/init.vim
+cp config/zathura/zathurarc ~/.config/zathura/zathurarc
+cp config/mimeapps.list ~/.config/mimeapps.list
 cp wallpaper.jpg ~/.config/wallpaper.jpg
