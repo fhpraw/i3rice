@@ -6,7 +6,7 @@ pulseaudio pulseaudio-alsa,audio system
 pulseaudio-bluetooth,bluetooth support for audio system
 pulsemixer,audio mixer for pulseaudio
 bluez bluez-utils,bluetooth controller
-nnn,file manager
+ranger,file manager
 cmus,mp3 player
 unzip,extract zip
 unrar,extract rar

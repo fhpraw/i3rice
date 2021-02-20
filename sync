@@ -9,4 +9,3 @@ cp ~/.bashrc config/.bashrc
 cp ~/.bash_profile config/.bash_profile
 cp ~/.config/nvim/init.vim config/nvim/init.vim
 cp ~/.config/zathura/zathurarc config/zathura/zathurarc
-cp ~/.config/mimeapps.list config/mimeapps.list

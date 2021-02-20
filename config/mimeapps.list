@@ -1,6 +1,0 @@
-
-[Default Applications]
-image/jpeg=sxiv.desktop
-image/png=sxiv.desktop
-application/pdf=org.pwmt.zathura.desktop
-text/plain=nvim.desktop
