@@ -11,8 +11,8 @@ cmus,mp3 player
 unzip,extract zip
 unrar,extract rar
 youtube-dl,youtube downloader
-ntfs-3g,NTFS file system support
 dosfstools,FAT file system support
+ntfs-3g,NTFS file system support
 exfat-utils,EXFAT file system support
 xorg-server,X server
 xorg-xinit,starter for X server

@@ -10,11 +10,15 @@ mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
 mkdir -p ~/Images/{Wallpapers,Screenshots}/
 
+curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+unzip JetBrainsMono.zip -d ~/.local/share/fonts/
+rm JetBrainsMono.zip
+
 cp config/.xinitrc ~/.xinitrc
 cp config/.xprofile ~/.xprofile
 cp config/.Xresources ~/.Xresources
-cp config/.bash_profile ~/.bash_profile
 cp config/.bashrc ~/.bashrc
+cp config/.bash_profile ~/.bash_profile
 
 cp config/i3/config ~/.config/i3/config
 cp config/i3blocks/config ~/.config/i3blocks/config
