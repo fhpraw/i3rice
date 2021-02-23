@@ -5,6 +5,8 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
