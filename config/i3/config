@@ -1,4 +1,4 @@
-font pango:Terminus 10
+font pango:JetBrainsMono Nerd Font ExtraBold 10
 default_border pixel 3
 
 set $ws1 "1"
@@ -12,6 +12,38 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 set $mod Mod4
+
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $bghard #1d2021
+
+bar {
+  status_command i3blocks
+  font pango:JetBrainsMono Nerd Font ExtraBold 10
+  position bottom
+  colors {
+    background $bg
+    statusline $yellow
+    #                    border    backgr    text
+    focused_workspace    $blue   $blue   $darkgray
+    inactive_workspace   $darkgray $darkgray $yellow
+    active_workspace     $darkgray $darkgray $yellow
+    urgent_workspace     $red      $red      $bg
+  }
+}
+
+# class                 border    backgr    text      indicator child_border
+client.focused          $blue     $blue     $darkgray $purple   $blue
+client.focused_inactive $darkgray $darkgray $yellow   $purple   $darkgray
+client.unfocused        $darkgray $darkgray $yellow   $purple   $darkgray
+client.urgent           $red      $red      $white    $red      $red
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -45,8 +77,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
 bindsym XF86Tools mode "setting" 
 bindsym XF86Search exec chromium
-bindsym XF86LaunchA exec dmenu_run -b -nb '#282a36' -nf '#f8f8f2' -fn 'Terminus:style=regular:pixelsize=18'
-bindsym XF86Explorer exec xterm -e nnn
+bindsym XF86LaunchA exec dmenu_run -b -nb '#282a36' -nf '#f8f8f2' -fn 'JetBrainsMono Nerd Font:style=regular:pixelsize=14'
+bindsym XF86Explorer exec xterm -e ranger
 bindsym $mod+Home exec reboot
 bindsym $mod+End exec poweroff
 bindsym $mod+Insert reload 
@@ -81,19 +113,19 @@ bindsym Print mode "screenshot"
 bindsym $mod+Shift+w exec sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg
 
 mode "moving" {
-  bindsym h move left 50px
-  bindsym j move down 50px
-  bindsym k move up 50px
-  bindsym l move right 50px
+  bindsym h move left 30px
+  bindsym j move down 30px
+  bindsym k move up 30px
+  bindsym l move right 30px
   bindsym c move absolute position center
   bindsym Escape mode "default"
 }
 
 mode "resizing" {
-  bindsym h resize shrink width 50px
-  bindsym j resize grow height 50px
-  bindsym k resize shrink height 50px
-  bindsym l resize grow width 50px
+  bindsym h resize shrink width 30px
+  bindsym j resize grow height 30px
+  bindsym k resize shrink height 30px
+  bindsym l resize grow width 30px
   bindsym Escape mode "default"
 }
 
@@ -110,28 +142,4 @@ mode "setting" {
   bindsym Escape mode "default"
 }
 
-bar {
-  status_command i3blocks
-  font pango: Terminus 10
-  position bottom
-  colors {
-    background #282A36
-    statusline #F8F8F2
-    separator  #44475A
 
-    focused_workspace  #44475A #44475A #F8F8F2
-    active_workspace   #282A36 #44475A #F8F8F2
-    inactive_workspace #282A36 #282A36 #BFBFBF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-    binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
-}
-
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2

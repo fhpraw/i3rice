@@ -2,20 +2,22 @@
 sudo pacman -Syyu --noconfirm
 sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
 sudo systemctl enable tlp
+
 sudo mkdir -p /etc/X11/xorg.conf.d/
 sudo cp config/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
 mkdir -p ~/.config/{i3,i3blocks,nvim,fontconfig}/
 mkdir -p ~/.local/share/fonts/
 mkdir -p ~/Images/{Wallpapers,Screenshots}/
-cp config/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
+
 cp config/.xinitrc ~/.xinitrc
 cp config/.xprofile ~/.xprofile
 cp config/.Xresources ~/.Xresources
 cp config/.bash_profile ~/.bash_profile
 cp config/.bashrc ~/.bashrc
+
 cp config/i3/config ~/.config/i3/config
 cp config/i3blocks/config ~/.config/i3blocks/config
 cp config/nvim/init.vim ~/.config/nvim/init.vim
-cp config/zathura/zathurarc ~/.config/zathura/zathurarc
-cp config/mimeapps.list ~/.config/mimeapps.list
+cp config/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
 cp wallpaper.jpg ~/.config/wallpaper.jpg

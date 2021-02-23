@@ -5,11 +5,19 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'dracula/vim',{'as':'dracula'}
+Plug 'sheerun/vim-polyglot'
+Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-colo dracula
+set termguicolors
+set background=dark
+let g:gruvbox_italic=1
+colorscheme gruvbox
+let g:airline_powerline_fonts = 1
 
 set cursorline
 set incsearch
