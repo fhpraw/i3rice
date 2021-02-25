@@ -1,5 +1,6 @@
-font pango:JetBrainsMono Nerd Font ExtraBold 10
+font pango:JetBrainsMono Nerd Font Bold 9
 default_border pixel 3
+title_align center
 
 set $ws1 "1"
 set $ws2 "2"
@@ -14,36 +15,67 @@ set $ws10 "10"
 set $mod Mod4
 
 set $bg #282828
+set $lgray #928374
+
 set $red #cc241d
+set $lred #fb4934
+
 set $green #98971a
+set $lgreen #b8bb26
+
 set $yellow #d79921
+set $lyellow #fabd2f
+
 set $blue #458588
+set $lblue #83a598
+
 set $purple #b16286
+set $lpurple #d3869b
+
 set $aqua #689d68
+set $laqua #8ec07c
+
 set $gray #a89984
-set $darkgray #1d2021
-set $bghard #1d2021
+set $fg #ebdbb2
+
+set $orange #d65d0e
+set $lorange #fe8019
+
+set $hbg #1d2021
+set $lbg #32302f
+
+set $bg0 #282828
+set $bg1 #3c3836
+set $bg2 #504945
+set $bg3 #665c54
+set $bg4 #7c6f64
+
+set $fg4 #a89984
+set $fg3 #bdae93
+set $fg2 #d5c7a1
+set $fg1 #ebdbb2
+set $fg0 #fbf1c7
 
 bar {
   status_command i3blocks
-  font pango:JetBrainsMono Nerd Font ExtraBold 10
-  position bottom
+  font pango:JetBrainsMono Nerd Font ExtraBold 9
+  position top
   colors {
     background $bg
-    statusline $yellow
+    statusline $lyellow
     #                    border    backgr    text
-    focused_workspace    $blue   $blue   $darkgray
-    inactive_workspace   $darkgray $darkgray $yellow
-    active_workspace     $darkgray $darkgray $yellow
-    urgent_workspace     $red      $red      $bg
+    focused_workspace    $yellow $yellow $bg
+    inactive_workspace   $bg     $bg     $fg
+    active_workspace     $lgreen $lgreen $lyellow
+    urgent_workspace     $red    $red    $bg
   }
 }
 
-# class                 border    backgr    text      indicator child_border
-client.focused          $blue     $blue     $darkgray $purple   $blue
-client.focused_inactive $darkgray $darkgray $yellow   $purple   $darkgray
-client.unfocused        $darkgray $darkgray $yellow   $purple   $darkgray
-client.urgent           $red      $red      $white    $red      $red
+# class                 border backgr text indicator child_border
+client.focused          $lorange $lorange $bg    $purple $lorange
+client.unfocused        $bg1    $bg1    $bg4   $purple $lbg
+client.focused_inactive $bg1    $bg1    $bg4   $purple $bg1
+client.urgent           $red    $red    $white $red    $red
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -77,7 +109,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
 bindsym XF86Tools mode "setting" 
 bindsym XF86Search exec chromium
-bindsym XF86LaunchA exec dmenu_run -b -nb '#282a36' -nf '#f8f8f2' -fn 'JetBrainsMono Nerd Font:style=regular:pixelsize=14'
+bindsym XF86LaunchA exec dmenu_run -nb '#282828' -nf '#ebdbb2' -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=16'
 bindsym XF86Explorer exec xterm -e ranger
 bindsym $mod+Home exec reboot
 bindsym $mod+End exec poweroff
@@ -141,5 +173,3 @@ mode "setting" {
   bindsym n exec xterm -e nmtui
   bindsym Escape mode "default"
 }
-
-
