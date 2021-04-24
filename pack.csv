@@ -1,5 +1,6 @@
 PACKAGES,DESCRIPTION
 neovim,text editor
+git,git
 acpi,battery info
 tlp tp_smapi,TLP powermanagement
 pulseaudio pulseaudio-alsa,audio system
