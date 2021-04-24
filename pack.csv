@@ -1,7 +1,6 @@
 PACKAGES,DESCRIPTION
 acpi,battery info
 tlp tp_smapi,TLP powermanagement
-tmux,terminal multiplexer
 pulseaudio pulseaudio-alsa,audio system
 pulseaudio-bluetooth,bluetooth support for audio system
 pulsemixer,audio mixer for pulseaudio
@@ -19,13 +18,12 @@ xorg-xinit,starter for X server
 xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu,graphic driver
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
-terminus-font,terminus font
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
 xterm,terminal emulator
-chromium,web browser
+firefox,web browser
 arandr,multidisplay manager
 libreoffice-fresh,office
 zathura zathura-pdf-mupdf,pdf reader
@@ -40,3 +38,5 @@ mpv,video player
 xclip,clipboard
 xwallpaper,wallpaper setter
 virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtual machine
+htop,system monitor
+neofetch,system info
