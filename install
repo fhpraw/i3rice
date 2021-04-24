@@ -35,7 +35,7 @@ cp config/.bashrc ~/.bashrc
 cp config/.bash_profile ~/.bash_profile
 
 # set wallpaper
-cp wallpaper.jpg ~/.config/wallpaper.jpg
+cp background.jpg ~/.config/background.jpg
 
 # set i3wm config
 mkdir -p ~/.config/{i3,i3blocks}/
