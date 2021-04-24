@@ -1,4 +1,5 @@
 PACKAGES,DESCRIPTION
+neovim,text editor
 acpi,battery info
 tlp tp_smapi,TLP powermanagement
 pulseaudio pulseaudio-alsa,audio system
