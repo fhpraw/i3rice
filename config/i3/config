@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:JetBrainsMono Nerd Font Bold 9
+font pango:JetBrainsMono Nerd Font ExtraBold 9
 
 client.focused #4c7899 #285577 #ebdbb2 #2e9ef4 #285577
 bar {

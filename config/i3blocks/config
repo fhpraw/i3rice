@@ -1,10 +1,12 @@
 separator=false
-separator_block_width=10
+separator_block_width=5
 
 [battery]
-command=echo -e "BAT$(acpi -b | grep -P -o '\d{1,3}%') "
+command=echo -e " BAT $(acpi -b | grep -P -o '\d{1,3}%') "
 interval=60
+background=#285577
 
 [time]
-command=echo -e "$(date '+%a %b %d %I:%M %p') "
+command=echo -e " $(date '+%a %b %d %I:%M %p') "
 interval=60
+background=#285577
