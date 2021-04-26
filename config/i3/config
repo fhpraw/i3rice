@@ -1,103 +1,32 @@
-font pango:JetBrainsMono Nerd Font Bold 9
-default_border pixel 3
-title_align center
-
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 set $mod Mod4
-
-set $bg #282828
-set $lgray #928374
-
-set $red #cc241d
-set $lred #fb4934
-
-set $green #98971a
-set $lgreen #b8bb26
-
-set $yellow #d79921
-set $lyellow #fabd2f
-
-set $blue #458588
-set $lblue #83a598
-
-set $purple #b16286
-set $lpurple #d3869b
-
-set $aqua #689d68
-set $laqua #8ec07c
-
-set $gray #a89984
-set $fg #ebdbb2
-
-set $orange #d65d0e
-set $lorange #fe8019
-
-set $hbg #1d2021
-set $lbg #32302f
-
-set $bg0 #282828
-set $bg1 #3c3836
-set $bg2 #504945
-set $bg3 #665c54
-set $bg4 #7c6f64
-
-set $fg4 #a89984
-set $fg3 #bdae93
-set $fg2 #d5c7a1
-set $fg1 #ebdbb2
-set $fg0 #fbf1c7
+font pango:JetBrainsMono Nerd Font Bold 9
+title_align center
 
 bar {
   status_command i3blocks
-  font pango:JetBrainsMono Nerd Font ExtraBold 9
-  position top
-  colors {
-    background $bg
-    statusline $lyellow
-    #                    border    backgr    text
-    focused_workspace    $yellow $yellow $bg
-    inactive_workspace   $bg     $bg     $fg
-    active_workspace     $lgreen $lgreen $lyellow
-    urgent_workspace     $red    $red    $bg
-  }
 }
 
-# class                 border backgr text indicator child_border
-client.focused          $lorange $lorange $bg    $purple $lorange
-client.unfocused        $bg1    $bg1    $bg4   $purple $lbg
-client.focused_inactive $bg1    $bg1    $bg4   $purple $bg1
-client.urgent           $red    $red    $white $red    $red
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
 
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+Shift+Escape exit
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -108,8 +37,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
 bindsym XF86Tools mode "setting" 
-bindsym XF86Search exec chromium
-bindsym XF86LaunchA exec dmenu_run -nb '#282828' -nf '#ebdbb2' -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=16'
+bindsym XF86Search exec firefox
+bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14'
 bindsym XF86Explorer exec xterm -e ranger
 bindsym $mod+Home exec reboot
 bindsym $mod+End exec poweroff
@@ -142,8 +71,6 @@ bindsym $mod+m mode "moving"
 bindsym $mod+r mode "resizing"
 bindsym Print mode "screenshot"
 
-bindsym $mod+Shift+w exec sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
-
 mode "moving" {
   bindsym h move left 30px
   bindsym j move down 30px
@@ -171,5 +98,11 @@ mode "screenshot" {
 mode "setting" {
   bindsym p exec xterm -e pulsemixer
   bindsym n exec xterm -e nmtui
+  bindsym w exec sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
   bindsym Escape mode "default"
 }
+
+for_window [class="Sxiv"] floating enable
+for_window [class="Zoom"] floating enable
+for_window [title="ranger"] floating enable
+for_window [title="VirtualBox*"] floating enable
