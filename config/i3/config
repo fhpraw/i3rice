@@ -103,7 +103,7 @@ mode "setting" {
   bindsym Escape mode "default"
 }
 
-for_window [class="Sxiv"] floating enable
 for_window [class="Zoom"] floating enable
-for_window [title="ranger"] floating enable
 for_window [title="VirtualBox*"] floating enable
+for_window [title="nmtui"] floating enable
+for_window [title="pulsemixer"] floating enable
