@@ -19,6 +19,7 @@ xorg-server,X server
 xorg-xinit,starter for X server
 xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu,graphic driver
+mesa,opengl support
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
 i3-wm,window manager
 i3blocks,status bar
