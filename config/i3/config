@@ -1,13 +1,33 @@
 set $mod Mod4
 font pango:JetBrainsMono Nerd Font ExtraBold 9
 
-client.focused #4c7899 #285577 #ebdbb2 #2e9ef4 #285577
+for_window [class=".*"] border pixel 1
+for_window [class="Zoom"] floating enable
+for_window [title="VirtualBox*"] floating enable
+for_window [title="nmtui"] floating enable
+for_window [title="pulsemixer"] floating enable
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #458588 #458588 #ebdbb2 #b16286   #458588
+client.focused_inactive #98971a #98971a #ebdbb2 #484e50   #98971a
+client.unfocused        #1d2021 #1d2021 #928374 #292d2e   #1d2021
+client.urgent           #cc241d #cc241d #ebdbb2 #900000   #cc241d
+client.placeholder      #000000 #0c0c0c #ebdbb2 #000000   #0c0c0c
+client.background       #ebdbb2
+
 bar {
-  status_command i3blocks
-  colors {
-    background #282828
-    statusline #ebdbb2
-  }
+    status_command i3blocks
+    colors {
+        background #282828
+        statusline #ebdbb2
+        separator #666666
+
+        focused_workspace  #458588 #458588 #282828
+        active_workspace   #98971a #98971a #282828
+        inactive_workspace #1d2021 #1d2021 #928374
+        urgent_workspace   #cc241d #cc241d #ebdbb2
+        binding_mode       #2f343a #900000 #ebdbb2
+    }
 }
 
 bindsym $mod+1 workspace number 1
@@ -100,10 +120,7 @@ mode "setting" {
   bindsym p exec xterm -e pulsemixer
   bindsym n exec xterm -e nmtui
   bindsym w exec sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
+  bindsym 3 exec xterm -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym b exec xterm -e nvim ~/.bashrc ~/.bash_profile
   bindsym Escape mode "default"
 }
-
-for_window [class="Zoom"] floating enable
-for_window [title="VirtualBox*"] floating enable
-for_window [title="nmtui"] floating enable
-for_window [title="pulsemixer"] floating enable
