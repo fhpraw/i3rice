@@ -47,3 +47,5 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 mkdir -p ~/.config/nvim/
 cp config/nvim/init.vim ~/.config/nvim/init.vim
 nvim +PlugInstall +qall
+echo 'source "$HOME/.local/share/nvim/plugged/gruvbox/gruvbox_256palette.sh"' >> ~/.bashrc
+echo 'set -o vi' >> ~/.bashrc
