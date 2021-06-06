@@ -31,8 +31,7 @@ cp config/.xprofile ~/.xprofile
 cp config/.Xresources ~/.Xresources
 
 # set bash configs
-cp config/.bashrc ~/.bashrc
-cp config/.bash_profile ~/.bash_profile
+echo 'set -o vi' >> ~/.bashrc
 
 # set wallpaper
 cp config/background.jpg ~/.config/background.jpg
