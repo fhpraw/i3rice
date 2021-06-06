@@ -2,7 +2,7 @@ PACKAGES,DESCRIPTION
 neovim,text editor
 git,git
 acpi,battery info
-tlp tp_smapi,TLP powermanagement
+tlp,TLP powermanagement
 pulseaudio pulseaudio-alsa,audio system
 pulseaudio-bluetooth,bluetooth support for audio system
 pulsemixer,audio mixer for pulseaudio
