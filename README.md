@@ -1,4 +1,4 @@
 # i3rice
 for personal purpose only
 
-feel free to fork, liked, or whatever you want
+feel free to fork, like, or whatever you want
