@@ -26,7 +26,7 @@ i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
 kitty,terminal emulator
-firefox,web browser
+chromium,web browser
 arandr,multidisplay manager
 libreoffice-fresh,office
 zathura zathura-pdf-mupdf,pdf reader
