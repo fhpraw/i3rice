@@ -45,3 +45,7 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 mkdir -p ~/.config/nvim/
 cp config/nvim/init.vim ~/.config/nvim/init.vim
 nvim +PlugInstall +qall
+
+# install kitty config
+mkdir -p ~/.config/kitty/
+cp -r config/kitty/kitty.conf ~/.config/kitty/kitty.conf
