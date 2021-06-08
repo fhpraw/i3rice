@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
 
 # open firefox
-bindsym XF86Search exec firefox
+bindsym XF86Search exec chromium
 
 # open dmenu
 bindsym XF86LaunchA exec dmenu_run -fn 'Noto Sans:style=ExtraBold:pixelsize=12' -nf '#ebdbb2' -nb '#282828' -sf '#282828' -sb '#ebdbb2'
