@@ -15,7 +15,6 @@ sudo cp config/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 # make directories
 mkdir -p ~/Images/{Wallpapers,Screenshots}/
-mkdir -p ~/Drive/{0..9}/
 
 # set font 
 mkdir -p ~/.local/share/fonts/
