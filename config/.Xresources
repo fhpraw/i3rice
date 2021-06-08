@@ -1,14 +1,3 @@
-Xft.dpi: 96
-Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-xterm*faceName: JetBrainsMono Nerd Font
-xterm*faceSize: 10
-xterm*selectToClipboard: true
-xterm*internalBorder: 20
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
 ! Description: Retro groove colorscheme generalized
