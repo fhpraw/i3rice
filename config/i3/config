@@ -180,5 +180,3 @@ bar {
         statusline #ebdbb2
     }
 }
-
-for_window [class=".*"] border pixel 2
