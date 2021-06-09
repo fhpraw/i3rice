@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # set titlebar font
-font pango:Noto Sans ExtraBold 8
+font pango:Noto Sans Bold 8
 
 # key bindings
 
@@ -52,7 +52,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86Display exec arandr 
 
 # open browser
-bindsym XF86Search exec chromium
+bindsym XF86Search exec firefox
 
 # open dmenu
 bindsym XF86LaunchA exec dmenu_run -fn 'Noto Sans:style=ExtraBold:pixelsize=12' -nf '#ebdbb2' -nb '#282828' -sf '#282828' -sb '#ebdbb2'
@@ -171,7 +171,7 @@ mode "launcher" {
 bar {
     position top
     status_command i3blocks
-    font pango: Noto Sans ExtraBold 9
+    font pango: Noto Sans Bold 9
     colors {
         # bar background color
         background #282828 

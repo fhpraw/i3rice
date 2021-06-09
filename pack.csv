@@ -26,7 +26,7 @@ i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
 kitty,terminal emulator
-chromium,web browser
+firefox,web browser
 arandr,multidisplay manager
 libreoffice-still,office
 zathura zathura-pdf-mupdf,pdf reader
@@ -40,7 +40,6 @@ ffmpeg,multimedia tool for video and audio
 mpv,video player
 xclip,clipboard
 xwallpaper,wallpaper setter
-virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtual machine
 htop,system monitor
 neofetch,system info
 man-db,manual page
