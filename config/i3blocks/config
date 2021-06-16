@@ -1,15 +1,21 @@
-separator=true
-separator_block_width=20
+separator=false
+separator_block_width=2
 
 [caps-lock]
-command=xset -q | grep Caps | awk '{ print $2, $3, $4  }'
+command=echo -e " CAPSLOCK $(xset -q | grep Caps | awk '{ print $4 }') "
 interval=once
 signal=10
+color=#3c3836
+background=#fabd2f
 
 [battery]
-command=echo -e "Battery: $(acpi -b | grep -P -o '\d{1,3}%')"
+command=echo -e " BATTERY $(acpi -b | grep -P -o '\d{1,3}%') "
 interval=60
+color=#3c3836
+background=#fabd2f
 
 [time]
-command=echo -e "$(date '+%A %d %B %Y, %I:%M %p')   "
+command=echo -e " $(date '+%A %d %B %Y, %I:%M %p') "
 interval=60
+color=#3c3836
+background=#fabd2f

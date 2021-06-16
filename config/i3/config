@@ -2,9 +2,11 @@
 set $mod Mod4
 
 # set titlebar font
-font pango:Noto Sans Bold 8
+font pango:JetBrainsMono Nerd Font ExtraBold 9
 
-# key bindings
+# title alignment
+title_align center
+
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -55,7 +57,7 @@ bindsym XF86Display exec arandr
 bindsym XF86Search exec firefox
 
 # open dmenu
-bindsym XF86LaunchA exec dmenu_run -fn 'Noto Sans:style=ExtraBold:pixelsize=12' -nf '#ebdbb2' -nb '#282828' -sf '#282828' -sb '#ebdbb2'
+bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#fabd2f' -nb '#282828' -sf '#282828' -sb '#fabd2f'
 
 # open filemanager ranger
 bindsym XF86Explorer exec i3-sensible-terminal -e ranger
@@ -171,12 +173,18 @@ mode "launcher" {
 bar {
     position top
     status_command i3blocks
-    font pango: Noto Sans Bold 9
-    colors {
-        # bar background color
-        background #282828 
+    font pango: JetBrainsMono Nerd Font Bold 8
 
-        # text color used for blocks that do not have a color specified.
-        statusline #ebdbb2
+    colors {
+        background #32302f
+        statusline #fabd2f
+        separator #fabd2f
+
+        focused_workspace #fabd2f #fabd2f #3c3836
+        inactive_workspace #333333 #282828 #fabd2f
     }
 }
+
+client.focused          #fabd2f #fabd2f #3c3836 #2e9ef4 #fabd2f
+
+for_window [class=".*"] border pixel 2
