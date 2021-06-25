@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # set titlebar font
-font pango:JetBrainsMono Nerd Font ExtraBold 9
+font pango:JetBrainsMono Nerd Font ExtraBold 8
 
 # title alignment
 title_align center
@@ -173,7 +173,7 @@ mode "launcher" {
 bar {
     position top
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font Bold 8
+    font pango: JetBrainsMono Nerd Font ExtraBold 9
 
     colors {
         background #32302f
@@ -185,6 +185,8 @@ bar {
     }
 }
 
+# window color
 client.focused          #fabd2f #fabd2f #3c3836 #2e9ef4 #fabd2f
 
-for_window [class=".*"] border pixel 2
+# rules
+for_window [class=".*"] border pixel 3
