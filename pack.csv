@@ -30,6 +30,7 @@ kitty,terminal emulator
 firefox,web browser
 arandr,multidisplay manager
 libreoffice-still,office
+texlive-core texlive-bin,minimum texlive
 zathura zathura-pdf-mupdf,pdf reader
 sxiv,image viewer
 imagemagick,simple image manipulation tools
