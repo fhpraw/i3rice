@@ -2,11 +2,10 @@
 set $mod Mod4
 
 # set titlebar font
-font pango:JetBrainsMono Nerd Font ExtraBold 8
+font pango:Noto Sans 8
 
 # title alignment
-title_align center
-
+title_align left
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -51,16 +50,16 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 
 # open arandr
-bindsym XF86Display exec arandr 
+bindsym XF86Display exec --no-startup-id arandr 
 
 # open browser
-bindsym XF86Search exec firefox
+bindsym XF86Search exec --no-startup-id firefox
 
 # open dmenu
-bindsym XF86LaunchA exec dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#fabd2f' -nb '#282828' -sf '#282828' -sb '#fabd2f'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -b -fn 'Noto Sans:style=Regular:pixelsize=16' -nb '#32302f' -nf '#ebdbb2'
 
 # open filemanager ranger
-bindsym XF86Explorer exec i3-sensible-terminal -e ranger
+bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal -e ranger
 
 # exit i3
 bindsym $mod+Shift+Escape exit
@@ -114,10 +113,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # open terminal emulator
-bindsym $mod+Return exec i3-sensible-terminal --title Terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --title Terminal
 
 # open editor
-bindsym $mod+Shift+Return exec i3-sensible-terminal --title Neovim -e nvim
+bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal --title Neovim -e nvim
 
 # Caps Lock Indicator
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+10 i3blocks
@@ -146,47 +145,57 @@ mode "resizing" {
 # screenshot mode
 bindsym $mod+Print mode "screenshot"
 mode "screenshot" {
-  bindsym --release f exec maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release w exec maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release s exec maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
   bindsym Escape mode "default"
 }
 
 # settings mode
 bindsym XF86Tools mode "setting" 
 mode "setting" {
-  bindsym p exec i3-sensible-terminal -e pulsemixer
-  bindsym n exec i3-sensible-terminal -e nmtui
-  bindsym w exec sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
-  bindsym 3 exec i3-sensible-terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym b exec i3-sensible-terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
+  bindsym p exec --no-startup-id i3-sensible-terminal -e pulsemixer
+  bindsym n exec --no-startup-id i3-sensible-terminal -e nmtui
+  bindsym w exec --no-startup-id sxiv -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
+  bindsym 3 exec --no-startup-id i3-sensible-terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym b exec --no-startup-id i3-sensible-terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
   bindsym Escape mode "default"
 }
 
 # app mode
 bindsym $mod+p mode "launcher"
 mode "launcher" {
-    bindsym h exec i3-sensible-terminal --title Htop -e htop
+    bindsym h exec --no-startup-id i3-sensible-terminal --title Htop -e htop
     bindsym Escape mode "default"
 }
 
+# i3bar
 bar {
-    position top
+    position bottom
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font ExtraBold 9
+    font pango: Noto Sans Bold 10
 
     colors {
-        background #32302f
-        statusline #fabd2f
-        separator #fabd2f
+        background #282828
+        statusline #ebdbb2
+        separator #666666
 
-        focused_workspace #fabd2f #fabd2f #3c3836
-        inactive_workspace #333333 #282828 #fabd2f
+        focused_workspace  #285577 #285577 #ebdbb2
+        active_workspace   #5f676a #5f676a #ebdbb2
+        inactive_workspace #222222 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ebdbb2
+        binding_mode       #2f343a #900000 #ebdbb2
     }
 }
 
-# window color
-client.focused          #fabd2f #fabd2f #3c3836 #2e9ef4 #fabd2f
+#color
+# class                 border  backgr. text    indicator child_border
+client.focused          #285577 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #5f676a #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #222222 #222222 #888888 #292d2e   #222222
+client.urgent           #900000 #900000 #ffffff #900000   #900000
+client.placeholder      #0c0c0c #0c0c0c #ffffff #000000   #0c0c0c
+
 
 # rules
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border normal 3
