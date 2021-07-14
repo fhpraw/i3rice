@@ -56,7 +56,7 @@ bindsym XF86Display exec --no-startup-id arandr
 bindsym XF86Search exec --no-startup-id firefox
 
 # open dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -b -fn 'Noto Sans:style=Regular:pixelsize=16' -nb '#32302f' -nf '#ebdbb2'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'Roboto:style=Bold:pixelsize=16' -nb '#32302f' -nf '#ebdbb2'
 
 # open filemanager ranger
 bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal -e ranger
@@ -171,7 +171,7 @@ mode "launcher" {
 
 # i3bar
 bar {
-    position bottom
+    position top
     status_command i3blocks
     font pango: Roboto Medium 10 
 
@@ -198,4 +198,4 @@ client.placeholder      #0c0c0c #0c0c0c #ffffff #000000   #0c0c0c
 
 
 # rules
-for_window [class=".*"] border pixel 3
+#for_window [class=".*"] border pixel 3
