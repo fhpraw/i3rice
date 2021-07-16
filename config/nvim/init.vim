@@ -31,7 +31,7 @@ set noshowcmd
 
 " Gruvbox
 silent! let g:gruvbox_italic=1
-silent! let g:gruvbox_contrast_dark='medium'
+silent! let g:gruvbox_contrast_dark='hard'
 silent! colorscheme gruvbox
 
 " Airline
