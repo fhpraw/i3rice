@@ -29,6 +29,7 @@ i3lock,screen locker
 dmenu,application launcher
 kitty,terminal emulator
 firefox,web browser
+wget,download helper
 arandr,multidisplay manager
 libreoffice-still,office
 texlive-core texlive-bin,minimum texlive
