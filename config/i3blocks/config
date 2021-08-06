@@ -1,29 +1,34 @@
-separator=true
-separator_block_width=15
+separator=false
+separator_block_width=5
 
-[caps-lock]
-label=
-command=echo -e " $(xset -q | grep Caps | awk '{ print $4 }')"
+[capslock]
+command=scripts/capslock.sh
 interval=once
-signal=10
+signal=3
 
 [brightness]
-label=
-command=echo -e " $(xbacklight -get | awk '{ printf "%.0f\n",$1  }')%"
+command=scripts/brightness.sh
 interval=once
-signal=10
+signal=2
+
+[mic]
+command=scripts/mic.sh
+interval=once
+signal=4
 
 [volume]
-label=墳
-command=if [ $(pulsemixer --get-mute) -eq 1 ]; then echo " MUTE"; else echo -e " $(pulsemixer --get-volume | awk '{ print $1 }')%"; fi
+command=scripts/volume.sh
 interval=once
-signal=10
+signal=1
+
+[wifi]
+command=scripts/wifi.sh
+interval=60
 
 [battery]
-label=
-command=echo -e "  $(acpi | grep -P -o '\d{1,3}%')"
+command=scripts/battery.sh
 interval=60
 
 [time]
-command=echo -e "$(date '+%A %d %B %Y, %I:%M %p')"
+command=scripts/time.sh
 interval=60
