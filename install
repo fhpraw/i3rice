@@ -21,8 +21,7 @@ mkdir -p ~/.local/share/fonts/
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 rm JetBrainsMono.zip
-mkdir -p ~/.config/fontconfig/
-cp config/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
+cp -r  config/fontconfig ~/.config/
 
 # set X configs
 cp config/.xinitrc ~/.xinitrc
@@ -36,16 +35,13 @@ echo 'set -o vi' >> ~/.bashrc
 cp config/background.jpg ~/.config/background.jpg
 
 # set i3wm config
-mkdir -p ~/.config/{i3,i3blocks}/
-cp config/i3/config ~/.config/i3/config
-cp config/i3blocks/config ~/.config/i3blocks/config
+cp -r config/i3 ~/.config/
+cp -r config/i3blocks ~/.config/
 
 # install plugins for neovim
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-mkdir -p ~/.config/nvim/
-cp config/nvim/init.vim ~/.config/nvim/init.vim
+cp -r config/nvim ~/.config/
 nvim +PlugInstall +qall
 
 # install kitty config
-mkdir -p ~/.config/kitty/
-cp -r config/kitty/kitty.conf ~/.config/kitty/kitty.conf
+cp -r config/kitty ~/.config/
