@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cp -v ~/.config/i3/config config/i3/config
-
 cp -v ~/.config/i3blocks/config config/i3blocks/config
+
 cp -v ~/.config/i3blocks/scripts/battery.sh config/i3blocks/scripts/battery.sh
 cp -v ~/.config/i3blocks/scripts/brightness.sh config/i3blocks/scripts/brightness.sh
 cp -v ~/.config/i3blocks/scripts/capslock.sh config/i3blocks/scripts/capslock.sh
