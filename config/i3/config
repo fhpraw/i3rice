@@ -26,7 +26,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Extra Bold:pixelsize=14' -nb '#1d2021' -nf '#fbf1c7' -sb '#076678' -sf '#fbf1c7'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -b -fn 'JetBrainsMono Nerd Font:style=Extra Bold:pixelsize=14' -nb '#1d2021' -nf '#fbf1c7' -sb '#464646' -sf '#fbf1c7'
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
@@ -41,7 +41,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 # app
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86Search exec --no-startup-id firefox
-bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal -e ranger
+bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal --title File\ Manager -e ranger
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -98,8 +98,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # moving window mode
-bindsym $mod+m mode "MOVE"
-mode "MOVE" {
+bindsym $mod+m mode "Move"
+mode "Move" {
   bindsym $mod+h move left 50px
   bindsym $mod+j move down 50px
   bindsym $mod+k move up 50px
@@ -109,8 +109,8 @@ mode "MOVE" {
 }
 
 # resizing window mode
-bindsym $mod+r mode "RESIZE"
-mode "RESIZE" {
+bindsym $mod+r mode "Resize"
+mode "Resize" {
   bindsym $mod+h resize shrink width 30px
   bindsym $mod+j resize grow height 30px
   bindsym $mod+k resize shrink height 30px
@@ -119,8 +119,8 @@ mode "RESIZE" {
 }
 
 # screenshot mode
-bindsym $mod+Print mode "SCREENSHOT"
-mode "SCREENSHOT" {
+bindsym $mod+Print mode "Screenshot"
+mode "Screenshot" {
   bindsym --release $mod+f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
   bindsym --release $mod+w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
   bindsym --release $mod+s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
@@ -128,8 +128,8 @@ mode "SCREENSHOT" {
 }
 
 # settings mode
-bindsym XF86Tools mode "SETTINGS" 
-mode "SETTINGS" {
+bindsym XF86Tools mode "Settings" 
+mode "Settings" {
   bindsym $mod+s exec --no-startup-id i3-sensible-terminal --title Pulsemixer -e pulsemixer
   bindsym $mod+n exec --no-startup-id i3-sensible-terminal --title Network\ Manager -e nmtui
   bindsym $mod+3 exec --no-startup-id i3-sensible-terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
@@ -141,34 +141,34 @@ mode "SETTINGS" {
 
 # i3bar
 bar {
-    position top
+    position bottom
     status_command i3blocks
-    font pango:JetBrainsMono Nerd Font Bold 10
+    font pango: JetBrainsMono Nerd Font ExtraBold 10
 
     colors {
-        background #161616
+        background #262626
         statusline #ecdbba 
         separator #666666
         
-        #                  border backgr text
+        #                  border  backgr  text
         focused_workspace  #464646 #464646 #ecdbba
-        active_workspace   #161616 #161616 #ecdbba
-        inactive_workspace #161616 #161616 #ecdbba 
-        urgent_workspace   #c84b31 #c84b31 #ecdbba
-        binding_mode       #161616 #161616 #ecdbba
+        active_workspace   #262626 #262626 #ecdbba
+        inactive_workspace #262626 #262626 #ecdbba 
+        #urgent_workspace   #c84b31 #c84b31 #ecdbba
+        #binding_mode       #161616 #161616 #ecdbba
     }
 }
 
-#color
-# class                 border  backgr. text    indicator child_border
-client.focused          #262626 #262626 #ecdbba #ffbd44   #262626
-client.unfocused        #161616 #161616 #676767 #ffbd44   #161616
-client.focused_inactive #161616 #161616 #676767 #ffbd44   #161616
-client.urgent           #c84b31 #c84b31 #fbf1c7 #900000   #c84b31
-client.placeholder      #0c0c0c #0c0c0c #ffffff #000000   #0c0c0c
+# theme color
+# class                 border  backgr. text    indctr. childb.
+client.focused          #262626 #262626 #ecdbba #ffbd44 #262626
+client.unfocused        #161616 #161616 #676767 #ffbd44 #161616
+client.focused_inactive #161616 #161616 #676767 #ffbd44 #161616
+#client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
+#client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
 
 # set titlebar font
-font pango:JetBrainsMono Nerd Font ExtraBold 9
+font pango:Roboto Bold 10
 
 # title alignment
 title_align center
