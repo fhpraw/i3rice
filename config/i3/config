@@ -154,8 +154,8 @@ bar {
         focused_workspace  #464646 #464646 #ecdbba
         active_workspace   #262626 #262626 #ecdbba
         inactive_workspace #262626 #262626 #ecdbba 
-        #urgent_workspace   #c84b31 #c84b31 #ecdbba
-        #binding_mode       #161616 #161616 #ecdbba
+        urgent_workspace   #cc241d #cc241d #ecdbba
+        binding_mode       #cc241d #cc241d #ecdbba
     }
 }
 
@@ -164,8 +164,8 @@ bar {
 client.focused          #262626 #262626 #ecdbba #ffbd44 #262626
 client.unfocused        #161616 #161616 #676767 #ffbd44 #161616
 client.focused_inactive #161616 #161616 #676767 #ffbd44 #161616
-#client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
-#client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
+client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
+client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
 
 # set titlebar font
 font pango:Roboto Bold 10
@@ -175,7 +175,7 @@ title_align center
 
 # rules
 # all windows
-for_window [class=".*"] border normal 3
+for_window [class=".*"] border normal 2
 
 # mpv
 for_window [class="mpv"] border pixel 0
@@ -183,9 +183,5 @@ for_window [class="mpv"] floating enable
 for_window [class="mpv"] resize set width 720
 
 # sxiv
-for_window [class="Sxiv"] border pixel 0
+for_window [class="Sxiv"] border normal 0
 for_window [class="Sxiv"] floating enable
-
-# Firefox about
-for_window [class="firefox" instance="Browser"] border pixel 0
-for_window [class="firefox" instance="Browser"] floating enable
