@@ -40,7 +40,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 
 # app
 bindsym XF86Display exec --no-startup-id arandr 
-bindsym XF86Search exec --no-startup-id firefox
+bindsym XF86Search exec --no-startup-id chromium
 bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal --title File\ Manager -e ranger
 
 # i3
