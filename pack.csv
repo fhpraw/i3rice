@@ -25,7 +25,7 @@ i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
-kitty,terminal emulator
+xterm,terminal emulator
 firefox,web browser
 wget,download helper
 arandr,multidisplay manager

@@ -41,7 +41,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 # app
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86Search exec --no-startup-id firefox
-bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal --title File\ Manager -e ranger
+bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal -title File\ Manager -e ranger
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -83,10 +83,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # open terminal emulator
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --title Terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal -title Terminal
 
 # open editor
-bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal --title Neovim -e nvim
+bindsym $mod+Shift+Return exec --no-startup-id i3-sensible-terminal -title Neovim -e nvim
 
 # Caps Lock Indicator
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+3 i3blocks
@@ -130,11 +130,10 @@ mode "Screenshot" {
 # settings mode
 bindsym XF86Tools mode "Settings" 
 mode "Settings" {
-  bindsym $mod+s exec --no-startup-id i3-sensible-terminal --title Pulsemixer -e pulsemixer
-  bindsym $mod+n exec --no-startup-id i3-sensible-terminal --title Network\ Manager -e nmtui
-  bindsym $mod+3 exec --no-startup-id i3-sensible-terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym $mod+b exec --no-startup-id i3-sensible-terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
-  bindsym $mod+k exec --no-startup-id i3-sensible-terminal --title kitty\ config -e nvim ~/.config/kitty/kitty.conf
+  bindsym $mod+s exec --no-startup-id i3-sensible-terminal -title Pulsemixer -e pulsemixer
+  bindsym $mod+n exec --no-startup-id i3-sensible-terminal -title Network\ Manager -e nmtui
+  bindsym $mod+3 exec --no-startup-id i3-sensible-terminal -title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym $mod+b exec --no-startup-id i3-sensible-terminal -title bash\ config -e nvim ~/.bashrc ~/.bash_profile
   bindsym $mod+w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
   bindsym Escape mode "default"
 }
