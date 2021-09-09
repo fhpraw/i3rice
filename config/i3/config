@@ -26,7 +26,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -b -fn 'JetBrainsMono Nerd Font:style=Extra Bold:pixelsize=14' -nb '#1d2021' -nf '#fbf1c7' -sb '#464646' -sf '#fbf1c7'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nb '#262626' -nf '#ececec' -sb '#e1140a' -sf '#161616'
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
@@ -40,7 +40,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 
 # app
 bindsym XF86Display exec --no-startup-id arandr 
-bindsym XF86Search exec --no-startup-id chromium
+bindsym XF86Search exec --no-startup-id firefox
 bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal --title File\ Manager -e ranger
 
 # i3
@@ -141,47 +141,43 @@ mode "Settings" {
 
 # i3bar
 bar {
-    position bottom
+    position top
     status_command i3blocks
     font pango: JetBrainsMono Nerd Font ExtraBold 10
 
-    colors {
-        background #262626
-        statusline #ecdbba 
-        separator #666666
+     colors {
+         background #262626
+         statusline #cecece  
+         separator #666666
         
         #                  border  backgr  text
-        focused_workspace  #464646 #464646 #ecdbba
-        active_workspace   #262626 #262626 #ecdbba
-        inactive_workspace #262626 #262626 #ecdbba 
-        urgent_workspace   #cc241d #cc241d #ecdbba
-        binding_mode       #cc241d #cc241d #ecdbba
-    }
+        focused_workspace  #363636 #363636 #cecece
+        active_workspace   #262626 #262626 #cecece
+        inactive_workspace #262626 #262626 #cecece 
+        urgent_workspace   #cc241d #cc241d #cecece
+        binding_mode       #cc241d #cc241d #cecece
+     }
 }
 
 # theme color
 # class                 border  backgr. text    indctr. childb.
-client.focused          #262626 #262626 #ecdbba #ffbd44 #262626
+client.focused          #363636 #262626 #cecece #ffbd44 #e1140a
 client.unfocused        #161616 #161616 #676767 #ffbd44 #161616
 client.focused_inactive #161616 #161616 #676767 #ffbd44 #161616
 client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
 client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
 
 # set titlebar font
-font pango:Roboto Bold 10
+font pango:JetBrainsMono Nerd Font ExtraBold 10
+font pango:Roboto ExtraBold 10
 
 # title alignment
 title_align center
 
 # rules
-# all windows
-for_window [class=".*"] border normal 2
-
-# mpv
-for_window [class="mpv"] border pixel 0
-for_window [class="mpv"] floating enable
-for_window [class="mpv"] resize set width 720
-
-# sxiv
-for_window [class="Sxiv"] border normal 0
-for_window [class="Sxiv"] floating enable
+for_window [class=".*"] border pixel 3
+# for_window [class="mpv"] border pixel 0
+# for_window [class="mpv"] floating enable
+# for_window [class="mpv"] resize set width 720
+# for_window [class="Sxiv"] floating enable
+for_window [class="zoom"] floating enable
