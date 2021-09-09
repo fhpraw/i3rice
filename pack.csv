@@ -21,14 +21,12 @@ xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu,graphic driver
 mesa,opengl support
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
-ttf-roboto,roboto font
-libertinus-font,Times New Roman compatible
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
 kitty,terminal emulator
-chromium,web browser
+firefox,web browser
 wget,download helper
 arandr,multidisplay manager
 libreoffice-still,office
