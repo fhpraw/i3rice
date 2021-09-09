@@ -20,7 +20,7 @@ xorg-xinit,starter for X server
 xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu,graphic driver
 mesa,opengl support
-noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
+noto-fonts noto-fonts-emoji,google noto font
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
@@ -30,7 +30,6 @@ firefox,web browser
 wget,download helper
 arandr,multidisplay manager
 libreoffice-still,office
-texlive-core texlive-bin,minimum texlive
 zathura zathura-pdf-mupdf,pdf reader
 sxiv,image viewer
 imagemagick,simple image manipulation tools
@@ -42,7 +41,6 @@ ffmpeg,multimedia tool for video and audio
 mpv,video player
 xclip,clipboard
 xwallpaper,wallpaper setter
-virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtual machine
 htop,system monitor
 neofetch,system info
 man-db,manual page

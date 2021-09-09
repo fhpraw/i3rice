@@ -168,16 +168,10 @@ client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
 client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
 
 # set titlebar font
-font pango:JetBrainsMono Nerd Font ExtraBold 10
-font pango:Roboto ExtraBold 10
+font pango:JetBrainsMono Nerd Font ExtraBold 9
 
 # title alignment
 title_align center
 
 # rules
 for_window [class=".*"] border pixel 3
-# for_window [class="mpv"] border pixel 0
-# for_window [class="mpv"] floating enable
-# for_window [class="mpv"] resize set width 720
-# for_window [class="Sxiv"] floating enable
-for_window [class="zoom"] floating enable
