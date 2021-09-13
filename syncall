@@ -12,6 +12,5 @@ cp -v ~/.config/i3blocks/scripts/volume.sh config/i3blocks/scripts/volume.sh
 cp -v ~/.config/i3blocks/scripts/wifi.sh config/i3blocks/scripts/wifi.sh
 
 cp -v ~/.config/nvim/init.vim config/nvim/init.vim
-cp -v ~/.config/background.jpg config/background.jpg
 
 cp -v ~/.Xresources config/.Xresources

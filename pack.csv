@@ -1,35 +1,41 @@
 PACKAGES,DESCRIPTION
-neovim,text editor
-git,git
-acpi,battery info
-tlp,TLP powermanagement
+htop,system monitor
+neofetch,system info
+man-db,manual page
 pulseaudio pulseaudio-alsa,audio system
 pulseaudio-bluetooth,bluetooth support for audio system
 pulsemixer,audio mixer for pulseaudio
 bluez bluez-utils,bluetooth controller
-ranger,file manager
-cmus,mp3 player
-unzip,extract zip
-unrar,extract rar
-youtube-dl,youtube downloader
 dosfstools,FAT file system support
 ntfs-3g,NTFS file system support
 exfat-utils,EXFAT file system support
+git,git
+neovim,text editor
+wget,downloader cli based
+xclip,clipboard
+ranger,file manager
+unzip,extract zip
+unrar,extract rar
+acpi,battery info
+tlp,TLP powermanagement
+cmus,mp3 player
+youtube-dl,youtube downloader
 xorg-server,X server
 xorg-xinit,starter for X server
 xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu,graphic driver
 mesa,opengl support
-noto-fonts noto-fonts-emoji,google noto font
+arandr,multidisplay manager
+noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
 xterm,terminal emulator
 firefox,web browser
-wget,download helper
-arandr,multidisplay manager
 zathura zathura-pdf-mupdf,pdf reader
+libreoffice-fresh,office suite
+virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtua machine
 sxiv,image viewer
 imagemagick,simple image manipulation tools
 inkscape,vector based image editor
@@ -38,8 +44,4 @@ maim,screenshot tools
 xdotool,X automation tool
 ffmpeg,multimedia tool for video and audio
 mpv,video player
-xclip,clipboard
 xwallpaper,wallpaper setter
-htop,system monitor
-neofetch,system info
-man-db,manual page
