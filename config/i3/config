@@ -160,8 +160,8 @@ bar {
 
 # theme color
 # class                 border  backgr. text    indctr. childb.
-client.focused          #363636 #262626 #cecece #ffbd44 #e1140a
-client.unfocused        #161616 #161616 #676767 #ffbd44 #161616
+client.focused          #262626 #262626 #cecece #ffbd44 #262626
+client.unfocused        #161616 #161616 #454545 #ffbd44 #161616
 client.focused_inactive #161616 #161616 #676767 #ffbd44 #161616
 client.urgent           #c84b31 #c84b31 #fbf1c7 #900000 #c84b31
 client.placeholder      #0c0c0c #0c0c0c #ffffff #000000 #0c0c0c
@@ -173,4 +173,4 @@ font pango:JetBrainsMono Nerd Font ExtraBold 9
 title_align center
 
 # rules
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border normal 3
