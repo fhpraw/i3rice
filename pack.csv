@@ -1,30 +1,24 @@
 PACKAGES,DESCRIPTION
-htop,system monitor
-neofetch,system info
-man-db,manual page
-pulseaudio pulseaudio-alsa,audio system
-pulseaudio-bluetooth,bluetooth support for audio system
+pulseaudio pulseaudio-alsa pulseaudio-bluetooth,audio system with bluetooth support
 pulsemixer,audio mixer for pulseaudio
 bluez bluez-utils,bluetooth controller
-dosfstools,FAT file system support
-ntfs-3g,NTFS file system support
-exfat-utils,EXFAT file system support
+dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
 git,git
 neovim,text editor
 wget,downloader cli based
 xclip,clipboard
 ranger,file manager
-unzip,extract zip
-unrar,extract rar
+unzip unrar,extract zip and rar
+neofetch,system info
+htop,system monitor
 acpi,battery info
 tlp,TLP powermanagement
 cmus,mp3 player
 youtube-dl,youtube downloader
-xorg-server,X server
-xorg-xinit,starter for X server
+man-db,manual page
+xorg-server xorg-xinit,X server with xinit
 xorg-xbacklight,brightness
-xf86-video-intel xf86-video-amdgpu,graphic driver
-mesa,opengl support
+xf86-video-intel xf86-video-amdgpu mesa,graphic driver with opengl support
 arandr,multidisplay manager
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
 i3-wm,window manager
