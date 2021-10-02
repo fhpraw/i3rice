@@ -3,13 +3,9 @@ pulseaudio pulseaudio-alsa pulseaudio-bluetooth,audio system with bluetooth supp
 pulsemixer,audio mixer for pulseaudio
 bluez bluez-utils,bluetooth controller
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
-git,git
-neovim,text editor
-wget,downloader cli based
 xclip,clipboard
 ranger,file manager
 unzip unrar,extract zip and rar
-neofetch,system info
 htop,system monitor
 acpi,battery info
 tlp,TLP powermanagement

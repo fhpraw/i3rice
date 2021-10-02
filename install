@@ -21,7 +21,7 @@ mkdir -p ~/.local/share/fonts/
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 rm JetBrainsMono.zip
-cp -r  config/fontconfig ~/.config/
+cp -r config/fontconfig ~/.config/
 
 # set X configs
 cp config/.xinitrc ~/.xinitrc

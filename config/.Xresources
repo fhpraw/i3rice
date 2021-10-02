@@ -8,7 +8,7 @@ Xft.rgba: rgb
 xterm*faceName: JetBrainsMono Nerd Font
 xterm*faceSize: 10
 xterm*selectToClipboard: true
-xterm*internalBorder: 20
+xterm*internalBorder: 3
 
 ! -----------------------------------------------------------------------------
 ! File: gruvbox-dark.xresources
