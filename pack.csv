@@ -21,7 +21,7 @@ i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
 dmenu,application launcher
-xterm,terminal emulator
+kitty,terminal emulator
 firefox,web browser
 zathura zathura-pdf-mupdf,pdf reader
 libreoffice-still,office suite
