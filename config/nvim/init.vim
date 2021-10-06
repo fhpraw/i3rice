@@ -4,7 +4,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim',{'as':'dracula'}
 Plug 'mattn/emmet-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -30,10 +30,8 @@ set foldmethod=manual
 set noshowmode
 set noshowcmd
 
-" Gruvbox
-silent! let g:gruvbox_italic=1
-silent! let g:gruvbox_contrast_dark='hard'
-silent! colorscheme gruvbox
+" Dracula
+silent! colorscheme dracula
 
 " Airline
 silent! let g:airline_powerline_fonts = 1

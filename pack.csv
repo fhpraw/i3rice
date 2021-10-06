@@ -4,7 +4,7 @@ pulsemixer,audio mixer for pulseaudio
 bluez bluez-utils,bluetooth controller
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
 xclip,clipboard
-ranger,file manager
+ranger ueberzug,file manager with ueberzug preview mode
 unzip unrar,extract zip and rar
 htop,system monitor
 acpi,battery info
@@ -15,8 +15,10 @@ man-db,manual page
 xorg-server xorg-xinit,X server with xinit
 xorg-xbacklight,brightness
 xf86-video-intel xf86-video-amdgpu mesa,graphic driver with opengl support
+xdotool,X automation tool
+xwallpaper,wallpaper setter
+maim,screenshot tools
 arandr,multidisplay manager
-noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
@@ -24,14 +26,12 @@ dmenu,application launcher
 kitty,terminal emulator
 firefox,web browser
 zathura zathura-pdf-mupdf,pdf reader
-libreoffice-still,office suite
-virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtual machine
 sxiv,image viewer
 imagemagick,simple image manipulation tools
 inkscape,vector based image editor
 gimp,bitmap based image editor
-maim,screenshot tools
-xdotool,X automation tool
 ffmpeg,multimedia tool for video and audio
 mpv,video player
-xwallpaper,wallpaper setter
+libreoffice-still,office suite
+noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
+virtualbox virtualbox-host-modules-arch virtualbox-guest-iso,virtual machine

@@ -1,45 +1,6 @@
 # set mod to windows button
 set $mod Mod4
-set $browser firefox
-set $terminal kitty
-
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2
-
-# i3bar
-bar {
-    position top
-    status_command i3blocks
-    font pango: JetBrainsMono Nerd Font ExtraBold 9
-
-    colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #44475A
-
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #F8F8F2
-        binding_mode       #FF5555 #FF5555 #F8F8F2
-    }
-
-}
-
-# set titlebar font
-font pango: JetBrainsMono Nerd Font ExtraBold 8
-
-# title alignment
-title_align left
-
-# rules
-for_window [class="zoom"] floating enable
+set $defaultbrowser firefox
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -66,7 +27,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' 
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=ExtraBold:pixelsize=14'
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
@@ -80,8 +41,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 
 # app
 bindsym XF86Display exec --no-startup-id arandr 
-bindsym XF86Search exec --no-startup-id $browser
-bindsym XF86Explorer exec --no-startup-id $terminal --title File\ Manager -e ranger
+bindsym XF86Search exec --no-startup-id $defaultbrowser
+bindsym XF86Explorer exec --no-startup-id i3-sensible-terminal --title File\ Manager -e ranger
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -123,7 +84,7 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # open terminal emulator
-bindsym $mod+Return exec --no-startup-id $terminal --title Terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal --title Terminal
 
 # Caps Lock Indicator
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+3 i3blocks
@@ -135,11 +96,15 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # moving window mode
-bindsym $mod+Shift+h move left 50px
-bindsym $mod+Shift+j move down 50px
-bindsym $mod+Shift+k move up 50px
-bindsym $mod+Shift+l move right 50px
-bindsym $mod+Shift+c move absolute position center
+bindsym $mod+m mode "Move"
+mode "Move" {
+  bindsym $mod+h move left 50px
+  bindsym $mod+j move down 50px
+  bindsym $mod+k move up 50px
+  bindsym $mod+l move right 50px
+  bindsym $mod+c move absolute position center
+  bindsym Escape mode "default"
+}
 
 # resizing window mode
 bindsym $mod+r mode "Resize"
@@ -163,10 +128,26 @@ mode "Screenshot" {
 # settings mode
 bindsym XF86Tools mode "Settings" 
 mode "Settings" {
-  bindsym $mod+s exec --no-startup-id $terminal --title Pulsemixer -e pulsemixer
-  bindsym $mod+n exec --no-startup-id $terminal --title Network\ Manager -e nmtui
-  bindsym $mod+3 exec --no-startup-id $terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym $mod+b exec --no-startup-id $terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
+  bindsym $mod+s exec --no-startup-id i3-sensible-terminal --title Pulsemixer -e pulsemixer
+  bindsym $mod+n exec --no-startup-id i3-sensible-terminal --title Network\ Manager -e nmtui
+  bindsym $mod+3 exec --no-startup-id i3-sensible-terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym $mod+b exec --no-startup-id i3-sensible-terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
   bindsym $mod+w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
   bindsym Escape mode "default"
 }
+
+# i3bar
+bar {
+    position top
+    status_command i3blocks
+    font pango: JetBrainsMono Nerd Font ExtraBold 9
+}
+
+# set titlebar font
+font pango: JetBrainsMono Nerd Font ExtraBold 8
+
+# title alignment
+title_align left
+
+# rules
+for_window [class="zoom"] floating enable
