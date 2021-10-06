@@ -1,21 +1,2 @@
 #!/bin/bash
-
-ICON_BATTERY_FULL=" "
-ICON_BATTERY_THREEQ=" "
-ICON_BATTERY_HALF=" "
-ICON_BATTERY_QUARTER=" "
-ICON_BATTERY_LOW=" "
-
-GET_BATTERY_LEVEL=$(acpi | awk -F ', ' '{print int($2)}')
-
-if [ $GET_BATTERY_LEVEL -ge 90 ]
-    then echo " $ICON_BATTERY_FULL $GET_BATTERY_LEVEL% "
-elif [ $GET_BATTERY_LEVEL -ge 65 -a $GET_BATTERY_LEVEL -lt 90 ]
-    then echo " $ICON_BATTERY_THREEQ $GET_BATTERY_LEVEL% "
-elif [ $GET_BATTERY_LEVEL -ge 30 -a $GET_BATTERY_LEVEL -lt 65 ]
-    then echo " $ICON_BATTERY_HALF $GET_BATTERY_LEVEL% "
-elif [ $GET_BATTERY_LEVEL -ge 15 -a $GET_BATTERY_LEVEL -lt 30 ]
-    then echo " $ICON_BATTERY_QUARTER $GET_BATTERY_LEVEL% "
-elif [ $GET_BATTERY_LEVEL -ge 5 -a $GET_BATTERY_LEVEL -lt 15 ]
-    then echo " $ICON_BATTERY_LOW $GET_BATTERY_LEVEL% "
-fi
+echo "$(acpi | awk -F ', ' '{print int($2)}')%"

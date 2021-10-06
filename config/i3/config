@@ -16,7 +16,7 @@ client.background       #F8F8F2
 bar {
     position top
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font ExtraBold 9
+    font pango: JetBrainsMono Nerd Font 9
 
     colors {
         background #282A36
@@ -33,12 +33,13 @@ bar {
 }
 
 # set titlebar font
-font pango: JetBrainsMono Nerd Font ExtraBold 8
+font pango: JetBrainsMono Nerd Font 9
 
 # title alignment
 title_align left
 
 # rules
+for_window [class=".*"] border pixel 1
 for_window [class="zoom"] floating enable
 
 # switch workspace
@@ -66,7 +67,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' 
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=14' -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' 
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
@@ -135,38 +136,42 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # moving window mode
-bindsym $mod+Shift+h move left 50px
-bindsym $mod+Shift+j move down 50px
-bindsym $mod+Shift+k move up 50px
-bindsym $mod+Shift+l move right 50px
-bindsym $mod+Shift+c move absolute position center
+bindsym $mod+m mode "Move"
+mode "Move" {
+    bindsym h move left 50px
+    bindsym j move down 50px
+    bindsym k move up 50px
+    bindsym l move right 50px
+    bindsym c move absolute position center
+    bindsym Escape mode "default"
+}
 
 # resizing window mode
 bindsym $mod+r mode "Resize"
 mode "Resize" {
-  bindsym $mod+h resize shrink width 30px
-  bindsym $mod+j resize grow height 30px
-  bindsym $mod+k resize shrink height 30px
-  bindsym $mod+l resize grow width 30px
+  bindsym h resize shrink width 30px
+  bindsym j resize grow height 30px
+  bindsym k resize shrink height 30px
+  bindsym l resize grow width 30px
   bindsym Escape mode "default"
 }
 
 # screenshot mode
 bindsym $mod+Print mode "Screenshot"
 mode "Screenshot" {
-  bindsym --release $mod+f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release $mod+w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release $mod+s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
   bindsym Escape mode "default"
 }
 
 # settings mode
 bindsym XF86Tools mode "Settings" 
 mode "Settings" {
-  bindsym $mod+s exec --no-startup-id $terminal --title Pulsemixer -e pulsemixer
-  bindsym $mod+n exec --no-startup-id $terminal --title Network\ Manager -e nmtui
-  bindsym $mod+3 exec --no-startup-id $terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym $mod+b exec --no-startup-id $terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
-  bindsym $mod+w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
+  bindsym s exec --no-startup-id $terminal --title Pulsemixer -e pulsemixer
+  bindsym n exec --no-startup-id $terminal --title Network\ Manager -e nmtui
+  bindsym 3 exec --no-startup-id $terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym b exec --no-startup-id $terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
+  bindsym w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
   bindsym Escape mode "default"
 }
