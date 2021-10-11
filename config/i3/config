@@ -138,10 +138,10 @@ bindsym $mod+minus scratchpad show
 # moving window mode
 bindsym $mod+m mode "Move"
 mode "Move" {
-    bindsym h move left 50px
-    bindsym j move down 50px
-    bindsym k move up 50px
-    bindsym l move right 50px
+    bindsym h move left 10px
+    bindsym j move down 10px
+    bindsym k move up 10px
+    bindsym l move right 10px
     bindsym c move absolute position center
     bindsym Escape mode "default"
 }

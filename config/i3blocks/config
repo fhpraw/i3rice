@@ -1,5 +1,5 @@
-separator=false
-separator_block_width=25
+separator=true
+separator_block_width=10
 
 [capslock]
 label=🆑 Capslock: 
