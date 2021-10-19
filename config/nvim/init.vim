@@ -13,7 +13,6 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Settings
-set number
 set path+=**
 set wildmenu
 set termguicolors

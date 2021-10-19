@@ -5,5 +5,5 @@ if [ -z $CONNECTION ]
 then
     echo "offline"
 else
-    echo "connected to $CONNECTION"
+    echo "$CONNECTION"
 fi

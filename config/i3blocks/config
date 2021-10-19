@@ -1,41 +1,41 @@
 separator=true
-separator_block_width=10
+separator_block_width=20
 
 [capslock]
-label=🆑 Capslock: 
+label=🆑 
 command=scripts/capslock.sh
 interval=once
 signal=3
 
 [mic]
-label=🎤 Microphone: 
+label=🎤 
 command=scripts/mic.sh
 interval=once
 signal=4
 
 [volume]
-label=🔊 Speaker: 
+label=🔊 
 command=scripts/volume.sh
 interval=once
 signal=1
 
 [brightness]
-label=🔆 Brightness: 
+label=🔆 
 command=scripts/brightness.sh
 interval=once
 signal=2
 
 [wifi]
-label=📶 Network: 
+label=📶 
 command=scripts/wifi.sh
 interval=60
 
 [battery]
-label=🔋 Battery: 
+label=🔋 
 command=scripts/battery.sh
 interval=60
 
 [time]
-label=📅
+label=📅 
 command=scripts/time.sh
 interval=60
