@@ -1,45 +1,79 @@
-# set mod to windows button
 set $mod Mod4
 set $browser firefox
 set $terminal kitty
 
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #8BE9FD   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+set $hblack #1d2021
+set $sblack #32302f
 
-client.background       #F8F8F2
+set $black0 #282828
+set $black1 #3c3836
+set $black2 #504945
+set $black3 #665c54
+set $black4 #7c6f64
+
+set $white0 #fbf1c7
+set $white1 #ebdbb2
+set $white2 #d5c4a1
+set $white3 #bdae93
+set $white4 #a89984
+
+set $gray #928374
+
+set $red #cc241d
+set $lred #fb4934
+
+set $green #98971a
+set $lgreen #b8bb26
+
+set $yellow #d79921
+set $lyellow #fabd2f
+
+set $blue #458588
+set $lblue #83a598
+
+set $purple #b16286
+set $lpurple #d3869b
+
+set $aqua #689d6a
+set $laqua #8ec07c
+
+# class                 border  bground text    indctor cborder
+client.focused          $sblack $sblack $white0 $purple $sblack
+client.unfocused        $hblack $hblack $black3 $black3 $hblack
+client.focused_inactive $black1 $black1 $black4 $black4 $black1
+client.urgent           $red    $red    $white0 $black3 $red
+client.placeholder      $yellow $yellow $black0 $black3 $yellow
+
+client.background       $white0
 
 # i3bar
 bar {
     position top
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font 9
+    font pango: JetBrainsMono Nerd Font 10
 
     colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #44475A
+        background $sblack
+        statusline $white0
+        separator  $gray
 
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #F8F8F2
-        binding_mode       #FF5555 #FF5555 #F8F8F2
+        focused_workspace  $black2 $black2 $white0
+        active_workspace   $green  $green  $white0
+        inactive_workspace $sblack $sblack $white0 
+        urgent_workspace   $red    $red    $white0
+        binding_mode       $blue   $blue   $white0
     }
 
 }
 
 # set titlebar font
-font pango: JetBrainsMono Nerd Font 9
+font pango: JetBrainsMono Nerd Font 10
 
 # title alignment
-title_align left
+title_align center
 
 # rules
-default_border pixel 2
+default_border normal 2
 for_window [class="zoom"] floating enable
 assign [class="zoom"] workspace number 10
 
