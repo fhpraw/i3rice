@@ -1,0 +1,10 @@
+#!/bin/bash
+# get mounted drive
+mounted=$(lsblk -lp | grep "Drive" | awk '{print $1, "(" $4 ")"}')
+[[ "$mounted" = "" ]] && exit 1
+
+# chose drive
+chosen=$(echo "$mounted" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
+[[ "$chosen" = "" ]] && exit 1
+
+sudo -A umount $chosen

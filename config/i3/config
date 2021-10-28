@@ -1,79 +1,77 @@
-set $mod Mod4
-set $browser firefox
+# Modkey, assign to Windows button
+set $mod      Mod4
+
+# Default Apps
+set $browser  firefox
 set $terminal kitty
 
-set $hblack #1d2021
-set $sblack #32302f
-
-set $black0 #282828
-set $black1 #3c3836
-set $black2 #504945
-set $black3 #665c54
-set $black4 #7c6f64
-
-set $white0 #fbf1c7
-set $white1 #ebdbb2
-set $white2 #d5c4a1
-set $white3 #bdae93
-set $white4 #a89984
-
-set $gray #928374
-
-set $red #cc241d
-set $lred #fb4934
-
-set $green #98971a
-set $lgreen #b8bb26
-
-set $yellow #d79921
+# Dark Gruvbox Colorscheme
+set $hblack  #1d2021
+set $sblack  #32302f
+set $black   #282828
+set $black1  #3c3836
+set $black2  #504945
+set $black3  #665c54
+set $black4  #7c6f64
+set $hwhite  #fbf1c7
+set $white   #ebdbb2
+set $white1  #d5c4a1
+set $white2  #bdae93
+set $white3  #a89984
+set $gray    #928374
+set $red     #cc241d
+set $lred    #fb4934
+set $green   #98971a
+set $lgreen  #b8bb26
+set $yellow  #d79921
 set $lyellow #fabd2f
-
-set $blue #458588
-set $lblue #83a598
-
-set $purple #b16286
+set $blue    #458588
+set $lblue   #83a598
+set $purple  #b16286
 set $lpurple #d3869b
+set $aqua    #689d6a
+set $laqua   #8ec07c
+set $oren    #d65d0e
+set $loren   #fe8019
 
-set $aqua #689d6a
-set $laqua #8ec07c
-
+# Window color
 # class                 border  bground text    indctor cborder
-client.focused          $sblack $sblack $white0 $purple $sblack
-client.unfocused        $hblack $hblack $black3 $black3 $hblack
-client.focused_inactive $black1 $black1 $black4 $black4 $black1
-client.urgent           $red    $red    $white0 $black3 $red
-client.placeholder      $yellow $yellow $black0 $black3 $yellow
-
-client.background       $white0
+client.focused          $sblack $sblack $lblue   $lgreen $sblack
+client.unfocused        $hblack $hblack $black3  $black3 $hblack
+client.focused_inactive $black1 $black1 $black4  $black4 $black1
+client.urgent           $red    $red    $white   $black3 $red
+client.placeholder      $yellow $yellow $black   $black3 $yellow
+client.background       $white
 
 # i3bar
 bar {
     position top
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font 10
+    font pango: JetBrainsMono Nerd Font Bold 10
 
+    # color on bar
     colors {
-        background $sblack
-        statusline $white0
-        separator  $gray
-
-        focused_workspace  $black2 $black2 $white0
-        active_workspace   $green  $green  $white0
-        inactive_workspace $sblack $sblack $white0 
-        urgent_workspace   $red    $red    $white0
-        binding_mode       $blue   $blue   $white0
+        background         $sblack
+        statusline         $lblue
+        separator          $lyellow
+        focused_workspace  $lblue   $lblue   $sblack
+        active_workspace   $loren   $loren   $sblack
+        inactive_workspace $sblack  $sblack  $laqua
+        urgent_workspace   $lred    $lred    $sblack
+        binding_mode       $lgreen  $lgreen  $sblack
     }
 
 }
 
 # set titlebar font
-font pango: JetBrainsMono Nerd Font 10
+font pango: JetBrainsMono Nerd Font Bold 10
 
 # title alignment
-title_align center
+title_align left
 
 # rules
-default_border normal 2
+default_border normal 3
+for_window [class="^.*"] title_format " %title"
 for_window [class="zoom"] floating enable
 assign [class="zoom"] workspace number 10
 
@@ -102,8 +100,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=14' -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' 
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=14' -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' 
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=16' -nf '#83a598' -nb '#32302f' -sb '#83a598' -sf '#1d2021' 
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=16' -nf '#83a598' -nb '#32302f' -sb '#83a598' -sf '#1d2021' 
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
@@ -119,6 +117,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86Search exec --no-startup-id $browser
 bindsym XF86Explorer exec --no-startup-id $terminal --title File\ Manager -e ranger
+bindsym $mod+i exec --no-startup-id inkscape
+bindsym $mod+g exec --no-startup-id gimp
+bindsym $mod+o exec --no-startup-id libreoffice
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -161,6 +162,7 @@ bindsym $mod+l focus right
 
 # open terminal emulator
 bindsym $mod+Return exec --no-startup-id $terminal --title Terminal
+bindsym $mod+Shift+Return exec --no-startup-id $terminal --title Terminal -e nvim
 
 # Caps Lock Indicator
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+3 i3blocks
@@ -170,6 +172,11 @@ bindsym $mod+Shift+minus move scratchpad
 
 # show the first scratchpad window (unminimize)
 bindsym $mod+minus scratchpad show
+
+# mount drive
+bindsym $mod+u exec --no-startup-id ~/.scripts/mountdrv
+# unmount drive
+bindsym $mod+Shift+u exec --no-startup-id ~/.scripts/umountdrv
 
 # moving window mode
 bindsym $mod+m mode "Move"
@@ -206,8 +213,8 @@ bindsym XF86Tools mode "Settings"
 mode "Settings" {
   bindsym s exec --no-startup-id $terminal --title Pulsemixer -e pulsemixer
   bindsym n exec --no-startup-id $terminal --title Network\ Manager -e nmtui
-  bindsym 3 exec --no-startup-id $terminal --title i3\ config -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym b exec --no-startup-id $terminal --title bash\ config -e nvim ~/.bashrc ~/.bash_profile
+  bindsym 3 exec --no-startup-id $terminal --title i3\ Configurations -e nvim ~/.config/i3/config ~/.config/i3blocks/config
+  bindsym b exec --no-startup-id $terminal --title bash\ Configurations -e nvim ~/.bashrc ~/.bash_profile
   bindsym w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
   bindsym Escape mode "default"
 }

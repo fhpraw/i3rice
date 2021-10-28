@@ -28,6 +28,7 @@ set autoindent
 set foldmethod=manual
 set noshowmode
 set noshowcmd
+set number
 
 " Gruvbox
 silent! colorscheme gruvbox

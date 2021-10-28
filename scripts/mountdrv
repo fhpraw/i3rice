@@ -1,0 +1,13 @@
+#!/bin/bash
+# get mountable drive
+mountable=$(lsblk -lp | grep "part $" | awk '{print $1, "(" $4 ")"}')
+[[ "$mountable" = "" ]] && exit 1
+
+# chose drive
+chosen=$(echo "$mountable" | dmenu -i -p "Mount which drive?" | awk '{print $1}')
+[[ "$chosen" = "" ]] && exit 1
+
+directories=$(find ~/Drive/* -type d)
+mountpoint=$(echo "$directories" | dmenu -i -p "Type in mount point.")
+
+sudo -A mount $chosen $mountpoint

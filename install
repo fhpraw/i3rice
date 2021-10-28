@@ -21,6 +21,7 @@ mkdir -v -p ~/.local/share/fonts/
 
 # copy all configs
 cp -v -r config ~/.config
+cp -v -r scripts ~/.scripts
 cp -v -r home/{.xinitrc,.xprofile,.Xresources} ~/
 cat ~/.bashrc home/addtobashrc > ~/.bashrc
 
