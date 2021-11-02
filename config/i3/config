@@ -36,7 +36,7 @@ set $loren   #fe8019
 
 # Window color
 # class                 border  bground text    indctor cborder
-client.focused          $sblack $sblack $lblue   $lgreen $sblack
+client.focused          $sblack $black  $lyellow $lgreen $black
 client.unfocused        $hblack $hblack $black3  $black3 $hblack
 client.focused_inactive $black1 $black1 $black4  $black4 $black1
 client.urgent           $red    $red    $white   $black3 $red
@@ -52,11 +52,11 @@ bar {
     # color on bar
     colors {
         background         $sblack
-        statusline         $lblue
+        statusline         $lyellow
         separator          $lyellow
-        focused_workspace  $lblue   $lblue   $sblack
+        focused_workspace  $yellow  $lyellow $sblack
         active_workspace   $loren   $loren   $sblack
-        inactive_workspace $sblack  $sblack  $laqua
+        inactive_workspace $sblack  $sblack  $lyellow
         urgent_workspace   $lred    $lred    $sblack
         binding_mode       $lgreen  $lgreen  $sblack
     }
