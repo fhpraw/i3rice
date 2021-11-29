@@ -1,4 +1,5 @@
 PACKAGES,DESCRIPTION
+neovim,text editor
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
 bluez bluez-utils,bluetooth controller
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
