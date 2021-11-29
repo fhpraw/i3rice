@@ -3,7 +3,7 @@ pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with blu
 bluez bluez-utils,bluetooth controller
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
 xclip,clipboard
-ranger ueberzug udisks2,file manager with ueberzug preview mode and mount support from udisks2
+ranger ueberzug,file manager with ueberzug preview mode
 zip unzip unrar,archive and extract zip and extract rar
 htop,system monitor
 acpi,battery info
