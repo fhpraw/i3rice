@@ -1,15 +1,13 @@
 PACKAGES,DESCRIPTION
-pulseaudio pulseaudio-alsa pulseaudio-bluetooth,audio system with bluetooth support
-pulsemixer,audio mixer for pulseaudio
+pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
 bluez bluez-utils,bluetooth controller
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
 xclip,clipboard
-ranger ueberzug,file manager with ueberzug preview mode
-unzip unrar,extract zip and rar
+ranger ueberzug udisks2,file manager with ueberzug preview mode and mount support from udisks2
+zip unzip unrar,archive and extract zip and extract rar
 htop,system monitor
 acpi,battery info
 tlp,TLP powermanagement
-cmus,mp3 player
 youtube-dl,youtube downloader
 man-db,manual page
 xorg-server xorg-xinit,X server with xinit
