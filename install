@@ -16,14 +16,14 @@ sudo cp -v xorg/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 # make directories
 mkdir -v -p ~/{Documents,Downloads,Drives,Images,Projects}
 mkdir -v -p ~/Images/{Wallpapers,Screenshots}/
-mkdir -v -p ~/Drives/{1..10}
+mkdir -v -p ~/Drives/{1..3}
 mkdir -v -p ~/.local/share/fonts/
 
 # copy all configs
 cp -v -r config ~/.config
 cp -v -r scripts ~/.scripts
-cp -v -r home/{.xinitrc,.xprofile,.Xresources} ~/
-cat ~/.bashrc home/addtobashrc > ~/.bashrc
+cp -v -r dots/{.xinitrc,.xprofile,.Xresources} ~/
+cat ~/.bashrc dots/addtobashrc > ~/.bashrc
 
 # set font 
 curl -LJO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
