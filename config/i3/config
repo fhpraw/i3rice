@@ -64,7 +64,7 @@ bar {
 }
 
 # set titlebar font
-font pango: JetBrainsMono Nerd Font Bold 10
+font pango: JetBrainsMono Nerd Font Bold 9
 
 # title alignment
 title_align left
@@ -72,8 +72,6 @@ title_align left
 # rules
 default_border normal 3
 for_window [class="^.*"] title_format " %title"
-for_window [class="zoom"] floating enable
-assign [class="zoom"] workspace number 10
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -117,9 +115,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86Search exec --no-startup-id $browser
 bindsym XF86Explorer exec --no-startup-id $terminal --title File\ Manager -e ranger
-bindsym $mod+i exec --no-startup-id inkscape
-bindsym $mod+g exec --no-startup-id gimp
-bindsym $mod+o exec --no-startup-id libreoffice
 
 # i3
 bindsym $mod+Shift+Escape exit
