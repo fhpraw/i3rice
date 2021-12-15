@@ -33,10 +33,11 @@ set $aqua    #689d6a
 set $laqua   #8ec07c
 set $oren    #d65d0e
 set $loren   #fe8019
+set $bluetron #7dfdfe
 
 # Window color
-# class                 border  bground text    indctor cborder
-client.focused          $sblack $black  $lyellow $lgreen $black
+# class                 border  bground text     indctor cborder
+client.focused          $lblue  $lblue  $hblack  $lgreen $lblue
 client.unfocused        $hblack $hblack $black3  $black3 $hblack
 client.focused_inactive $black1 $black1 $black4  $black4 $black1
 client.urgent           $red    $red    $white   $black3 $red
@@ -45,18 +46,18 @@ client.background       $white
 
 # i3bar
 bar {
-    position top
+    position bottom
     status_command i3blocks
-    font pango: JetBrainsMono Nerd Font Bold 10
+    font pango: JetBrainsMono Nerd Font ExtraBold 10
 
     # color on bar
     colors {
-        background         $sblack
-        statusline         $lyellow
-        separator          $lyellow
-        focused_workspace  $yellow  $lyellow $sblack
+        background         $hblack
+        statusline         $lblue
+        separator          $black2
+        focused_workspace  $lblue $lblue $hblack
         active_workspace   $loren   $loren   $sblack
-        inactive_workspace $sblack  $sblack  $lyellow
+        inactive_workspace $hblack  $hblack  $lblue
         urgent_workspace   $lred    $lred    $sblack
         binding_mode       $lgreen  $lgreen  $sblack
     }
@@ -64,14 +65,16 @@ bar {
 }
 
 # set titlebar font
-font pango: JetBrainsMono Nerd Font Bold 9
+font pango: JetBrainsMono Nerd Font ExtraBold 9
 
 # title alignment
 title_align left
 
 # rules
-default_border normal 3
+default_border pixel 2
 for_window [class="^.*"] title_format " %title"
+for_window [class="zoom"] border normal 0 floating enable move to workspace 10
+for_window [class="mpv"] border pixel 0 floating enable
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -98,8 +101,7 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=16' -nf '#83a598' -nb '#32302f' -sb '#83a598' -sf '#1d2021' 
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Regular:pixelsize=16' -nf '#83a598' -nb '#32302f' -sb '#83a598' -sf '#1d2021' 
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#83a598' -nb '#1d2021' -sb '#fabd2f' -sf '#1d2021' 
 
 # Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks

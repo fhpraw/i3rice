@@ -1,6 +1,6 @@
 #!/bin/bash
 # get mounted drive
-mounted=$(lsblk -lp | grep "Drive" | awk '{print $1, "(" $4 ")"}')
+mounted=$(lsblk -lp | grep "Drives" | awk '{print $1, "(" $4 ")"}')
 [[ "$mounted" = "" ]] && exit 1
 
 # chose drive
