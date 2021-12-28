@@ -14,8 +14,9 @@ sudo mkdir -v -p /etc/X11/xorg.conf.d
 sudo cp -v xorg/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 # make directories
+mkdir -v -p ~/{Documents,Downloads,Projects,Videos,Audios}
 mkdir -v -p ~/Images/{Wallpapers,Screenshots}
-mkdir -v -p ~/Drives/{1..10}
+mkdir -v -p ~/Drives/{1..5}
 mkdir -v -p ~/.local/share/fonts
 
 # copy all configs

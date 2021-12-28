@@ -1,35 +1,33 @@
 PACKAGES,DESCRIPTION
-neovim,text editor
-pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
-bluez bluez-utils,bluetooth controller
-dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
-xclip,clipboard
-ranger ueberzug,file manager with ueberzug preview mode
-zip unzip unrar,archive and extract zip and extract rar
-htop,system monitor
 acpi,battery info
-tlp,TLP powermanagement
-youtube-dl,youtube downloader
-man-db,manual page
-xorg-server xorg-xinit,X server with xinit
-xorg-xbacklight,brightness
-xf86-video-intel xf86-video-amdgpu mesa,graphic driver with opengl support
-xdotool,X automation tool
-xwallpaper,wallpaper setter
-maim,screenshot tools
 arandr,multidisplay manager
+bluez bluez-utils,bluetooth controller
+dmenu,application launcher
+dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
+ffmpeg,multimedia tool for video and audio
+firefox,web browser
+gimp,bitmap based image editor
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
-dmenu,application launcher
-kitty,terminal emulator
-firefox,web browser
-zathura zathura-pdf-mupdf,pdf reader
-sxiv,image viewer
 imagemagick,simple image manipulation tools
 inkscape,vector based image editor
-gimp,bitmap based image editor
-ffmpeg,multimedia tool for video and audio
-mpv,video player
+kitty,terminal emulator
 libreoffice-still,office suite
+maim,screenshot tools
+man-db,manual page
+mpv,video player
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
+pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
+ranger,file manager
+sxiv,image viewer
+tlp,TLP powermanagement
+xclip,clipboard
+xdotool,X automation tool
+xf86-video-intel xf86-video-amdgpu mesa,graphic driver with opengl support
+xorg-server xorg-xinit,X server with xinit
+xorg-xbacklight,brightness
+xwallpaper,wallpaper setter
+yt-dlp,youtube downloader
+zathura zathura-pdf-mupdf,pdf reader
+zip unzip unrar,archive and extract zip and extract rar
