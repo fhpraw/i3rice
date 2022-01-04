@@ -38,5 +38,5 @@ interval=60
 [time]
 command=scripts/time.sh
 interval=60
-background=#83a598
-color=#1d2021
+background=#3f51b5
+color=#ffffff

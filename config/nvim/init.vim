@@ -4,7 +4,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'morhetz/gruvbox'
+Plug 'kaicataldo/material.vim', {'branch':'main'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
@@ -27,10 +27,12 @@ set autoindent
 set foldmethod=manual
 set noshowmode
 set noshowcmd
-set number
 
-" Gruvbox
-silent! colorscheme gruvbox
+" material theme
+let g:material_terminal_italics = 1
+" pick one: default, palenight, ocean, lighter, darker
+let g:material_theme_style = 'darker'
+colorscheme material
 
 " Airline
 silent! let g:airline_powerline_fonts = 1

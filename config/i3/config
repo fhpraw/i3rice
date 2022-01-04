@@ -1,80 +1,5 @@
 # Modkey, assign to Windows button
-set $mod      Mod4
-
-# Default Apps
-set $browser  firefox
-set $terminal kitty
-
-# Dark Gruvbox Colorscheme
-set $hblack  #1d2021
-set $sblack  #32302f
-set $black   #282828
-set $black1  #3c3836
-set $black2  #504945
-set $black3  #665c54
-set $black4  #7c6f64
-set $hwhite  #fbf1c7
-set $white   #ebdbb2
-set $white1  #d5c4a1
-set $white2  #bdae93
-set $white3  #a89984
-set $gray    #928374
-set $red     #cc241d
-set $lred    #fb4934
-set $green   #98971a
-set $lgreen  #b8bb26
-set $yellow  #d79921
-set $lyellow #fabd2f
-set $blue    #458588
-set $lblue   #83a598
-set $purple  #b16286
-set $lpurple #d3869b
-set $aqua    #689d6a
-set $laqua   #8ec07c
-set $oren    #d65d0e
-set $loren   #fe8019
-set $bluetron #7dfdfe
-
-# Window color
-# class                 border  bground text     indctor cborder
-client.focused          $lblue  $lblue  $hblack  $lgreen $lblue
-client.unfocused        $hblack $hblack $black3  $black3 $hblack
-client.focused_inactive $black1 $black1 $black4  $black4 $black1
-client.urgent           $red    $red    $white   $black3 $red
-client.placeholder      $yellow $yellow $black   $black3 $yellow
-client.background       $white
-
-# i3bar
-bar {
-    position bottom
-    status_command i3blocks
-    font pango: JetBrainsMono Nerd Font ExtraBold 10
-
-    # color on bar
-    colors {
-        background         $hblack
-        statusline         $lblue
-        separator          $black2
-        focused_workspace  $lblue $lblue $hblack
-        active_workspace   $loren   $loren   $sblack
-        inactive_workspace $hblack  $hblack  $lblue
-        urgent_workspace   $lred    $lred    $sblack
-        binding_mode       $lgreen  $lgreen  $sblack
-    }
-
-}
-
-# set titlebar font
-font pango: JetBrainsMono Nerd Font ExtraBold 9
-
-# title alignment
-title_align left
-
-# rules
-default_border pixel 2
-for_window [class="^.*"] title_format " %title"
-for_window [class="zoom"] border normal 0 floating enable move to workspace 10
-for_window [class="mpv"] border pixel 0 floating enable
+set $mod Mod4
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -100,23 +25,17 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# dmenu
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono Nerd Font:style=Bold:pixelsize=14' -nf '#83a598' -nb '#1d2021' -sb '#fabd2f' -sf '#1d2021' 
 
-# Speaker and Mic
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle; exec pkill -SIGRTMIN+4 i3blocks
-
-# Brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5; exec pkill -SIGRTMIN+2 i3blocks
-
-# app
 bindsym XF86Display exec --no-startup-id arandr 
-bindsym XF86Search exec --no-startup-id $browser
-bindsym XF86Explorer exec --no-startup-id $terminal --title File\ Manager -e ranger
+bindsym XF86Search exec --no-startup-id google-chrome-stable
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'Noto Sans Mono:style=SemiBold:pixelsize=14'
+bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -158,21 +77,17 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # open terminal emulator
-bindsym $mod+Return exec --no-startup-id $terminal --title Terminal
-bindsym $mod+Shift+Return exec --no-startup-id $terminal --title Terminal -e nvim
+bindsym $mod+Return exec --no-startup-id kitty
 
 # Caps Lock Indicator
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+3 i3blocks
 
-# make the currently focused window a scratchpad (minimize)
+# scratchpad
 bindsym $mod+Shift+minus move scratchpad
-
-# show the first scratchpad window (unminimize)
 bindsym $mod+minus scratchpad show
 
-# mount drive
+# mount umount drive
 bindsym $mod+u exec --no-startup-id ~/.scripts/mountdrv
-# unmount drive
 bindsym $mod+Shift+u exec --no-startup-id ~/.scripts/umountdrv
 
 # moving window mode
@@ -199,19 +114,58 @@ mode "Resize" {
 # screenshot mode
 bindsym $mod+Print mode "Screenshot"
 mode "Screenshot" {
-  bindsym --release f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release f exec --no-startup-id ~/.scripts/scrotfull
+  bindsym --release w exec --no-startup-id ~/.scripts/scrotwin
+  bindsym --release s exec --no-startup-id ~/.scripts/scrotsel
   bindsym Escape mode "default"
 }
 
 # settings mode
 bindsym XF86Tools mode "Settings" 
 mode "Settings" {
-  bindsym s exec --no-startup-id $terminal --title Pulsemixer -e pulsemixer
-  bindsym n exec --no-startup-id $terminal --title Network\ Manager -e nmtui
-  bindsym 3 exec --no-startup-id $terminal --title i3\ Configurations -e nvim ~/.config/i3/config ~/.config/i3blocks/config
-  bindsym b exec --no-startup-id $terminal --title bash\ Configurations -e nvim ~/.bashrc ~/.bash_profile
-  bindsym w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/background.jpg && xwallpaper --zoom ~/.config/background.jpg
+  bindsym w exec --no-startup-id ~/.scripts/chwall
   bindsym Escape mode "default"
 }
+
+# title alignment
+title_align left
+
+# rules
+for_window [class="zoom"] border normal 0 floating enable move to workspace 2
+
+# set titlebar font
+#font pango: Noto Sans Mono SemiBold 9
+font pango: JetBrainsMono Nerd Font Bold 8
+
+set $prm #3f51b5
+set $lpr #c5cae9
+set $dpr #303f9f
+set $txi #ffffff
+set $acc #ff5252
+set $prt #212121
+set $sct #757575
+set $dvd #bdbdbd
+
+bar {
+    status_command i3blocks
+    font pango: JetBrainsMono Nerd Font Bold 9
+
+    colors {
+        background $prt
+        statusline $txi
+        separator  $dvd 
+
+        focused_workspace   $dpr $dpr $txi
+        inactive_workspace  $prt $prt $txi
+        active_workspace    $sct $sct $txi
+        urgent_workspace    $acc $acc $txi
+        binding_mode        $prm $prm $txi
+    }
+}
+
+client.focused          $dpr $dpr $txi $acc $dpr
+client.unfocused        $prt $prt $sct $acc $prt
+client.focused_inactive $sct $sct $txi $acc $sct
+client.urgent           $acc $acc $txi $sct $acc
+client.placeholder      $prt $prt $txi $acc $prt
+client.background       $dpr

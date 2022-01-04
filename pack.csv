@@ -5,8 +5,9 @@ bluez bluez-utils,bluetooth controller
 dmenu,application launcher
 dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
 ffmpeg,multimedia tool for video and audio
-firefox,web browser
 gimp,bitmap based image editor
+google-chrome,modern web browser
+htop,system monitor
 i3-wm,window manager
 i3blocks,status bar
 i3lock,screen locker
@@ -17,6 +18,8 @@ libreoffice-still,office suite
 maim,screenshot tools
 man-db,manual page
 mpv,video player
+nerd-fonts-jetbrains-mono,jetbrains nerd font
+neofetch,system info
 noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
 pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
 ranger,file manager
@@ -31,3 +34,4 @@ xwallpaper,wallpaper setter
 yt-dlp,youtube downloader
 zathura zathura-pdf-mupdf,pdf reader
 zip unzip unrar,archive and extract zip and extract rar
+zoom,video converence
