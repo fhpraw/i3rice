@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# install paru
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
-cd ..
-
 paru -Syyu --noconfirm
 paru -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
 
