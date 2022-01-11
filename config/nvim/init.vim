@@ -1,10 +1,10 @@
 " Plugins
 call plug#begin( stdpath( 'data' ) . '/plugged' )
+Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
-Plug 'kaicataldo/material.vim', {'branch':'main'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
@@ -15,7 +15,6 @@ call plug#end()
 set path+=**
 set wildmenu
 set termguicolors
-set background=dark
 set cursorline
 set incsearch
 set hlsearch
@@ -27,12 +26,11 @@ set autoindent
 set foldmethod=manual
 set noshowmode
 set noshowcmd
+set number
 
-" material theme
-let g:material_terminal_italics = 1
-" pick one: default, palenight, ocean, lighter, darker
-let g:material_theme_style = 'darker'
-colorscheme material
+set background=dark
+silent! let g:gruvbox_contrast_dark = 'hard'
+silent! colo gruvbox
 
 " Airline
 silent! let g:airline_powerline_fonts = 1

@@ -1,37 +1,50 @@
 PACKAGES,DESCRIPTION
-acpi,battery info
-bluez bluez-utils,bluetooth controller
-dosfstools ntfs-3g exfat-utils,FAT NTFS Exfat file system support
-ffmpeg,multimedia tool for video and audio
-htop,system monitor
-imagemagick,simple image manipulation tools
-man-db,manual page
-neofetch,system info
-pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulsemixer,audio system with bluetooth support
-ranger,file manager
-tlp,TLP powermanagement
-yt-dlp,youtube downloader
-xclip,clipboard
-zip unzip unrar,archive and extract zip and extract rar
-arandr,multidisplay manager
-dmenu,application launcher
-i3-wm,window manager
-i3blocks,status bar
-i3lock,screen locker
-inkscape,vector based image editor
-gimp,bitmap based image editor
-kitty,terminal emulator
-libreoffice-still,office suite
-maim,screenshot tools
-mpv,video player
-noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra,google noto font
-sxiv,image viewer
-xdotool,X automation tool
-xf86-video-intel xf86-video-amdgpu mesa,graphic driver with opengl support
-xorg-server xorg-xinit,X server with xinit
-xorg-xbacklight,brightness
-xwallpaper,wallpaper setter
-zathura zathura-pdf-mupdf,pdf reader
-google-chrome,modern web browser
-nerd-fonts-jetbrains-mono,jetbrains nerd font
-zoom,video converence
+acpi,client for battery power and thermal readings
+arandr,Provide a simple visual front end for XRandR
+bluez,daemons for the bluetooth protocol stack
+bluez-utils,Development and debugging utilities for the bluetooth protocol stack
+dmenu,Generic menu for X
+dosfstools,DOS filesystem utilities
+exfat-utils,Utilities for exFAT file system
+ffmpeg,Complete solution to record convert and stream audio and video
+firefox,Standalone web browser from mozilla org
+gimp,GNU Image Manipulation Program
+i3-wm,Improved dynamic tiling window manager
+i3blocks,Define blocks for your i3bar status line
+i3lock,Improved screenlocker based upon XCB and PAM
+imagemagick,An image viewing manipulation program
+inkscape,Professional vector graphics editor
+kitty,A modern hackable featureful OpenGL based terminal emulator
+libreoffice-still,LibreOffice maintenance branch
+maim,Utility to take a screenshot using imlib2
+man-db,A utility for reading man pages
+mesa,An open source implementation of the OpenGL specification
+mpv,a free open source and cross platform media player
+noto-fonts,Google Noto TTF fonts
+noto-fonts-cjk,Google Noto CJK fonts
+noto-fonts-emoji,Google Noto emoji fonts
+noto-fonts-extra,Google Noto TTF fonts additional variants
+ntfs-3g,NTFS filesystem driver and utilities
+pulseaudio,A featureful general purpose sound server
+pulseaudio-alsa,ALSA Configuration for PulseAudio
+pulseaudio-bluetooth,Bluetooth support for PulseAudio
+pulsemixer,CLI and curses mixer for pulseaudio
+ranger,simple vim-like file manager
+sxiv,Simple X Image Viewer
+tlp,Linux Advanced Power Management
+ttf-ibm-plex,IBM Plex Mono Sans and Serif
+ttf-nerd-fonts-symbols,High number of extra glyphs from popular iconic fonts 2048em
+unrar,archive and extract zip and extract rar
+unzip,For extracting and viewing files in zip archives
+xclip,Command line interface to the X11 clipboard
+xdotool,Command line X11 automation tool
+xf86-video-amdgpu,Xorg amdgpu video driver
+xf86-video-intel,Xorg Intel video drivers 
+xorg-server,Xorg X server
+xorg-xbacklight,RandR-based backlight control application
+xorg-xinit,Xorg initialisation program
+xwallpaper,Wallpaper setting utility for X
+yt-dlp,A youtube-dl fork with additional features and fixes
+zathura,Minimalistic document viewer
+zathura-pdf-mupdf,PDF support for Zathura MuPDF backend support PDF ePub and OpenXPS
+zip,Compressor archiver for creating and modifying zipfiles

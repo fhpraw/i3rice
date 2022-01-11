@@ -1,1 +1,2 @@
+#!/bin/bash
 maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
