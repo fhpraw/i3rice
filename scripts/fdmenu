@@ -1,0 +1,2 @@
+#!/bin/bash
+dmenu_run -fn 'IBM Plex Mono:style=Medium:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sb '#98971a' -sf '#1d2021'
