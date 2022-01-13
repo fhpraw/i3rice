@@ -1,16 +1,19 @@
 PACKAGES,DESCRIPTION
 acpi,client for battery power and thermal readings
+atool,A script for managing file archives of various types
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
 cmus,Feature rich ncurses based music player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
+elinks,An advanced and well established feature rich text mode web browser
 exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
 firefox,Standalone web browser from mozilla org
 gimp,GNU Image Manipulation Program
 git,the fast distributed version control system
+highlight,Fast and flexible source code highlighter
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
@@ -20,6 +23,7 @@ kitty,A modern hackable featureful OpenGL based terminal emulator
 libreoffice-still,LibreOffice maintenance branch
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
+mediainfo,Supplies technical and tag information about a video or audio file
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs

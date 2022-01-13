@@ -131,7 +131,8 @@ mode "Settings" {
 for_window [class="zoom"] floating enable move to workspace 2
 
 # set titlebar font
-font pango: IBM Plex Mono Bold 8
+#font pango: IBM Plex Mono Bold 8
+font pango: Noto Sans Bold 8
 
 # set primary gruvbox colorscheme colors
 set $bg #282828
@@ -146,23 +147,18 @@ set $darkgray #1d2021
 set $fg #ebdbb2
 
 bar {
-    position top
+    position bottom
     status_command i3blocks
-    font pango: IBM Plex Mono Medium 9
+    font pango: IBM Plex Mono Bold 10
     colors {
-        # bar background color
         background $bg
-        # text color used for blocks that do not have a color specified.
         statusline $fg
-        # separator
         separator $green
-
-        # workspaces section            
         #                    border  backgr. text
-        focused_workspace    $green $green $darkgray
+        focused_workspace    $green    $green    $darkgray
         inactive_workspace   $darkgray $darkgray $fg
         active_workspace     $darkgray $darkgray $fg
-        urgent_workspace     $red $red $bg
+        urgent_workspace     $red      $red      $fg
     }
 }
 
@@ -170,7 +166,9 @@ bar {
 
 # green gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $green $green $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-client.urgent           $red $red $white $red $red
+client.focused          $green    $green    $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $fg       $purple $darkgray
+client.unfocused        $darkgray $darkgray $gray     $purple $darkgray
+client.urgent           $red      $red      $fg       $red    $red
+client.placeholder      #000000   #0c0c0c   #ffffff   #000000 #0c0c0c
+client.background       #ffffff

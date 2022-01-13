@@ -12,6 +12,7 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=nvim
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export VISUAL=nvim
+export PATH=$HOME/.scripts:$PATH
 
 alias vi='nvim'
 alias c3='nvim ~/.config/{i3/config,i3blocks/config}'
@@ -20,7 +21,7 @@ alias ck='nvim ~/.config/kitty/kitty.conf'
 alias ls='ls --color=auto'
 alias nt='nmtui'
 alias rg='ranger'
-alias mixer='pulsemixer'
+alias upd='sudo pacman -Syyu'
 
 # colorize man page using less
 man() {
