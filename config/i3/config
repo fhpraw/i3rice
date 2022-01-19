@@ -131,44 +131,10 @@ mode "Settings" {
 for_window [class="zoom"] floating enable move to workspace 2
 
 # set titlebar font
-#font pango: IBM Plex Mono Bold 8
-font pango: Noto Sans Bold 8
-
-# set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-set $fg #ebdbb2
+font pango: JetBrainsMono Bold 8
 
 bar {
     position bottom
     status_command i3blocks
-    font pango: IBM Plex Mono Bold 10
-    colors {
-        background $bg
-        statusline $fg
-        separator $green
-        #                    border  backgr. text
-        focused_workspace    $green    $green    $darkgray
-        inactive_workspace   $darkgray $darkgray $fg
-        active_workspace     $darkgray $darkgray $fg
-        urgent_workspace     $red      $red      $fg
-    }
+    font pango: JetBrainsMono Bold 10
 }
-
-#start of window title bars & borders section
-
-# green gruvbox
-# class                 border|backgr|text|indicator|child_border
-client.focused          $green    $green    $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $fg       $purple $darkgray
-client.unfocused        $darkgray $darkgray $gray     $purple $darkgray
-client.urgent           $red      $red      $fg       $red    $red
-client.placeholder      #000000   #0c0c0c   #ffffff   #000000 #0c0c0c
-client.background       #ffffff
