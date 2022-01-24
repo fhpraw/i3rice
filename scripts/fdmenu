@@ -1,2 +1,2 @@
 #!/bin/bash
-dmenu_run -fn 'JetBrainsMono:style=Medium:pixelsize=14'
+dmenu_run -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2'
