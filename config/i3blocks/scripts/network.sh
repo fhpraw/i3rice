@@ -1,9 +1,8 @@
 #!/bin/bash
-CONNECTION=$(nmcli d | grep -w connected | awk '{print $4}')
-
-if [ -z $CONNECTION ]
+CON=$(nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}')
+if [ -z $CON ]
 then
-    echo "offline"
+    echo "   offline "
 else
-    echo "$CONNECTION"
+    echo "  $CON"
 fi

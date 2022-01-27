@@ -1,3 +1,3 @@
 #!/bin/bash
-TIMEDATE_NOW=$(date '+%a %b %d %I:%M %p')
+TIMEDATE_NOW=$(date '+%c')
 echo " $TIMEDATE_NOW "

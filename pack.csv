@@ -7,6 +7,7 @@ cmus,Feature rich ncurses based music player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
+firefox,standalone web browser from mozilla dot org
 git,the fast distributed version control system
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
