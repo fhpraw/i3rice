@@ -1,51 +1,51 @@
 separator=false
 separator_block_width=2
 
+[network speed]
+command=scripts/netspeed.sh
+interval=1
+
+# [network usage]
+# command=scripts/netusage.sh
+# interval=1
+# background=#285577
+
 [cpu]
 command=scripts/cpu.sh
 interval=1
-#background=#557728
 
 [memory]
 command=scripts/memory.sh
 interval=1
-#background=#772855
 
 [network]
 command=scripts/network.sh
 interval=60
-#background=#557728
 
 [capslock]
 command=scripts/capslock.sh
 interval=once
 signal=3
-#background=#285577
 
 [mic]
 command=scripts/mic.sh
 interval=once
 signal=4
-#background=#557728
 
 [volume]
 command=scripts/volume.sh
 interval=once
 signal=1
-#background=#772855
 
 [brightness]
 command=scripts/brightness.sh
 interval=once
 signal=2
-#background=#285577
 
 [battery]
 command=scripts/battery.sh
 interval=60
-#background=#772855
 
 [time]
 command=scripts/time.sh
 interval=1
-#background=#285577
