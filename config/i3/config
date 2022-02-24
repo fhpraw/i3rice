@@ -33,7 +33,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
-bindsym XF86Search exec --no-startup-id google-chrome-stable
+bindsym XF86Search exec --no-startup-id firefox
 bindsym XF86LaunchA exec --no-startup-id ~/.scripts/fdmenu
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
@@ -128,19 +128,34 @@ mode "Settings" {
 }
 
 # rules
+default_border pixel 2
 for_window [class="zoom"] floating enable move to workspace 2
 
 # set titlebar font
-font pango: JetBrainsMono 9
+font pango: JetBrainsMono Bold 9
 
 bar {
-    position top
+    position bottom
     status_command i3blocks
     font pango: JetBrainsMono 9
-
     colors {
-        background #282828
+        background #1d2021
         statusline #ebdbb2
-        inactive_workspace #282828 #282828 #ebdbb2
+        separator #665c54
+
+        focused_workspace  #504945 #504945 #fbf1c7
+        active_workspace   #1d2021 #1d2021 #fbf1c7
+        inactive_workspace #1d2021 #1d2021 #fbf1c7
+        urgent_workspace   #cc241d #cc241d #fbf1c7
+        binding_mode       #cc241d #cc241d #fbf1c7
     }
 }
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #504945 #504945 #fbf1c7 #a89984   #504945
+client.focused_inactive #1d2021 #1d2021 #928374 #484e50   #1d2021
+client.unfocused        #1d2021 #1d2021 #928374 #292d2e   #1d2021
+client.urgent           #cc241d #cc241d #fbf1c7 #900000   #cc241d
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #fbf1c7

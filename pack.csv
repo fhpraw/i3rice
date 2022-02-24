@@ -7,14 +7,11 @@ cmus,Feature rich ncurses based music player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
-ffmpeg,Complete solution to record convert and stream audio and video
 git,the fast distributed version control system
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
-imagemagick,An image viewing manipulation program
 kitty,A modern hackable featureful OpenGL based terminal emulator
-libreoffice-fresh,LibreOffice branch which contains new features and program enhancements
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
@@ -44,7 +41,6 @@ xorg-server,Xorg X server
 xorg-xbacklight,RandR-based backlight control application
 xorg-xinit,Xorg initialisation program
 xwallpaper,Wallpaper setting utility for X
-yt-dlp,A youtubedl fork with additional features and fixes
 zathura,Minimalistic document viewer
 zathura-pdf-mupdf,PDF support for Zathura MuPDF backend support PDF ePub and OpenXPS
 zip,Compressor archiver for creating and modifying zipfiles
