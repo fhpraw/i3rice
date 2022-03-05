@@ -1,14 +1,13 @@
 separator=true
-separator_block_width=20
+separator_block_width=5
 
 [network speed]
 command=~/.scripts/netspeed
 interval=1
 
-# [network usage]
-# command=~/.scripts/netusage
-# interval=1
-# background=#285577
+[network usage]
+command=~/.scripts/netusage
+interval=1
 
 [cpu]
 command=~/.scripts/cpu
