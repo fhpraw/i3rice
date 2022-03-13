@@ -27,11 +27,11 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1%; exec pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1%; exec pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%; exec pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle; exec pkill -SIGRTMIN+4 i3blocks
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 1; exec pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 1; exec pkill -SIGRTMIN+2 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec pkill -SIGRTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86Search exec --no-startup-id google-chrome-stable
 bindsym XF86LaunchA exec --no-startup-id ~/.scripts/fdmenu
@@ -128,16 +128,16 @@ mode "Settings" {
 }
 
 # rules
-default_border pixel 2
+default_border pixel 3
 for_window [class="zoom"] floating enable move to workspace 10
 
 # set titlebar font
-font pango: JetBrainsMono Bold 9
+font pango: JetBrainsMono 10
 
 bar {
-    position top
+    position bottom
     status_command i3blocks
-    font pango: JetBrainsMono Bold 9
+    font pango: JetBrainsMono ExtraBold 10
     colors {
         background #1d2021
         statusline #ebdbb2

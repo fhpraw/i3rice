@@ -1,21 +1,21 @@
-separator=true
-separator_block_width=5
+separator=false
+separator_block_width=10
 
-[network speed]
-command=~/.scripts/netspeed
-interval=1
+# [network speed]
+# command=~/.scripts/netspeed
+# interval=1
 
-[network usage]
-command=~/.scripts/netusage
-interval=1
+# [network usage]
+# command=~/.scripts/netusage
+# interval=1
 
-[cpu]
-command=~/.scripts/cpu
-interval=1
+# [cpu]
+# command=~/.scripts/cpu
+# interval=1
 
-[memory]
-command=~/.scripts/memory
-interval=1
+# [memory]
+# command=~/.scripts/memory
+# interval=1
 
 [network]
 command=~/.scripts/network
@@ -47,4 +47,4 @@ interval=60
 
 [time]
 command=~/.scripts/timedate
-interval=1
+interval=60
