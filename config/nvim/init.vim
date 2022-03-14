@@ -30,7 +30,7 @@ set noshowcmd
 set number
 
 set background=dark
-silent! let g:gruvbox_contrast_dark = 'soft'
+silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
 
 silent! let g:airline_powerline_fonts = 1

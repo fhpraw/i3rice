@@ -132,7 +132,7 @@ mode "Settings" {
 for_window [class="zoom"] floating enable move to workspace 10
 
 # set titlebar font
-font pango: JetBrainsMono 10
+font pango: JetBrainsMono 8
 
 bar {
     position bottom

@@ -9,6 +9,7 @@ dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 firefox,a web browser
 git,the fast distributed version control system
+htop,system process browser
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
