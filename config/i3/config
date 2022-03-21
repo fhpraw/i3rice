@@ -143,7 +143,7 @@ bar {
         statusline #ebdbb2
         separator #665c54
 
-        focused_workspace  #fabd2f #fabd2f #1d2021
+        focused_workspace  #504945 #504945 #fbf1c7
         active_workspace   #1d2021 #1d2021 #fbf1c7
         inactive_workspace #1d2021 #1d2021 #fbf1c7
         urgent_workspace   #cc241d #cc241d #fbf1c7
@@ -152,7 +152,7 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #504945 #504945 #fbf1c7 #a89984   #fabd2f
+client.focused          #504945 #504945 #fbf1c7 #a89984   #504945
 client.focused_inactive #1d2021 #1d2021 #928374 #484e50   #1d2021
 client.unfocused        #1d2021 #1d2021 #928374 #292d2e   #1d2021
 client.urgent           #cc241d #cc241d #fbf1c7 #900000   #cc241d
