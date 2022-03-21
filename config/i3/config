@@ -128,7 +128,7 @@ mode "Settings" {
 }
 
 # rules
-default_border pixel 3
+default_border normal 2
 for_window [class="zoom"] floating enable move to workspace 10
 
 # set titlebar font
