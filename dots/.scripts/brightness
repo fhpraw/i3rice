@@ -1,0 +1,3 @@
+#!/bin/bash
+INFO=$(xbacklight -get | awk '{print int($1)}')
+echo " BRG:$INFO% "

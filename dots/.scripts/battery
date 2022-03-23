@@ -1,0 +1,10 @@
+#!/bin/bash
+INFO=$(acpi)
+CAPACITY=$(echo $INFO | awk -F ', ' '{print int($2)}')
+STATUS=$(echo $INFO | tr ',' ' ' | awk '{print $3}')
+if [ "$STATUS" == "Charging" ]; then
+    POWER="AC"
+elif [ "$STATUS" == "Discharging" ]; then
+    POWER="BAT"
+fi
+echo " $POWER:$CAPACITY% "

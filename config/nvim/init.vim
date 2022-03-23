@@ -24,41 +24,28 @@ set autoindent
 set foldmethod=manual
 set noshowmode
 set noshowcmd
-set number
 
 set background=dark
 silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
 
-" Keybindings
-" ---------------------------------------------------
-
 " back to normal
 inoremap jk <esc>
-
 " edit init.vim
 nnoremap <space>ev :edit $MYVIMRC<cr>
-
 " stop highlight search
 nnoremap <space><space> :nohlsearch<cr>
-
 " yank to clipboard
 vnoremap <space>y "+y
-
 " paste from clipboard
 nnoremap <space>p "+gP
-
 " next buffer
 nnoremap <space>l :bnext<cr>
-
 " previous buffer
 nnoremap <space>h :bprevious<cr>
-
 " delete buffer
 nnoremap <space>x :bprevious <bar> bdelete #<cr>
-
 " write buffer
 nnoremap <space>w :write<cr>
-
 " quit
 nnoremap <space>q :q<cr>

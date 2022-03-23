@@ -1,25 +1,19 @@
-separator=false
-separator_block_width=10
+separator=true
+separator_block_width=5
 
-# [network speed]
-# command=~/.scripts/netspeed
-# interval=1
-
-# [network usage]
-# command=~/.scripts/netusage
-# interval=1
-
-# [cpu]
-# command=~/.scripts/cpu
-# interval=1
-
-# [memory]
-# command=~/.scripts/memory
-# interval=1
-
-[network]
-command=~/.scripts/network
+[connection]
+command=~/.scripts/connection
 interval=60
+
+[bluetooth]
+command=~/.scripts/bluetoothstat
+interval=once
+signal=6
+
+[wifi]
+command=~/.scripts/wifistat
+interval=once
+signal=5
 
 [capslock]
 command=~/.scripts/capslock

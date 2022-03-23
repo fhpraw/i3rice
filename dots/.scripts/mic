@@ -1,0 +1,8 @@
+#!/bin/bash
+STATUS=$(pulsemixer --list-sources | grep 'Default' | awk -F ', ' '{print $3}' | awk '{print $2}')
+if [ $STATUS -eq 1 ]; then
+    MIC="off"
+elif [ $STATUS -eq 0 ]; then
+    MIC="on"
+fi
+echo " MIC:$MIC "

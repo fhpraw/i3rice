@@ -19,8 +19,7 @@ mkdir -v -p ~/Drives/{1..5}
 
 # copy all configs
 cp -v -r config ~/.config
-cp -v -r scripts ~/.scripts
-cp -v -r dots/{.xinitrc,.xprofile,.bashrc} ~/
+cp -v -r dots/{.xinitrc,.xprofile,.bashrc,.scripts} ~/
 
 # copy wallpapers
 cp -v -r walls ~/Images/Wallpapers

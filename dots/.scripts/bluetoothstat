@@ -1,0 +1,3 @@
+#!/bin/bash
+STATUS=$(bluetooth | awk '{print $3}')
+echo " BT:$STATUS "

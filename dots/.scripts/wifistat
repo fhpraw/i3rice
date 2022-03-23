@@ -1,0 +1,3 @@
+#!/bin/bash
+STATUS=$(wifi | awk '{print $3}')
+echo " WF:$STATUS "

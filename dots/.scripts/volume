@@ -1,0 +1,12 @@
+#!/bin/bash
+STATUS=$(pulsemixer --get-mute)
+VOLUME=$(pulsemixer --get-volume | awk '{print $1}')
+
+# 0 is unmute, 1 is mute
+if [ $STATUS -eq 1 ]; then
+    SPK="muted"
+elif [ $STATUS -eq 0 ]; then
+    SPK=$VOLUME
+fi
+
+echo " VOL:$SPK "

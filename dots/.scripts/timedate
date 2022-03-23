@@ -1,0 +1,3 @@
+#!/bin/bash
+NOW=$(date '+%H:%M %a %d %b %Y')
+echo " $NOW "
