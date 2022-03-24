@@ -34,7 +34,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec pkil
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
-bindsym XF86Search exec --no-startup-id firefox
+bindsym XF86Search exec --no-startup-id google-chrome-stable
 bindsym XF86LaunchA exec --no-startup-id ~/.scripts/fdmenu
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
@@ -155,5 +155,4 @@ client.focused_inactive #1d2021 #1d2021 #928374 #484e50   #1d2021
 client.unfocused        #1d2021 #1d2021 #928374 #292d2e   #1d2021
 client.urgent           #cc241d #cc241d #fbf1c7 #900000   #cc241d
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
 client.background       #fbf1c7
