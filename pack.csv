@@ -8,17 +8,13 @@ dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
-firefox,a web browser
-gimp,GNU Image Manipulation Program
 git,the fast distributed version control system
 htop,system process browser
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
 imagemagick,An image viewing or manipulation program
-inkscape,Professional vector graphics editor
 kitty,A modern hackable featureful OpenGL based terminal emulator
-libreoffice-fresh,LibreOffice branch which contains new features and program enhancements
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
