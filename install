@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Update
-sudo pacman -Syyu --noconfirm
+paru -Syyu --noconfirm
 
 # Install all packages
-sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
+paru -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
 
 # enable TLP
 sudo systemctl enable tlp
