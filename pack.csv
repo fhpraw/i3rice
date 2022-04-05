@@ -9,6 +9,7 @@ dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
 git,the fast distributed version control system
+google-chrome,AUR The popular and trusted web browser by Google
 htop,system process browser
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
