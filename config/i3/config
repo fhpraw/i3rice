@@ -130,12 +130,12 @@ mode "Settings" {
 }
 
 # set titlebar font
-font pango: JetBrainsMono Bold 8
+font pango: JetBrainsMono ExtraBold 8
 
 bar {
     position top
     status_command i3blocks
-    font pango: JetBrainsMono Bold 9
+    font pango: JetBrainsMono ExtraBold 9
     colors {
         background #1d2021
         statusline #ebdbb2

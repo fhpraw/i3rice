@@ -37,6 +37,7 @@ tealdeer,A fast tldr client in Rust
 tlp,Linux Advanced Power Management
 ttf-jetbrains-mono,Typeface for developers by Jetbrains
 ttf-nerd-fonts-symbols,High number of extra glyphs from popular iconic fonts 2048em
+ueberzug,cli which allow to display images in combination with X11
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
 wget,Network utility to retrieve files from the Web

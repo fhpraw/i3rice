@@ -4,6 +4,8 @@ CAPACITY=$(echo $INFO | awk -F ', ' '{print int($2)}')
 STATUS=$(echo $INFO | tr ',' ' ' | awk '{print $3}')
 if [ "$STATUS" == "Charging" ]; then
     POWER="AC"
+elif [ "$STATUS" == "Not" ]; then
+    POWER="Full"
 elif [ "$STATUS" == "Discharging" ]; then
     POWER="BAT"
 fi
