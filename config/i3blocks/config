@@ -1,9 +1,9 @@
-separator=true
+separator=false
 separator_block_width=5
 
 [connection]
 command=~/.scripts/connection
-interval=60
+interval=5
 
 [bluetooth]
 command=~/.scripts/bluetoothstat
@@ -37,7 +37,7 @@ signal=2
 
 [battery]
 command=~/.scripts/battery
-interval=60
+interval=5
 
 [time]
 command=~/.scripts/timedate
