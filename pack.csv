@@ -28,6 +28,7 @@ ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
 tmux,terminal multiplexer
+terminus-font,terminus font
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
 xclip,Command line interface to the X11 clipboard
