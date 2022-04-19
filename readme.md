@@ -33,7 +33,7 @@ mount /dev/sda1 /mnt/efi
 ## Install minimum packages
 
 ```shell
-pacstrap /mnt base base-devel linux linux-firmware neovim networkmanager grub efibootmgr
+pacstrap /mnt base linux linux-firmware
 ```
 
 ## Generate fstab
@@ -77,6 +77,7 @@ echo 'LANG=en_US.UTF-8' > /etc/locale.conf
 Enable Network Manager at startup
 
 ```shell
+pacman -S networkmanager
 systemctl enable NetworkManager
 ```
 
@@ -105,6 +106,7 @@ passwd
 Using GRUB
 
 ```shell
+pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -114,6 +116,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 add new user set to wheel group
 
 ```shell
+pacman -S sudo
 useradd -m -g wheel youruser
 passwd youruser
 ```
