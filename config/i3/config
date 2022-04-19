@@ -25,7 +25,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-
+# multimedia key
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%; exec pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%; exec pkill -SIGRTMIN+1 i3blocks
@@ -35,7 +35,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill 
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Search exec --no-startup-id google-chrome-stable
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#504945'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=ExtraBold:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#504945'
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
 # i3
@@ -130,12 +130,12 @@ mode "Settings" {
 }
 
 # set titlebar font
-font pango: JetBrainsMono 9
+font pango: JetBrainsMono ExtraBold 8
 
 bar {
-    position bottom
+    position top
     status_command i3blocks
-    font pango: JetBrainsMono 9
+    font pango: JetBrainsMono ExtraBold 9
     colors {
         background #1d2021
         statusline #ebdbb2
