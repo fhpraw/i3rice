@@ -19,6 +19,10 @@ man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
+noto-fonts,Google Noto TTF fonts
+noto-fonts-CJK,Google Noto CJK fonts
+noto-fonts-emoji,Google Noto Emoji fonts
+noto-fonts-extra,Google Noto TTF fonts additional variants
 ntfs-3g,NTFS filesystem driver and utilities
 pulseaudio,A featureful general purpose sound server
 pulseaudio-alsa,ALSA Configuration for PulseAudio
@@ -27,8 +31,10 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
+tamsyn-font,Tamsyn font
 tmux,terminal multiplexer
 terminus-font,terminus font
+ttf-nerd-fonts-symbols,Nerd Font Symbols
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
 xclip,Command line interface to the X11 clipboard
