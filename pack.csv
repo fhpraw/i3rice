@@ -19,7 +19,6 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
-neofetch,A CLI system information tool written in BASH that supports displaying images
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
@@ -36,7 +35,6 @@ tealdeer,A fast tldr client in Rust
 tlp,Linux Advanced Power Management
 ttf-jetbrains-mono,Typeface for developers by Jetbrains
 ttf-nerd-fonts-symbols,High number of extra glyphs from popular iconic fonts 2048em
-ueberzug,cli which allow to display images in combination with X11
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
 wget,Network utility to retrieve files from the Web
