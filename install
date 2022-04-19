@@ -1,25 +1,26 @@
 #!/bin/bash
 
 # Update
-paru -Syyu --noconfirm
+sudo pacman -Syyu --noconfirm
 
 # Install all packages
-paru -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
+sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
 
 # enable TLP
 sudo systemctl enable tlp
 
 # set touchpad
-sudo mkdir -v -p /etc/X11/xorg.conf.d
-sudo cp -v xorg/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo cp -v -r etc /
+
+# copy all configs
+cp -v -r config ~/.config
+cp -v -r dots/{.Xresources,.xinitrc,.xprofile,.scripts} ~/
+echo 'export EDITOR="nvim"' >> ~/.bashrc
+echo 'set -o vi' >> ~/.bashrc
 
 # make directories
 mkdir -v -p ~/Images/Screenshots
 mkdir -v -p ~/Drives/{1..5}
-
-# copy all configs
-cp -v -r config ~/.config
-cp -v -r dots/{.xinitrc,.xprofile,.scripts} ~/
 
 # copy wallpapers
 cp -v -r walls ~/Images/Wallpapers

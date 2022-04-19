@@ -2,6 +2,7 @@ call plug#begin( stdpath( 'data' ) . '/plugged' )
 Plug 'morhetz/gruvbox'
 call plug#end()
 
+set number
 set path+=**
 set wildmenu
 set termguicolors
@@ -13,7 +14,6 @@ set softtabstop=4
 set expandtab
 set autoindent
 set foldmethod=manual
-set nowrap
 set background=dark
 silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox

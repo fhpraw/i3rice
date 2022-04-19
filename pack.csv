@@ -7,14 +7,13 @@ dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
+firefox,Browser by Mozilla
 git,the fast distributed version control system
-google-chrome,AUR The popular and trusted web browser by Google
 htop,system process browser
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
 imagemagick,An image viewing or manipulation program
-kitty,A modern hackable featureful OpenGL based terminal emulator
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
@@ -31,13 +30,9 @@ pulseaudio-bluetooth,Bluetooth support for PulseAudio
 pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
-tealdeer,A fast tldr client in Rust
 tlp,Linux Advanced Power Management
-ttf-jetbrains-mono,Typeface for developers by Jetbrains
-ttf-nerd-fonts-symbols,High number of extra glyphs from popular iconic fonts 2048em
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
-wget,Network utility to retrieve files from the Web
 xclip,Command line interface to the X11 clipboard
 xdotool,Command line X11 automation tool
 xf86-video-amdgpu,Xorg amdgpu video driver
@@ -45,6 +40,7 @@ xf86-video-intel,Xorg Intel video drivers
 xorg-server,Xorg X server
 xorg-xbacklight,RandR-based backlight control application
 xorg-xinit,Xorg initialisation program
+xterm,terminal emulator for X
 xwallpaper,Wallpaper setting utility for X
 yt-dlp,A youtubedl fork with additional features and fixes
 zathura,Minimalistic document viewer
