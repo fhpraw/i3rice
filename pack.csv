@@ -1,5 +1,4 @@
 PACKAGES,DESCRIPTION
-acpi,client for battery power and thermal readings
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
