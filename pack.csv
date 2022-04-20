@@ -21,7 +21,7 @@ mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
 noto-fonts,Google Noto TTF fonts
-noto-fonts-CJK,Google Noto CJK fonts
+noto-fonts-cjk,Google Noto CJK fonts
 noto-fonts-emoji,Google Noto Emoji fonts
 noto-fonts-extra,Google Noto TTF fonts additional variants
 ntfs-3g,NTFS filesystem driver and utilities
