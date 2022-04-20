@@ -14,6 +14,7 @@ i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
 imagemagick,An image viewing or manipulation program
+kitty,Terminal Emulator
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
@@ -31,9 +32,7 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
-tamsyn-font,Tamsyn font
 tmux,terminal multiplexer
-terminus-font,terminus font
 ttf-nerd-fonts-symbols,Nerd Font Symbols
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
@@ -44,7 +43,6 @@ xf86-video-intel,Xorg Intel video drivers
 xorg-server,Xorg X server
 xorg-xbacklight,RandR-based backlight control application
 xorg-xinit,Xorg initialisation program
-xterm,terminal emulator for X
 xwallpaper,Wallpaper setting utility for X
 yt-dlp,A youtubedl fork with additional features and fixes
 zathura,Minimalistic document viewer
