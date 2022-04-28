@@ -10,7 +10,7 @@ Using `cfdisk`, create partition plan based on table below:
 
 | Partition | Size                          | Type                    | Mount |
 | --------- | ----------------------------- | ----------------------- | ----- |
-| /dev/sda1 | 260M                          | EFI System              | /efi  |
+| /dev/sda1 | 300M                          | EFI System              | /efi  |
 | /dev/sda3 | rest of disk space            | Linux filesystem (root) | /     |
 
 ## Formating Partition
