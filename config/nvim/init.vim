@@ -14,9 +14,11 @@ set softtabstop=4
 set expandtab
 set autoindent
 set foldmethod=manual
+
 set background=dark
 silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
+
 inoremap jk <esc>
 nnoremap <space>ev :edit $MYVIMRC<cr>
 vnoremap <space>y "+y
