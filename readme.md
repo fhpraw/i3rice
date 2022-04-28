@@ -135,3 +135,10 @@ Back to installer root and Reboot
 exit
 reboot
 ```
+# installing rice
+
+Download this repository and run
+
+```shell
+./install
+```
