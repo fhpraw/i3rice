@@ -4,7 +4,7 @@
 sudo pacman -Syyu --noconfirm
 
 # Install all packages
-sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs)
+sudo pacman -S --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}' | xargs) || exit 1
 
 # enable TLP
 sudo systemctl enable tlp
