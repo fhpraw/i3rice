@@ -19,7 +19,7 @@ interval=once
 signal=5
 
 [capslock]
-label=CAP:
+label=CAPS:
 command=xset -q | grep Caps | awk '{print $4}' 
 interval=once
 signal=3
