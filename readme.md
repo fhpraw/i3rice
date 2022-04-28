@@ -2,6 +2,8 @@
 
 My personal Archlinux Ricing
 
+![Alt text](screenshot.jpg)
+
 # Installing Archlinux
 
 ## Prepare Partition
