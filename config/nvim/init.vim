@@ -1,5 +1,10 @@
 call plug#begin( stdpath( 'data' ) . '/plugged' )
 Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set number

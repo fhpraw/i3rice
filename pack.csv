@@ -9,6 +9,7 @@ exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
 firefox,Browser by Mozilla
 git,the fast distributed version control system
+highlight,highlight code
 htop,system process browser
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
@@ -35,6 +36,7 @@ tlp,Linux Advanced Power Management
 tmux,terminal multiplexer
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols,Nerd Font Symbols
+ueberzug,Display image in term emulator
 unrar,archive and extract zip and extract rar
 unzip,For extracting and viewing files in zip archives
 xclip,Command line interface to the X11 clipboard

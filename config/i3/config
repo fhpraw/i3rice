@@ -35,7 +35,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill 
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Search exec --no-startup-id firefox
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#504945'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'Noto Sans UI:style=Bold:pixelsize=16' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#458588'
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
 # i3
@@ -94,10 +94,10 @@ bindsym $mod+Shift+u exec --no-startup-id ~/.scripts/umountdrv
 # moving window mode
 bindsym $mod+m mode "Move"
 mode "Move" {
-    bindsym h move left 10px
-    bindsym j move down 10px
-    bindsym k move up 10px
-    bindsym l move right 10px
+    bindsym h move left 50px
+    bindsym j move down 50px
+    bindsym k move up 50px
+    bindsym l move right 50px
     bindsym c move absolute position center
     bindsym Escape mode "default"
 }
@@ -105,10 +105,10 @@ mode "Move" {
 # resizing window mode
 bindsym $mod+r mode "Resize"
 mode "Resize" {
-  bindsym h resize shrink width 30px
-  bindsym j resize grow height 30px
-  bindsym k resize shrink height 30px
-  bindsym l resize grow width 30px
+  bindsym h resize shrink width 50px
+  bindsym j resize grow height 50px
+  bindsym k resize shrink height 50px
+  bindsym l resize grow width 50px
   bindsym Escape mode "default"
 }
 
@@ -130,29 +130,29 @@ mode "Settings" {
 }
 
 # set titlebar font
-font pango: JetBrainsMono Bold 8
+font pango: Noto Sans UI ExtraBold 10
+default_border pixel 3
 
 bar {
-    position bottom
+    font pango: Noto Sans UI ExtraBold 10
+    position top
     status_command i3blocks
-    font pango: JetBrainsMono Bold 9
     colors {
-        background #1d2021
+        background #282828
         statusline #ebdbb2
-        separator #665c54
 
-        focused_workspace  #504945 #504945 #fbf1c7
-        active_workspace   #1d2021 #1d2021 #fbf1c7
-        inactive_workspace #1d2021 #1d2021 #fbf1c7
-        urgent_workspace   #cc241d #cc241d #fbf1c7
-        binding_mode       #cc241d #cc241d #fbf1c7
+        focused_workspace  #458588 #458588 #ebdbb2
+        active_workspace   #282828 #282828 #ebdbb2
+        inactive_workspace #282828 #282828 #ebdbb2
+        urgent_workspace   #cc241d #cc241d #ebdbb2
+        binding_mode       #cc241d #cc241d #ebdbb2
     }
 }
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #504945 #504945 #fbf1c7 #a89984   #504945
-client.focused_inactive #1d2021 #1d2021 #928374 #484e50   #1d2021
-client.unfocused        #1d2021 #1d2021 #928374 #292d2e   #1d2021
-client.urgent           #cc241d #cc241d #fbf1c7 #900000   #cc241d
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-client.background       #fbf1c7
+# class                 border  backgr. text    indctr  ch_brdr
+client.focused          #458588 #458588 #ebdbb2 #ebdbb2 #458588
+client.focused_inactive #1d2021 #1d2021 #ebdbb2 #ebdbb2 #282828
+client.unfocused        #1d2021 #1d2021 #ebdbb2 #ebdbb2 #282828
+client.urgent           #cc241d #cc241d #ebdbb2 #ebdbb2 #cc241d
+client.placeholder      #1d2021 #1d2021 #ebdbb2 #ebdbb2 #282828
+client.background       #ebdbb2
