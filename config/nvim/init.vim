@@ -6,7 +6,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-set number
 set path+=**
 set wildmenu
 set termguicolors
