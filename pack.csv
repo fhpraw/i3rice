@@ -1,4 +1,5 @@
 PACKAGES,DESCRIPTION
+acpi,Client for battery power and thermal readings
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
@@ -11,7 +12,7 @@ firefox,Browser by Mozilla
 git,the fast distributed version control system
 highlight,highlight code
 htop,system process browser
-i3-wm,Improved dynamic tiling window manager
+i3-gaps,A fork of i3wm tiling window manager with more features like gaps
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
 imagemagick,An image viewing or manipulation program
@@ -33,6 +34,7 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
+tldr,a collection of simplified and community-driven man page
 tmux,terminal multiplexer
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols,Nerd Font Symbols
