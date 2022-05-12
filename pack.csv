@@ -12,7 +12,7 @@ firefox,Browser by Mozilla
 git,the fast distributed version control system
 highlight,highlight code
 htop,system process browser
-i3-gaps,A fork of i3wm tiling window manager with more features like gaps
+i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
 imagemagick,An image viewing or manipulation program
