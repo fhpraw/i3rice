@@ -131,7 +131,7 @@ mode "Settings" {
 
 # set titlebar font
 font pango: Noto Sans UI ExtraBold 10
-default_border pixel 3
+default_border normal 2
 
 bar {
     font pango: Noto Sans UI ExtraBold 10

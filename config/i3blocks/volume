@@ -1,0 +1,5 @@
+#!/bin/bash
+[ $(pulsemixer --get-mute) -eq 0 ] && volume=$(pulsemixer --get-volume | awk '{print int($1)}')
+[ "$volume" -lt 15 ] && echo "奄  $volume%" 
+[ "$volume" -lt 35 ] && [ "$volume" -gt 15 ] &&  echo "奔  $volume%" 
+[ "$volume" -gt 35 ] &&  echo "墳  $volume%" 

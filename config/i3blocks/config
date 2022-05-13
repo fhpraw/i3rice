@@ -1,44 +1,42 @@
-separator=false
+separator=true
 separator_block_width=30
 
+[capslock]
+command=[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo CAPS 
+interval=once
+signal=3
+
 [mic]
-command=[ $(pulsemixer --list-sources | grep 'Default' | awk -F ', ' '{print $3}' | awk '{print $2}') -eq 0 ] && echo 🎤
+command=[ $(pulsemixer --list-sources | grep 'Default' | awk -F ', ' '{print $3}' | awk '{print $2}') -eq 0 ] && echo MIC
 interval=once
 signal=4
 
 [bluetooth]
-command=[ $(bluetooth | awk '{print $3}') = on ] && echo 
+command=[ $(bluetooth | awk '{print $3}') = on ] && echo BT 
 interval=once
 signal=6
 
 [wifi]
-command=[ $(wifi | awk '{print $3}') = on ] && echo 
+command=[ $(wifi | awk '{print $3}') = on ] && echo WIFI
 interval=once
 signal=5
 
 [connection]
-command=nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}' | sed 's/^/🖥️ /'
+command=echo " $(nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}')"
 interval=5
 
-[capslock]
-command=[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo 🔠
-interval=once
-signal=3
-
 [volume]
-command=[ $(pulsemixer --get-mute) -eq 0 ] && echo "📢 $(pulsemixer --get-volume | awk '{print $1}')"
+command=./volume
 interval=once
 signal=1
 
 [brightness]
-label=🔆
-command=xbacklight -get | awk '{print int($1)}'
+command=echo " $(xbacklight -get | awk '{print int($1)}')%"
 interval=once
 signal=2
 
 [battery]
-label=🔋
-command=head /sys/class/power_supply/BAT0/capacity
+command=./power
 interval=5
 
 [time]

@@ -1,0 +1,18 @@
+#!/bin/bash
+data=$(acpi)
+capacity=$(echo $data | awk '{print int($4)}')
+stat=$(echo $data | awk -F"[, ]" '{print $3}')
+
+if [ "$stat" = "Discharging" ]
+then
+    [ "$capacity" -lt 15 ] && icon="  CRITICAL"
+    [ "$capacity" -lt 30 ] && [ "$capacity" -gt 15 ] && icon="  "
+    [ "$capacity" -lt 65 ] && [ "$capacity" -gt 30 ] && icon="  "
+    [ "$capacity" -lt 85 ] && [ "$capacity" -gt 65 ] && icon="  "
+    [ "$capacity" -gt 85 ] && icon="  "
+fi
+
+[ "$stat" = "Charging" ] && icon=" "
+[ "$stat" = "Not" ] && icon=" FULL"
+
+echo "$icon $capacity%"
