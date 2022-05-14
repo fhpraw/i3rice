@@ -16,15 +16,14 @@ command=[ $(bluetooth | awk '{print $3}') = on ] && echo BT
 interval=once
 signal=6
 
+[connection]
+command=nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}' | sed -e 's/^/NET /'
+interval=5
+
 [wifi]
 command=[ $(wifi | awk '{print $3}') = on ] && echo WIFI
 interval=once
 signal=5
-
-[connection]
-label=NET
-command=echo " $(nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}')"
-interval=5
 
 [volume]
 command=[ $(pulsemixer --get-mute) -eq 0 ] && vol=$(pulsemixer --get-volume | awk '{print int($1)}') && echo "VOL $vol%"
