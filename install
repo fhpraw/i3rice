@@ -14,7 +14,7 @@ sudo cp -v -r etc /
 
 # copy all configs
 cp -v -r config ~/.config
-cp -v -r dots/{.xinitrc,.xprofile,.scripts} ~/
+cp -v -r dots/{.bash_profile,.xinitrc,.xprofile,.scripts} ~/
 echo 'export EDITOR="nvim"' >> ~/.bashrc
 echo 'set -o vi' >> ~/.bashrc
 
