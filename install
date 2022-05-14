@@ -19,6 +19,7 @@ echo 'export EDITOR="nvim"' >> ~/.bashrc
 echo 'set -o vi' >> ~/.bashrc
 
 # make directories
+mkdir -v -p ~/{Documents,Downloads,Images,Videos,Projects}
 mkdir -v -p ~/Images/Screenshots
 mkdir -v -p ~/Drives/{1..5}
 
