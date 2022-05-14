@@ -35,7 +35,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill 
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Search exec --no-startup-id firefox
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'Noto Sans UI:style=Bold:pixelsize=16' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#458588'
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#458588'
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
 # i3
@@ -130,13 +130,12 @@ mode "Settings" {
 }
 
 # set titlebar font
-font pango: Noto Sans UI ExtraBold 10
-default_border normal 2
+font pango: JetBrainsMono Bold 9
 
 bar {
-    font pango: Noto Sans UI ExtraBold 10
-    position top
+    font pango: JetBrainsMono ExtraBold 10
     status_command i3blocks
+    position top
     colors {
         background #282828
         statusline #ebdbb2

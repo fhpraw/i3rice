@@ -1,6 +1,6 @@
 # i3rice
 
-My personal Archlinux Ricing with i3 Window Manager
+i3 Window Manager Ricing with Gruvbox,Archlinux only
 
 ![Alt text](screenshot.jpg)
 

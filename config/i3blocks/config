@@ -22,21 +22,25 @@ interval=once
 signal=5
 
 [connection]
-command=echo " $(nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}')"
+label=NET
+command=echo " $(nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}')"
 interval=5
 
 [volume]
-command=./volume
+label=VOL
+command=echo " $([ $(pulsemixer --get-mute) -eq 0 ] && pulsemixer --get-volume | awk '{print int($1)}')%"
 interval=once
 signal=1
 
 [brightness]
-command=echo " $(xbacklight -get | awk '{print int($1)}')%"
+label=BRG
+command=echo " $(xbacklight -get | awk '{print int($1)}')%"
 interval=once
 signal=2
 
 [battery]
-command=./power
+label=BAT
+command=echo " $(acpi | awk -F',' '{print int($2)}')%"
 interval=5
 
 [time]
