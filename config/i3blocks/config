@@ -1,5 +1,5 @@
 separator=true
-separator_block_width=30
+separator_block_width=40
 
 [capslock]
 command=[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo CAPS 
@@ -12,7 +12,7 @@ interval=once
 signal=4
 
 [bluetooth]
-command=[ $(bluetooth | awk '{print $3}') = on ] && echo BT 
+command=[ $(bluetooth | awk '{print $3}') = on ] && echo BLUETOOTH 
 interval=once
 signal=6
 
@@ -31,14 +31,12 @@ interval=once
 signal=1
 
 [brightness]
-label=BRG
-command=echo " $(xbacklight -get | awk '{print int($1)}')%"
+command=echo "BRG $(xbacklight -get | cut -d'.' -f 1)%"
 interval=once
 signal=2
 
 [battery]
-label=BAT
-command=echo " $(acpi | awk -F',' '{print int($2)}')%"
+command=echo "BAT $(head /sys/class/power_supply/BAT0/capacity)%"
 interval=5
 
 [time]

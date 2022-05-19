@@ -1,5 +1,4 @@
 PACKAGES,DESCRIPTION
-acpi,Client for battery power and thermal readings
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
@@ -8,7 +7,6 @@ dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
-firefox,Browser by Mozilla
 git,the fast distributed version control system
 highlight,highlight code
 htop,system process browser
@@ -35,7 +33,6 @@ ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
 tldr,a collection of simplified and community-driven man page
-tmux,terminal multiplexer
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols,Nerd Font Symbols
 unrar,archive and extract zip and extract rar
