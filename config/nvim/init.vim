@@ -1,4 +1,5 @@
 call plug#begin( stdpath( 'data' ) . '/plugged' )
+Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
@@ -17,6 +18,7 @@ set softtabstop=4
 set expandtab
 set autoindent
 set foldmethod=manual
+set noshowmode
 
 set background=dark
 silent! let g:gruvbox_contrast_dark = 'hard'
