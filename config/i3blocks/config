@@ -1,5 +1,5 @@
-separator=true
-separator_block_width=40
+separator=false
+separator_block_width=20
 
 [capslock]
 command=[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo CAPS 
@@ -40,5 +40,5 @@ command=echo "BAT $(head /sys/class/power_supply/BAT0/capacity)%"
 interval=5
 
 [time]
-command=date '+%a %b %d %H:%M ' 
+command=echo "$(date '+%a %b %d %H:%M') "
 interval=60
