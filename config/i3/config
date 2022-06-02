@@ -130,7 +130,7 @@ mode "Settings" {
 }
 
 # set titlebar font
-font pango: JetBrainsMono ExtraBold 8
+font pango: JetBrainsMono ExtraBold 9
 
 bar {
     font pango: JetBrainsMono ExtraBold 10
