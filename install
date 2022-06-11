@@ -15,7 +15,7 @@ sudo cp -v -r etc /
 # copy all configs
 cp -v -r config ~/.config
 cp -v -r dots/{.bash_profile,.xinitrc,.xprofile,.scripts,.vimrc} ~/
-echo 'export EDITOR="nvim"' >> ~/.bashrc
+echo 'export EDITOR="vim"' >> ~/.bashrc
 echo 'set -o vi' >> ~/.bashrc
 
 # make directories
