@@ -34,8 +34,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec pkil
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
-bindsym XF86Search exec --no-startup-id google-chrome-stable
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=ExtraBold:pixelsize=14'
+bindsym XF86Search exec --no-startup-id firefox
+bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Bold:pixelsize=14' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f'
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
 # i3
@@ -129,11 +129,61 @@ mode "Settings" {
   bindsym Escape mode "default"
 }
 
+# Dark Gruvbox Colorscheme
+set $hblack  #1d2021
+set $sblack  #32302f
+set $black   #282828
+set $black1  #3c3836
+set $black2  #504945
+set $black3  #665c54
+set $black4  #7c6f64
+set $hwhite  #fbf1c7
+set $white   #ebdbb2
+set $white1  #d5c4a1
+set $white2  #bdae93
+set $white3  #a89984
+set $gray    #928374
+set $red     #cc241d
+set $lred    #fb4934
+set $green   #98971a
+set $lgreen  #b8bb26
+set $yellow  #d79921
+set $lyellow #fabd2f
+set $blue    #458588
+set $lblue   #83a598
+set $purple  #b16286
+set $lpurple #d3869b
+set $aqua    #689d6a
+set $laqua   #8ec07c
+set $oren    #d65d0e
+set $loren   #fe8019
+
+# Window color
+# class                 border  bground text     indctor cborder
+client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
+client.unfocused        $hblack $hblack $black3  $black3 $hblack
+client.focused_inactive $black1 $black1 $black4  $black4 $black1
+client.urgent           $red    $red    $white   $black3 $red
+client.placeholder      $yellow $yellow $black   $black3 $yellow
+client.background       $white
+
 # set titlebar font
-font pango: JetBrainsMono ExtraBold 8
+font pango: JetBrainsMono Bold 9
 
 bar {
-    font pango: JetBrainsMono ExtraBold 10
+    font pango: JetBrainsMono Bold 9
     status_command i3blocks
     position top
+    # color on bar
+    colors {
+        background         $sblack
+        statusline         $lblue
+        separator          $lgreen
+
+        focused_workspace  $lblue   $lblue   $sblack
+        active_workspace   $loren   $loren   $sblack
+        inactive_workspace $sblack  $sblack  $laqua
+        urgent_workspace   $lred    $lred    $sblack
+        binding_mode       $lgreen  $lgreen  $sblack
+    }
 }
