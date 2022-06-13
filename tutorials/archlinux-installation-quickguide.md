@@ -69,10 +69,15 @@ echo 'LANG=en_US.UTF-8' > /etc/locale.conf
 
 ## Set Network
 
-Enable Network Manager at startup
+Install Network Manager
 
 ```shell
 pacman -S networkmanager
+```
+
+Enable Network Manager at startup
+
+```shell
 systemctl enable NetworkManager
 ```
 
@@ -98,10 +103,15 @@ passwd
 
 ## Set Boot Manager
 
-Using GRUB
+Install GRUB with EFI support
 
 ```shell
 pacman -S grub efibootmgr
+```
+
+Configure GRUB
+
+```shell
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
@@ -111,12 +121,17 @@ grub-mkconfig -o /boot/grub/grub.cfg
 add new user set to wheel group
 
 ```shell
-pacman -S sudo
 useradd -m -g wheel youruser
 passwd youruser
 ```
 
-edit `/etc/sudoers` and uncomment this to allow wheel group execute as root:
+Install `sudo`
+
+```shell
+pacman -S sudo
+```
+
+edit `/etc/sudoers` and uncomment this line to allow wheel group execute as root:
 
 ```text
 %wheel ALL=(ALL) ALL
