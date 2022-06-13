@@ -1,4 +1,4 @@
-# Installing Archlinux
+# Installing Minimal Archlinux
 
 ## Prepare Partition
 
