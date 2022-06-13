@@ -29,7 +29,7 @@ mount /dev/sda1 /mnt/efi
 ## Install minimum packages
 
 ```shell
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware vi
 ```
 
 ## Generate fstab
@@ -58,7 +58,6 @@ hwclock --systohc
 Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8` and generate
 
 ```shell
-vi /etc/locale.gen
 locale-gen
 ```
 
