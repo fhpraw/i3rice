@@ -1,5 +1,10 @@
-call plug#begin()
+call plug#begin( stdpath( 'data' ) . '/plugged' )
+Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set path+=**
@@ -13,13 +18,13 @@ set softtabstop=4
 set expandtab
 set autoindent
 set foldmethod=manual
+set noshowmode
 
 set background=dark
 silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
 
 inoremap jk <esc>
-nnoremap <space><space> :nohl<cr>
 nnoremap <space>ev :edit $MYVIMRC<cr>
 vnoremap <space>y "+y
 nnoremap <space>p "+gP
