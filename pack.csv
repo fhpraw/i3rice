@@ -9,7 +9,6 @@ exfat-utils,Utilities for exFAT file system
 ffmpeg,Complete solution to record convert and stream audio and video
 firefox,Standalone web browser from mozilla
 git,the fast distributed version control system
-gvim,Vi Improved with GUI
 highlight,highlight code
 htop,system process browser
 i3-wm,Improved dynamic tiling window manager
@@ -21,6 +20,7 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
+neovim,Fork of Vim aiming to improve user experience plugins and GUIs
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
 noto-fonts-emoji,Google Noto Emoji fonts
