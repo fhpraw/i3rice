@@ -1,10 +1,8 @@
 # i3rice
 
-After Minimal Archlinux Installation Script
-
 ![Alt text](screenshot.jpg)
 
-Download this repository and run
+After Minimal Archlinux Installation (check tutorial on folder), download this repository and run
 
 ```shell
 ./install
