@@ -29,7 +29,7 @@ mount /dev/sda1 /mnt/efi
 ## Install minimum packages
 
 ```shell
-pacstrap /mnt base linux linux-firmware vi
+pacstrap /mnt base linux linux-firmware
 ```
 
 ## Generate fstab
@@ -61,7 +61,7 @@ Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8` and generate
 locale-gen
 ```
 
-Edit `/etc/locale.conf`, set `LANG=en_US.UTF-8`
+Edit `/etc/locale.conf`, add `LANG=en_US.UTF-8`
 
 ```shell
 echo 'LANG=en_US.UTF-8' > /etc/locale.conf
