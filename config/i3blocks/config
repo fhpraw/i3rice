@@ -40,5 +40,5 @@ command=scripts/battery
 interval=5
 
 [time]
-command=scripts/time
+command=scripts/timedate
 interval=60
