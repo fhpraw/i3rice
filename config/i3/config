@@ -34,7 +34,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec pkil
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
-bindsym XF86Search exec --no-startup-id google-chrome-stable
+bindsym XF86Tools mode "Settings" 
+bindsym XF86Search exec --no-startup-id firefox
 bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Bold:pixelsize=14' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f'
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
@@ -94,38 +95,38 @@ bindsym $mod+Shift+u exec --no-startup-id ~/.scripts/umountdrv
 # moving window mode
 bindsym $mod+m mode "Move"
 mode "Move" {
-    bindsym h move left 50px
-    bindsym j move down 50px
-    bindsym k move up 50px
-    bindsym l move right 50px
-    bindsym c move absolute position center
+    bindsym $mod+h move left 50px
+    bindsym $mod+j move down 50px
+    bindsym $mod+k move up 50px
+    bindsym $mod+l move right 50px
+    bindsym $mod+c move absolute position center
     bindsym Escape mode "default"
 }
 
 # resizing window mode
 bindsym $mod+r mode "Resize"
 mode "Resize" {
-  bindsym h resize shrink width 50px
-  bindsym j resize grow height 50px
-  bindsym k resize shrink height 50px
-  bindsym l resize grow width 50px
+  bindsym $mod+h resize shrink width 50px
+  bindsym $mod+j resize grow height 50px
+  bindsym $mod+k resize shrink height 50px
+  bindsym $mod+l resize grow width 50px
   bindsym Escape mode "default"
 }
 
 # screenshot mode
 bindsym $mod+Print mode "Screenshot"
 mode "Screenshot" {
-  bindsym --release f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release $mod+f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release $mod+w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+  bindsym --release $mod+s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
   bindsym Escape mode "default"
 }
 
 # settings mode
-bindsym XF86Tools mode "Settings" 
+bindsym $mod+Shift+s mode "Settings" 
 mode "Settings" {
-  bindsym w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg 
-  bindsym b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
+  bindsym $mod+w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg 
+  bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
   bindsym Escape mode "default"
 }
 
