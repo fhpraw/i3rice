@@ -1,0 +1,1 @@
+[ $(bluetooth | awk '{print $3}') = on ] && echo 
