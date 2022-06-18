@@ -1,2 +1,1 @@
 export SUDO_ASKPASS=~/.scripts/dpass
-xwallpaper --zoom ~/.config/wallpaper.jpg
