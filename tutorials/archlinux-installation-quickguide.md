@@ -7,7 +7,7 @@ Using `cfdisk`, create partition plan based on table below:
 | Partition | Size                          | Type                    | Mount |
 | --------- | ----------------------------- | ----------------------- | ----- |
 | /dev/sda1 | 300M                          | EFI System              | /efi  |
-| /dev/sda3 | rest of disk space            | Linux filesystem (root) | /     |
+| /dev/sda2 | rest of disk space            | Linux filesystem (root) | /     |
 
 ## Formating Partition
 
@@ -145,4 +145,3 @@ Back to installer root and Reboot
 exit
 reboot
 ```
-
