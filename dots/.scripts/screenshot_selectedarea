@@ -1,0 +1,1 @@
+maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg

@@ -1,5 +1,57 @@
-# Modkey, assign to Windows button
 set $mod Mod4
+set $hblack  #1d2021
+set $sblack  #32302f
+set $black   #282828
+set $black1  #3c3836
+set $black2  #504945
+set $black3  #665c54
+set $black4  #7c6f64
+set $hwhite  #fbf1c7
+set $white   #ebdbb2
+set $white1  #d5c4a1
+set $white2  #bdae93
+set $white3  #a89984
+set $gray    #928374
+set $red     #cc241d
+set $lred    #fb4934
+set $green   #98971a
+set $lgreen  #b8bb26
+set $yellow  #d79921
+set $lyellow #fabd2f
+set $blue    #458588
+set $lblue   #83a598
+set $purple  #b16286
+set $lpurple #d3869b
+set $aqua    #689d6a
+set $laqua   #8ec07c
+set $oren    #d65d0e
+set $loren   #fe8019
+
+font pango: JetBrainsMono Bold 9
+
+client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
+client.unfocused        $hblack $hblack $black3  $black3 $hblack
+client.focused_inactive $black1 $black1 $black4  $black4 $black1
+client.urgent           $red    $red    $white   $black3 $red
+client.placeholder      $yellow $yellow $black   $black3 $yellow
+client.background       $white
+
+bar {
+    colors {
+        background         $sblack
+        statusline         $lblue
+        separator          $lgreen
+
+        focused_workspace  $lblue   $lblue   $sblack
+        active_workspace   $loren   $loren   $sblack
+        inactive_workspace $sblack  $sblack  $laqua
+        urgent_workspace   $lred    $lred    $sblack
+        binding_mode       $lgreen  $lgreen  $sblack
+    }
+
+    status_command i3blocks
+    position top
+}
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -26,18 +78,21 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # multimedia key
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle; exec pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%; exec pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%; exec pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle; exec pkill -SIGRTMIN+4 i3blocks
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10; exec pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10; exec pkill -SIGRTMIN+2 i3blocks
+bindsym XF86AudioMute exec --no-startup-id ~/.scripts/volumemute; exec pkill -SIGRTMIN+1 i3blocks 
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.scripts/volumeup; exec pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.scripts/volumedown; exec pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMicMute exec --no-startup-id ~/.scripts/micmute; exec pkill -SIGRTMIN+4 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.scripts/brightnessdown; exec pkill -SIGRTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.scripts/brightnessup; exec pkill -SIGRTMIN+2 i3blocks
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Tools mode "Settings" 
 bindsym XF86Search exec --no-startup-id google-chrome-stable
-bindsym XF86LaunchA exec --no-startup-id dmenu_run -fn 'JetBrainsMono:style=Bold:pixelsize=14' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f'
+bindsym XF86LaunchA exec --no-startup-id ~/.scripts/menu
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
+
+# dmenu
+bindsym $mod+p exec --no-startup-id ~/.scripts/menu
 
 # i3
 bindsym $mod+Shift+Escape exit
@@ -106,85 +161,26 @@ mode "Move" {
 # resizing window mode
 bindsym $mod+r mode "Resize"
 mode "Resize" {
-  bindsym $mod+h resize shrink width 50px
-  bindsym $mod+j resize grow height 50px
-  bindsym $mod+k resize shrink height 50px
-  bindsym $mod+l resize grow width 50px
-  bindsym Escape mode "default"
+    bindsym $mod+h resize shrink width 50px
+    bindsym $mod+j resize grow height 50px
+    bindsym $mod+k resize shrink height 50px
+    bindsym $mod+l resize grow width 50px
+    bindsym Escape mode "default"
 }
 
 # screenshot mode
 bindsym $mod+Print mode "Screenshot"
 mode "Screenshot" {
-  bindsym --release $mod+f exec --no-startup-id maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release $mod+w exec --no-startup-id maim -u -i $(xdotool getactivewindow) ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym --release $mod+s exec --no-startup-id maim -u -s -o ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
-  bindsym Escape mode "default"
+    bindsym --release $mod+f exec --no-startup-id ~/.scripts/screenshot_fullscreen
+    bindsym --release $mod+w exec --no-startup-id ~/.scripts/screenshot_activewindow
+    bindsym --release $mod+s exec --no-startup-id ~/.scripts/screenshot_selectedarea
+    bindsym Escape mode "default"
 }
 
 # settings mode
 bindsym $mod+Shift+s mode "Settings" 
 mode "Settings" {
-  bindsym $mod+w exec --no-startup-id sxiv -b -r -t -o ~/Images/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg 
-  bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
-  bindsym Escape mode "default"
-}
-
-# Dark Gruvbox Colorscheme
-set $hblack  #1d2021
-set $sblack  #32302f
-set $black   #282828
-set $black1  #3c3836
-set $black2  #504945
-set $black3  #665c54
-set $black4  #7c6f64
-set $hwhite  #fbf1c7
-set $white   #ebdbb2
-set $white1  #d5c4a1
-set $white2  #bdae93
-set $white3  #a89984
-set $gray    #928374
-set $red     #cc241d
-set $lred    #fb4934
-set $green   #98971a
-set $lgreen  #b8bb26
-set $yellow  #d79921
-set $lyellow #fabd2f
-set $blue    #458588
-set $lblue   #83a598
-set $purple  #b16286
-set $lpurple #d3869b
-set $aqua    #689d6a
-set $laqua   #8ec07c
-set $oren    #d65d0e
-set $loren   #fe8019
-
-# Window color
-# class                 border  bground text     indctor cborder
-client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
-client.unfocused        $hblack $hblack $black3  $black3 $hblack
-client.focused_inactive $black1 $black1 $black4  $black4 $black1
-client.urgent           $red    $red    $white   $black3 $red
-client.placeholder      $yellow $yellow $black   $black3 $yellow
-client.background       $white
-
-# set titlebar font
-font pango: JetBrainsMono Bold 9
-
-bar {
-    font pango: JetBrainsMono Bold 9
-    status_command i3blocks
-    position top
-    # color on bar
-    colors {
-        background         $sblack
-        statusline         $lblue
-        separator          $lgreen
-
-        focused_workspace  $lblue   $lblue   $sblack
-        active_workspace   $loren   $loren   $sblack
-        inactive_workspace $sblack  $sblack  $laqua
-        urgent_workspace   $lred    $lred    $sblack
-        binding_mode       $lgreen  $lgreen  $sblack
-    }
+    bindsym $mod+w exec --no-startup-id ~/.scripts/setwallpaper
+    bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
+    bindsym Escape mode "default"
 }
