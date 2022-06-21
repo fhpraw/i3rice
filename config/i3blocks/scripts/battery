@@ -1,1 +1,1 @@
-b=$(head /sys/class/power_supply/BAT0/capacity); c=🔋; [ $b -lt 15 ] && c=🪫 ; [ "Charging" = $(head /sys/class/power_supply/BAT0/status) ] && c=🔌; echo $c$b%
+b=$(head /sys/class/power_supply/BAT0/capacity); c=Battery; [ $b -lt 15 ] && c=Lowbat ; [ "Charging" = $(head /sys/class/power_supply/BAT0/status) ] && c=Plugged; echo $c$b%
