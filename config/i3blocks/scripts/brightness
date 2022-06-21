@@ -1,1 +1,1 @@
-echo "🔆 $(xbacklight -get | cut -d'.' -f 1)%"
+echo "Brightness $(xbacklight -get | cut -d'.' -f 1)%"
