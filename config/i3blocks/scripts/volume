@@ -1,1 +1,1 @@
-[ $(pulsemixer --get-mute) -eq 0 ] && vol=$(pulsemixer --get-volume | awk '{print int($1)}') && echo "📢 $vol%"
+[ $(pulsemixer --get-mute) -eq 0 ] && vol=$(pulsemixer --get-volume | awk '{print int($1)}') && echo "Volume $vol%"
