@@ -169,8 +169,8 @@ mode "Resize" {
 }
 
 # screenshot mode
-bindsym $mod+Print mode "Screenshot"
-mode "Screenshot" {
+bindsym Print mode "Printscreen"
+mode "Printscreen" {
     bindsym --release $mod+f exec --no-startup-id ~/.scripts/screenshot_fullscreen
     bindsym --release $mod+w exec --no-startup-id ~/.scripts/screenshot_activewindow
     bindsym --release $mod+s exec --no-startup-id ~/.scripts/screenshot_selectedarea
@@ -184,3 +184,5 @@ mode "Settings" {
     bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
     bindsym Escape mode "default"
 }
+
+default_border pixel 3
