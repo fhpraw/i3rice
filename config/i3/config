@@ -169,7 +169,7 @@ mode "Resize" {
 }
 
 # screenshot mode
-bindsym Print mode "Printscreen"
+bindsym $mod+Print mode "Printscreen"
 mode "Printscreen" {
     bindsym --release $mod+f exec --no-startup-id ~/.scripts/screenshot_fullscreen
     bindsym --release $mod+w exec --no-startup-id ~/.scripts/screenshot_activewindow
