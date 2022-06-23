@@ -87,7 +87,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.scripts/brightnessup; exec p
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Tools mode "Settings" 
-bindsym XF86Search exec --no-startup-id google-chrome-stable
+bindsym XF86Search exec --no-startup-id firefox
 bindsym XF86LaunchA exec --no-startup-id ~/.scripts/menu
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 
