@@ -6,8 +6,6 @@ set path+=**
 set wildmenu
 set termguicolors
 set incsearch
-set hlsearch
-set ignorecase
 set shiftwidth=4
 set softtabstop=4
 set expandtab

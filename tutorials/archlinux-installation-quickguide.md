@@ -46,6 +46,12 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
+## Install text editor
+
+```shell
+pacman -S neovim
+```
+
 ## Set Time Zone
 
 ```shell
