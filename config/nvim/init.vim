@@ -6,6 +6,8 @@ set path+=**
 set wildmenu
 set termguicolors
 set incsearch
+set hlsearch
+set ignorecase
 set shiftwidth=4
 set softtabstop=4
 set expandtab
@@ -14,7 +16,6 @@ set foldmethod=manual
 set noshowmode
 
 set background=dark
-silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
 
 inoremap jk <esc>
