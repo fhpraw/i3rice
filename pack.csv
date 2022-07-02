@@ -27,6 +27,8 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
+ttf-jetbrains-mono,Typeface for developers by JetBrains
+ttf-nerd-fonts-symbols,High number of extra glyphs from popular iconic fonts
 xclip,Command line interface to the X11 clipboard
 xdotool,Command line X11 automation tool
 xf86-video-amdgpu,Xorg amdgpu video driver
