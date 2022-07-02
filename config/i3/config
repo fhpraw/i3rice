@@ -27,7 +27,7 @@ set $laqua   #8ec07c
 set $oren    #d65d0e
 set $loren   #fe8019
 
-font pango: Noto Sans UI Bold 10
+font pango: JetBrainsMono ExtraBold 10
 
 client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
 client.unfocused        $hblack $hblack $black3  $black3 $hblack
