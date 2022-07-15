@@ -184,5 +184,3 @@ mode "Settings" {
     bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
     bindsym Escape mode "default"
 }
-
-default_border pixel 3
