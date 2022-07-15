@@ -2,7 +2,6 @@ PACKAGES,DESCRIPTION
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
-cmus,Feature rich ncurses based music player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
