@@ -1,2 +1,2 @@
 #!/bin/bash
-dmenu -p "$1" <&- && echo
+dmenu -fn 'JetBrainsMono:style=Bold:pixelsize=14' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f' -p "$1" <&- && echo 

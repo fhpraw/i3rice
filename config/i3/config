@@ -1,4 +1,5 @@
 set $mod Mod4
+set $mod Mod4
 set $hblack  #1d2021
 set $sblack  #32302f
 set $black   #282828
@@ -30,8 +31,8 @@ set $loren   #fe8019
 font pango: JetBrainsMono ExtraBold 10
 
 client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
-client.unfocused        $hblack $hblack $black3  $black3 $hblack
-client.focused_inactive $black1 $black1 $black4  $black4 $black1
+client.unfocused        $sblack $sblack $lblue   $black3 $sblack
+client.focused_inactive $black  $black  $black4  $black4 $black
 client.urgent           $red    $red    $white   $black3 $red
 client.placeholder      $yellow $yellow $black   $black3 $yellow
 client.background       $white
@@ -52,6 +53,8 @@ bar {
     status_command i3blocks
     position top
 }
+
+for_window [class="^.*"] title_format " >> %title"
 
 # switch workspace
 bindsym $mod+1 workspace number 1
@@ -87,7 +90,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.scripts/brightnessup; exec p
 bindsym XF86Display exec --no-startup-id arandr 
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Tools mode "Settings" 
-#bindsym XF86Search exec --no-startup-id firefox
+bindsym XF86Search exec --no-startup-id google-chrome-stable
 bindsym XF86LaunchA exec --no-startup-id ~/.scripts/menu
 bindsym XF86Explorer exec --no-startup-id kitty -e ranger
 

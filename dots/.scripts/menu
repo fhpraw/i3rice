@@ -1,1 +1,2 @@
-dmenu_run -fn 'Noto Sans UI:style=Bold:pixelsize=16' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f'
+#!/bin/bash
+dmenu_run -fn 'JetBrainsMono:style=Bold:pixelsize=14' -nb '#32302f' -nf '#83a598' -sb '#83a598' -sf '#32302f'
