@@ -42,5 +42,6 @@ xorg-server,Xorg X server
 xorg-xbacklight,RandR-based backlight control application
 xorg-xinit,Xorg initialisation program
 xwallpaper,Wallpaper setting utility for X
+yt-dlp,A youtube-dl fork with additional features and fixes
 zathura,Minimalistic document viewer
 zathura-pdf-mupdf,PDF support for Zathura MuPDF backend support PDF ePub and OpenXPS
