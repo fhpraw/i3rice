@@ -1,1 +1,1 @@
-[ $(pulsemixer --list-sources | grep 'Default' | awk -F ', ' '{print $3}' | awk '{print $2}') -eq 0 ] && echo Mic
+[ $(pulsemixer --list-sources | grep 'Default' | awk -F ', ' '{print $3}' | awk '{print $2}') -eq 0 ] && echo " MIC "

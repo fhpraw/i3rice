@@ -1,5 +1,8 @@
 call plug#begin( stdpath( 'data' ) . '/plugged' )
 Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'mhinz/vim-startify' 
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set path+=**

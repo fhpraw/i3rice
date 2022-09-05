@@ -2,13 +2,19 @@ PACKAGES,DESCRIPTION
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
+cmus,Feature-rich ncurses-based audio player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
+ffmpeg,Complete solution to record convert and stream audio and video 
+gimp,GNU Image Manipulation Program 
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
+imagemagick,An image viewing/manipulation program
+inkscape,Professional vector graphics editor
 kitty,Terminal Emulator
+libreoffice-fresh,LibreOffice branch which contains new features and program enhancements
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs 
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
