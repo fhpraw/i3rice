@@ -1,60 +1,31 @@
 set $mod Mod4
-set $mod Mod4
-set $hblack  #1d2021
-set $sblack  #32302f
-set $black   #282828
-set $black1  #3c3836
-set $black2  #504945
-set $black3  #665c54
-set $black4  #7c6f64
-set $hwhite  #fbf1c7
-set $white   #ebdbb2
-set $white1  #d5c4a1
-set $white2  #bdae93
-set $white3  #a89984
-set $gray    #928374
-set $red     #cc241d
-set $lred    #fb4934
-set $green   #98971a
-set $lgreen  #b8bb26
-set $yellow  #d79921
-set $lyellow #fabd2f
-set $blue    #458588
-set $lblue   #83a598
-set $purple  #b16286
-set $lpurple #d3869b
-set $aqua    #689d6a
-set $laqua   #8ec07c
-set $oren    #d65d0e
-set $loren   #fe8019
+font pango: JetBrainsMono Bold 9
 
-font pango: JetBrainsMono ExtraBold 10
-
-client.focused          $lblue  $lblue  $sblack  $lgreen $lblue
-client.unfocused        $sblack $sblack $lblue   $black3 $sblack
-client.focused_inactive $black  $black  $black4  $black4 $black
-client.urgent           $red    $red    $white   $black3 $red
-client.placeholder      $yellow $yellow $black   $black3 $yellow
-client.background       $white
+client.focused          #83a598 #83a598 #282828  #d79921 #83a598
+client.unfocused        #282828 #282828 #83a598  #98971a #282828
+client.focused_inactive #282828 #282828 #83a598  #98971a #282828
+client.urgent           #cc241d #cc241d #ebdbb2  #98971a #cc241d
+client.placeholder      #d79921 #d79921 #282828  #98971a #d79921
+client.background       #ebdbb2
 
 bar {
     colors {
-        background         $sblack
-        statusline         $lblue
-        separator          $lgreen
+        background         #282828
+        statusline         #b8bb26
+        separator          #928374
 
-        focused_workspace  $lblue   $lblue   $sblack
-        active_workspace   $loren   $loren   $sblack
-        inactive_workspace $sblack  $sblack  $laqua
-        urgent_workspace   $lred    $lred    $sblack
-        binding_mode       $lgreen  $lgreen  $sblack
+        focused_workspace  #83a598   #83a598   #282828
+        active_workspace   #d79921   #d79921   #282828
+        inactive_workspace #282828   #282828   #b8bb26
+        urgent_workspace   #cc241d   #cc241d   #282828
+        binding_mode       #b8bb26   #b8bb26   #282828
     }
 
     status_command i3blocks
     position top
 }
 
-for_window [class="^.*"] title_format " >> %title"
+for_window [class="^.*"] title_format "   %title"
 
 # switch workspace
 bindsym $mod+1 workspace number 1
