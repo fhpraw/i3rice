@@ -20,6 +20,7 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
+nm-applet,network manager applet
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
 noto-fonts-emoji,Google Noto Emoji fonts
