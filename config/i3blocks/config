@@ -1,5 +1,5 @@
 separator=false
-separator_block_width=3
+separator_block_width=0
 
 [capslock]
 command=scripts/capslock
@@ -15,25 +15,25 @@ signal=4
 background=#8ec07c
 color=#282828
 
-[connection]
-command=scripts/connection
-interval=5
-background=#fb4934
-color=#282828
+#[connection]
+#command=scripts/connection
+#interval=5
+#background=#fb4934
+#color=#282828
 
-[bluetooth]
-command=scripts/bluetooth
-interval=once
-signal=6
-background=#83a598
-color=#282828
+#[bluetooth]
+#command=scripts/bluetooth
+#interval=once
+#signal=6
+#background=#83a598
+#color=#282828
 
-[wifi]
-command=scripts/wifi
-interval=once
-signal=5
-background=#d3869b
-color=#282828
+#[wifi]
+#command=scripts/wifi
+#interval=once
+#signal=5
+#background=#d3869b
+#color=#282828
 
 [volume]
 command=scripts/volume
