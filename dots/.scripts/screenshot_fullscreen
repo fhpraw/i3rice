@@ -1,1 +1,1 @@
-maim -u ~/Images/Screenshots/scrot_$(date +%F-%H%M%S).jpg
+maim -u ~/Pictures/Screenshots/scrot_$(date +%F-%H%M%S).jpg
