@@ -9,6 +9,9 @@ client.placeholder      #d79921 #d79921 #282828  #98971a #d79921
 client.background       #ebdbb2
 
 bar {
+    font pango: JetBrainsMono Bold 9
+    status_command i3blocks
+    position top
     colors {
         background         #282828
         statusline         #b8bb26
@@ -155,6 +158,5 @@ mode "Printscreen" {
 bindsym $mod+Shift+s mode "Settings" 
 mode "Settings" {
     bindsym $mod+w exec --no-startup-id ~/.scripts/setwallpaper
-    #bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
     bindsym Escape mode "default"
 }
