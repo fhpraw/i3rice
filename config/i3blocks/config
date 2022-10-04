@@ -1,42 +1,30 @@
-separator=false
-separator_block_width=0
+separator=true
+separator_block_width=20
 
 [capslock]
 command=scripts/capslock
 interval=once
 signal=3
-background=#8ec07c
-color=#282828
 
 [mic]
 command=scripts/mic
 interval=once
 signal=4
-background=#8ec07c
-color=#282828
 
 [volume]
 command=scripts/volume
 interval=once
 signal=1
-background=#fe8019
-color=#282828
 
 [brightness]
 command=scripts/brightness
 interval=once
 signal=2
-background=#fabd2f
-color=#282828
 
 [battery]
 command=scripts/battery
 interval=5
-background=#8ec07c
-color=#282828
 
 [time]
 command=scripts/timedate
 interval=60
-background=#83a598
-color=#282828
