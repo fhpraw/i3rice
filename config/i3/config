@@ -1,34 +1,34 @@
 set $mod Mod4
-font pango: JetBrainsMono ExtraBold 9
+font pango: JetBrainsMono Bold 10
 
 # theme
-client.focused          #83a598 #83a598 #282828  #d79921 #83a598
-client.unfocused        #282828 #282828 #83a598  #98971a #282828
-client.focused_inactive #282828 #282828 #83a598  #98971a #282828
+client.focused          #83a598 #458588 #ebdbb2  #d79921 #458588
+client.unfocused        #504945 #3c3836 #ebdbb2  #98971a #504945
+client.focused_inactive #504945 #3c3836 #ebdbb2  #98971a #504945
 client.urgent           #cc241d #cc241d #ebdbb2  #98971a #cc241d
 client.placeholder      #d79921 #d79921 #282828  #98971a #d79921
 client.background       #ebdbb2
 
 # status bar
 bar {
-    font pango: JetBrainsMono 9
+    font pango: JetBrainsMono Bold 10
     status_command i3blocks
     position top
     colors {
         background         #282828
-        statusline         #b8bb26
+        statusline         #ebdbb2
         separator          #928374
 
-        focused_workspace  #83a598   #83a598   #282828
-        active_workspace   #d79921   #d79921   #282828
-        inactive_workspace #282828   #282828   #b8bb26
+        focused_workspace  #83a598   #458588   #ebdbb2
+        active_workspace   #504945   #3c3836   #ebdbb2
+        inactive_workspace #504945   #3c3836   #ebdbb2
         urgent_workspace   #cc241d   #cc241d   #282828
         binding_mode       #b8bb26   #b8bb26   #282828
     }
 }
 
 # title bar setting
-for_window [class="^.*"] title_format "   %title"
+for_window [class="^.*"] title_format " %title"
 
 # switch workspace
 bindsym $mod+1 workspace number 1
