@@ -2,11 +2,11 @@ PACKAGES,DESCRIPTION
 arandr,Provide a simple visual front end for XRandR
 bluez,daemons for the bluetooth protocol stack
 bluez-utils,Development and debugging utilities for the bluetooth protocol stack
-blueman,bluetooth manager
+blueman,GTK bluetooth manager
 cmus,Feature-rich ncurses-based audio player
-cups,CUPS
-cups-filters,CUPS filters
-cups-pdf,CUPS PDF
+cups,The CUPS Printing System daemon package
+cups-filters,OpenPrinting CUPS filters
+cups-pdf,PDF printer for cups
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
@@ -19,11 +19,12 @@ imagemagick,An image viewing/manipulation program
 inkscape,Professional vector graphics editor
 kitty,Terminal Emulator
 libreoffice-fresh,LibreOffice branch which contains new features and program enhancements
-neovim,Fork of Vim aiming to improve user experience plugins and GUIs 
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
+neovim,Fork of Vim aiming to improve user experience plugins and GUIs 
+neofetch,A CLI system information tool written in BASH that supports displaying images
 network-manager-applet,network manager applet
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
@@ -36,9 +37,11 @@ pulseaudio-bluetooth,Bluetooth support for PulseAudio
 pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
+tealdeer,a fast tldr client in rust
 tlp,Linux Advanced Power Management
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols-2048-em-mono,High number of extra glyphs from popular iconic fonts
+ueberzug,Command line util which allows to display images in combination with X11
 unzip,for extracting and viewing files in zip archives
 xclip,Command line interface to the X11 clipboard
 xdotool,Command line X11 automation tool
