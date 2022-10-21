@@ -1,1 +1,1 @@
-[ $(wifi | awk '{print $3}') = on ] && echo " WIFI "
+[ $(wifi | awk '{print $3}') = on ] && echo " Wifi "
