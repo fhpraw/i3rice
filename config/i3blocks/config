@@ -1,5 +1,5 @@
 separator=true
-separator_block_width=20
+separator_block_width=10
 
 [capslock]
 command=scripts/capslock
