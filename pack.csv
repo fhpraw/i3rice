@@ -10,6 +10,7 @@ cups-pdf,PDF printer for cups
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
+firefox,Standalone web browser from mozilla
 ffmpeg,Complete solution to record convert and stream audio and video 
 gimp,GNU Image Manipulation Program 
 i3-wm,Improved dynamic tiling window manager
