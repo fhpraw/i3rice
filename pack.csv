@@ -11,11 +11,9 @@ dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 firefox,Standalone web browser from mozilla
-ffmpeg,Complete solution to record convert and stream audio and video  
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
-imagemagick,An image viewing/manipulation program
 kitty,Terminal Emulator
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
@@ -37,7 +35,6 @@ sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols-2048-em-mono,High number of extra glyphs from popular iconic fonts
-ueberzug,Command line util which allows to display images in combination with X11
 unzip,for extracting and viewing files in zip archives
 xclip,Command line interface to the X11 clipboard
 xdotool,Command line X11 automation tool
