@@ -10,7 +10,7 @@ cups-pdf,PDF printer for cups
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
-firefox,Standalone web browser from mozilla
+git,git version control
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
@@ -19,7 +19,8 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mesa,An open source implementation of the OpenGL specification
 mpv,a free open source and cross platform media player
-neovim,Fork of Vim aiming to improve user experience plugins and GUIs 
+neovim,Fork of Vim aiming to improve user experience plugins and GUIs
+networkmanager,network manager 
 network-manager-applet,network manager applet
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
