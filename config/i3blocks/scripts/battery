@@ -1,3 +1,4 @@
+#!/bin/bash
 b=$(head /sys/class/power_supply/BAT0/capacity);
 c="Battery";
 [ $b -lt 15 ] && c="Lowbat";

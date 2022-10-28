@@ -1,1 +1,2 @@
+#!/bin/bash
 maim -u -s -o ~/Pictures/Screenshots/scrot_$(date +%F-%H%M%S).jpg
