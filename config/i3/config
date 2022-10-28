@@ -1,6 +1,8 @@
 set $mod Mod4
-set $browser firefox
+set $browser google-chrome-stable
 set $term kitty
+
+# font settings
 font pango: JetBrainsMono 9
 
 # status bar
@@ -46,11 +48,11 @@ bindsym XF86Display exec --no-startup-id arandr
 bindsym XF86WLAN exec pkill -SIGRTMIN+5 i3blocks
 bindsym XF86Tools mode "Settings" 
 bindsym XF86Search exec --no-startup-id $browser
-bindsym XF86LaunchA exec --no-startup-id dmenu_run
+bindsym XF86LaunchA exec --no-startup-id ~/.scripts/menu
 bindsym XF86Explorer exec --no-startup-id $term -e ranger
 
 # dmenu
-bindsym $mod+p exec --no-startup-id dmenu_run
+bindsym $mod+p exec --no-startup-id ~/.scripts/menu
 
 # i3
 bindsym $mod+Shift+Escape exit
