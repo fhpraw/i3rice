@@ -9,7 +9,6 @@ sudo pacman -S --needed --noconfirm $(sed '1d' pack.csv | awk -F "," '{print $1}
 # enable services
 sudo systemctl enable tlp
 sudo systemctl enable bluetooth.service
-sudo systemctl enable cups.service
 
 # set touchpad
 sudo cp -v -r etc /
