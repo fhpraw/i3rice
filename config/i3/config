@@ -1,5 +1,5 @@
 set $mod Mod4
-set $browser firefox
+set $browser google-chrome-stable
 set $term kitty
 
 # class                 border  backgr. text    indicator child_border
