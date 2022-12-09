@@ -1,6 +1,7 @@
 PACKAGES,DESCRIPTION
 arandr,Provide a simple visual front end for XRandR
-blueman,GTK bluetooth manager
+bluez,Daemons for the bluetooth protocol stack
+bluez-utils,Development and debugging utilities for the bluetooth protocol stack
 cmus,Feature-rich ncurses-based audio player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
@@ -13,12 +14,12 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mpv,a free open source and cross platform media player
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
-network-manager-applet,network manager applet
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
 noto-fonts-emoji,Google Noto Emoji fonts
 noto-fonts-extra,Google Noto TTF fonts additional variants
 ntfs-3g,NTFS filesystem driver and utilities
+pulseaudio,A featureful general-purpose sound server
 pulseaudio-alsa,ALSA Configuration for PulseAudio
 pulseaudio-bluetooth,Bluetooth support for PulseAudio
 pulsemixer,CLI and curses mixer for pulseaudio
