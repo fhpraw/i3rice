@@ -4,10 +4,11 @@ mountable=$(lsblk -lp | grep "part $" | awk '{print $1, "(" $4 ")"}')
 [[ "$mountable" = "" ]] && exit 1
 
 # choose drive
-chosen=$(echo "$mountable" | dmenu -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#504945' -i -p "Mount which drive?" | awk '{print $1}')
+chosen=$(echo "$mountable" | dmenu -i -p "Mount which drive?" | awk '{print $1}')
 [[ "$chosen" = "" ]] && exit 1
 
 directories=$(find ~/Drives/* -maxdepth 0 -empty -type d)
-mountpoint=$(echo "$directories" | dmenu -fn 'JetBrainsMono:style=Regular:pixelsize=14' -nb '#282828' -nf '#ebdbb2' -sf '#ebdbb2' -sb '#504945' -i -p "Type in mount point.")
+mountpoint=$(echo "$directories" | dmenu -i -p "Type in mount point.")
 
+# mount drive
 sudo -A mount $chosen $mountpoint
