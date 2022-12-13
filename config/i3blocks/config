@@ -1,10 +1,24 @@
 separator=true
-separator_block_width=15
+separator_block_width=5
 
 [capslock]
 command=scripts/capslock
 interval=once
 signal=3
+
+[bluetooth]
+command=scripts/bluetooth
+interval=once
+signal=6
+
+[Wifi]
+command=scripts/wifi
+interval=once
+signal=5
+
+[network]
+command=scripts/connection
+interval=5
 
 [mic]
 command=scripts/mic

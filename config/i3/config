@@ -1,11 +1,14 @@
 set $mod Mod4
 
 # font settings
-font pango: JetBrainsMono 10
+font pango: JetBrainsMono 9
 
 # status bar
 bar {
     status_command i3blocks
+    colors {
+        background #282828
+    }
 }
 
 # switch workspace
@@ -136,5 +139,6 @@ mode "Printscreen" {
 bindsym $mod+Shift+s mode "Settings" 
 mode "Settings" {
     bindsym $mod+w exec --no-startup-id ~/.scripts/setwallpaper
+    bindsym $mod+b exec --no-startup-id bluetooth toggle; exec pkill -SIGRTMIN+6 i3blocks
     bindsym Escape mode "default"
 }
