@@ -9,6 +9,7 @@ exfat-utils,Utilities for exFAT file system
 firefox,web browser from mozilla
 gimp,GNU image manipulation program
 git,the fast distributed version control system
+htop,interactive process viewer
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
@@ -19,6 +20,7 @@ maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mpv,a free open source and cross platform media player
 networkmanager,network connection manager and user applications
+neofetch,A CLI system information tool written in BASH that support displaying images
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
@@ -32,6 +34,7 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
+tldr,command line client for tldr
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols-2048-em-mono,High number of extra glyphs from popular iconic fonts
 xclip,Command line interface to the X11 clipboard
