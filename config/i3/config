@@ -1,7 +1,7 @@
 set $mod Mod4
 
 # font settings
-font pango: JetBrainsMono 9
+font pango: JetBrainsMono 10
 
 # status bar
 bar {

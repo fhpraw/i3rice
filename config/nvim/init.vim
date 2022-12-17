@@ -2,14 +2,14 @@
 call plug#begin( stdpath( 'data' ) . '/plugged' )
 Plug 'morhetz/gruvbox'
 "Plug 'mattn/emmet-vim'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-fugitive'
 "Plug 'sheerun/vim-polyglot'
-"Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-startify'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Settings
