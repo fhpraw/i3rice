@@ -1,2 +1,2 @@
 #!/bin/bash
-dmenu_run
+dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMono-10' -p 'dmenu%'
