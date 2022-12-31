@@ -4,7 +4,7 @@ mounted=$(lsblk -lp | grep "Drives" | awk '{print $1, "(" $4 ")"}')
 [[ "$mounted" = "" ]] && exit 1
 
 # chose drive
-chosen=$(echo "$mounted" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
+chosen=$(echo "$mounted" | dmenu -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMono-10' -i -p "Unmount which drive?" | awk '{print $1}')
 [[ "$chosen" = "" ]] && exit 1
 
 #umount drive
