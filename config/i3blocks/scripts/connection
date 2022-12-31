@@ -1,1 +1,1 @@
-nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}' | sed -e 's/^/ CON /'
+nmcli d | grep -w "connected" | head -n 1 | awk '{for(i=4;i<=NF;++i)printf $i""FS; print ""}' | sed -e 's/^/  /'

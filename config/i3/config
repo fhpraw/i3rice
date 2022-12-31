@@ -3,7 +3,7 @@ set $term kitty
 set $browser google-chrome-stable
 
 # font settings
-font pango: JetBrainsMono 10
+font pango: JetBrainsMono 9
 
 
 # class                 border  bground text    indicator child_border
@@ -28,6 +28,8 @@ bar {
         binding_mode       #FF5555 #FF5555 #F8F8F2
     }
 }
+
+default_border pixel 3
 
 # switch workspace
 bindsym $mod+1 workspace number 1
