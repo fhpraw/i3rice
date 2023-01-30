@@ -1,1 +1,1 @@
-[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo " Capslock "
+[ $(xset -q | grep Caps | awk '{print $4}') = on ] && echo " CAPS "

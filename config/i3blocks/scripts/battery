@@ -1,6 +1,6 @@
 #!/bin/bash
 b=$(head /sys/class/power_supply/BAT0/capacity);
-c="";
-[ $b -lt 15 ] && c="";
-[ "Charging" = $(head /sys/class/power_supply/BAT0/status) ] && c="" ;
-echo " $c $b% "
+c="BAT";
+[ $b -le 20 ] && c="LOWBAT";
+[ "Charging" = $(head /sys/class/power_supply/BAT0/status) ] && c="AC" ;
+echo " $c:$b% "

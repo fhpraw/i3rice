@@ -1,1 +1,1 @@
-echo "  $(date '+%a %b %d %H:%M') "
+echo " $(date '+%a %b %d %H:%M') "
