@@ -5,6 +5,7 @@ bluez-utils,Development and debugging utilities for the bluetooth protocol stack
 cmus,Feature-rich ncurses-based audio player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
+firefox,web browser from mozilla
 exfat-utils,Utilities for exFAT file system
 git,the fast distributed version control system
 htop,interactive process viewer
