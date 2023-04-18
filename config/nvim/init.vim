@@ -1,6 +1,5 @@
 " Plugins
 call plug#begin( stdpath( 'data' ) . '/plugged' )
-"Plug 'dracula/vim',{'as':'dracula'}
 Plug 'morhetz/gruvbox'
 "Plug 'mattn/emmet-vim'
 "Plug 'jiangmiao/auto-pairs'
@@ -29,11 +28,6 @@ set foldmethod=manual
 set noshowmode
 set noshowcmd
 set number
-
-" Dracula
-" ---------------------------------------------------
-"set background=dark
-"silent! colo dracula
 
 " Gruvbox
 " ---------------------------------------------------
