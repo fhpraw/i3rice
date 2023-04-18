@@ -6,19 +6,16 @@ cmus,Feature-rich ncurses-based audio player
 dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
+firefox,Mozilla web browser
 git,the fast distributed version control system
-htop,interactive process viewer
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
-inkscape,vector image editor
 kitty,Terminal Emulator
-libreoffice-fresh,libreoffice branch contains new features
 maim,Utility to take a screenshot using imlib2
 man-db,A utility for reading man pages
 mpv,a free open source and cross platform media player
 networkmanager,network connection manager and user applications
-neofetch,A CLI system information tool written in BASH that support displaying images
 neovim,Fork of Vim aiming to improve user experience plugins and GUIs
 noto-fonts,Google Noto TTF fonts
 noto-fonts-cjk,Google Noto CJK fonts
@@ -32,7 +29,6 @@ pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
 sxiv,Simple X Image Viewer
 tlp,Linux Advanced Power Management
-tldr,command line client for tldr
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols-2048-em-mono,High number of extra glyphs from popular iconic fonts
 unzip,extract zipfiles
@@ -44,7 +40,5 @@ xorg-server,Xorg X server
 xorg-xbacklight,RandR-based backlight control application
 xorg-xinit,Xorg initialisation program
 xwallpaper,Wallpaper setting utility for X
-yt-dlp,a youtube-dl fork with additional features and fixes
 zathura,Minimalistic document viewer
 zathura-pdf-mupdf,PDF support for Zathura MuPDF backend support PDF ePub and OpenXPS
-zip,archiver for creating zipfiles
