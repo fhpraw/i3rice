@@ -4,12 +4,10 @@ mountable=$(lsblk -lp | grep "part $" | awk '{print $1, "(" $4 ")"}')
 [[ "$mountable" = "" ]] && exit 1
 
 # choose drive
-#chosen=$(echo "$mountable" | dmenu -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMono-10' -i -p "Mount which drive?" | awk '{print $1}')
 chosen=$(echo "$mountable" | dmenu -i -p "Mount which drive?" | awk '{print $1}')
 [[ "$chosen" = "" ]] && exit 1
 
 directories=$(find ~/Drives/* -maxdepth 0 -empty -type d)
-#mountpoint=$(echo "$directories" | dmenu -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMono-10' -i -p "Type in mount point.")
 mountpoint=$(echo "$directories" | dmenu -i -p "Type in mount point.")
 
 # mount drive
