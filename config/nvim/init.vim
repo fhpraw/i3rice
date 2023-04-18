@@ -3,14 +3,14 @@ call plug#begin( stdpath( 'data' ) . '/plugged' )
 "Plug 'dracula/vim',{'as':'dracula'}
 Plug 'morhetz/gruvbox'
 "Plug 'mattn/emmet-vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'sheerun/vim-polyglot'
-Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'tpope/vim-commentary'
+"Plug 'tpope/vim-fugitive'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'mhinz/vim-startify'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Settings
@@ -59,7 +59,7 @@ silent! let g:gruvbox_italic = '1'
 silent! let g:gruvbox_contrast_dark = 'hard'
 silent! colo gruvbox
 
-silent! let g:airline_powerline_fonts = 1
+"silent! let g:airline_powerline_fonts = 1
 
 " Keybindings
 " ---------------------------------------------------
