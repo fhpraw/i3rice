@@ -7,7 +7,6 @@ dmenu,Generic menu for X
 dosfstools,DOS filesystem utilities
 exfat-utils,Utilities for exFAT file system
 firefox,Mozilla web browser
-git,the fast distributed version control system
 i3-wm,Improved dynamic tiling window manager
 i3blocks,Define blocks for your i3bar status line
 i3lock,Improved screenlocker based upon XCB and PAM
@@ -22,12 +21,11 @@ noto-fonts-cjk,Google Noto CJK fonts
 noto-fonts-emoji,Google Noto Emoji fonts
 noto-fonts-extra,Google Noto TTF fonts additional variants
 ntfs-3g,NTFS filesystem driver and utilities
-pulseaudio,A featureful general-purpose sound server
-pulseaudio-alsa,ALSA Configuration for PulseAudio
-pulseaudio-bluetooth,Bluetooth support for PulseAudio
+pipewire,Low-latency audio video router and processor
+wireplumber,Session policy manager implementation for PipeWire
 pulsemixer,CLI and curses mixer for pulseaudio
 ranger,simple vim-like file manager
-sxiv,Simple X Image Viewer
+nsxiv,new Simple X Image Viewer
 tlp,Linux Advanced Power Management
 ttf-jetbrains-mono,Typeface for developers by JetBrains
 ttf-nerd-fonts-symbols-2048-em-mono,High number of extra glyphs from popular iconic fonts
