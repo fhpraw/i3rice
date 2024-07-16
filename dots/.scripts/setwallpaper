@@ -1,2 +1,2 @@
 #!/bin/bash
-sxiv -b -r -t -o ~/Pictures/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg 
+nsxiv -b -r -t -o ~/Pictures/Wallpapers/ | xargs -I{} cp {} ~/.config/wallpaper.jpg && xwallpaper --zoom ~/.config/wallpaper.jpg 
